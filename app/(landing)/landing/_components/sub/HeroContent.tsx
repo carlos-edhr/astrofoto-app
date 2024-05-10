@@ -57,7 +57,8 @@ const HeroContent = () => {
       <div className="hidden w-full h-full md:block  justify-center items-center">
         {/* SPLINE SCENE START */}
         {/* <Spline scene="https://prod.spline.design/0ABX-F8AcLXFZ2hI/scene.splinecode" /> */}
-        <Spline scene="https://prod.spline.design/EiDOgcOIiL5Z-SBm/scene.splinecode" />
+        {/* <Spline scene="https://prod.spline.design/EiDOgcOIiL5Z-SBm/scene.splinecode" /> */}
+        <Spline scene="https://prod.spline.design/SCTGujpbmLheztnm/scene.splinecode" />
         {/* SPLINE SCENE END */}
       </div>
     </motion.div>

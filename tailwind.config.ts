@@ -84,10 +84,6 @@ const config = {
       animation: {
         gradient: "animatedgradient 6s ease infinite alternate",
       },
-
-      backgroundImage: {
-        parallax_1: 'url("../public/astrophotography-vid1.webm")',
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],
