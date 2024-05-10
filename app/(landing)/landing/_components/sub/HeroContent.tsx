@@ -30,11 +30,11 @@ const HeroContent = () => {
         </motion.div>*/}
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-9 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-9 text-4xl md:text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
             Congreso Internacional de{" "}
-            <span className="font-['Maitree'] mb-4 text-4xl font-bold leading-none tracking-tight  md:text-5xl lg:text-6xl xt-wdark:tehite bg-gradient-to-l pt-5 md:mt-5 from-sky-200 to-sky-600 text-transparent bg-clip-text bg-300% animate-gradient">
+            <span className="font-['Maitree'] mb-4 text-4xl md:text-4xl font-bold leading-none tracking-tight  md:text-5xl lg:text-6xl xt-wdark:tehite bg-gradient-to-l pt-5 md:mt-5 from-sky-200 to-sky-600 text-transparent bg-clip-text bg-300% animate-gradient">
               Astrofotografía{" "}
             </span>
           </span>
