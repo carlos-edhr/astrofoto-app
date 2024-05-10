@@ -17,7 +17,7 @@ export const NavBar = () => {
             height={40}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
+          <span className="ml-[10px] text-2xl font-semibold hidden md:block text-gray-300">
             Astrofoto
           </span>
         </a>
