@@ -12,7 +12,7 @@ export const Navigation = () => {
 
   const routes = [
     {
-      label: "Stream",
+      label: "Transmisión",
       href: `/u/${user?.username}`,
       icon: Fullscreen,
     },
@@ -27,7 +27,7 @@ export const Navigation = () => {
       icon: MessageSquare,
     },
     {
-      label: "Community",
+      label: "Comunidad",
       href: `/u/${user?.username}/community`,
       icon: Users,
     },
