@@ -43,8 +43,11 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 max-w-[600px]"
         >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
-          a optio iure cumque quibusdam maxime odit deleniti iusto hic.
+          Evento anual donde reunimos a varios fotógrafos, astrofotógrafos,
+          astrónomos y divulgadores científicos de diferentes países con el
+          objetivo de compartir a través de conferencias magistrales y de
+          talleres que nos ayudan a crecer en esta bonita disciplina de capturar
+          la luz del universo.
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}

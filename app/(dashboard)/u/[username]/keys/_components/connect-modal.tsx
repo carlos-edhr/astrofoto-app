@@ -40,10 +40,10 @@ const ConnectModal = () => {
     startTransition(() => {
       createIngress(parseInt(ingressType))
         .then(() => {
-          toast.success("Ingress created");
+          toast.success("Ingress - creado");
           closeRef?.current?.click();
         })
-        .catch(() => toast.error("Something went wrong"));
+        .catch(() => toast.error("Se ha producido un error"));
     });
   };
   return (
