@@ -4,13 +4,13 @@ import { Suspense } from "react";
 export default function Home() {
   return (
     <div className="h-full p-8 max-w-screen-2xl mx-auto ">
-      <Suspense fallback={<ResultsSkeleton />}>
+      <Suspense>
         <Results />
       </Suspense>
     </div>
   );
 }
 
-export const ResultsSkeleton = () => {
-  return <div></div>;
-};
+// export const ResultsSkeleton = () => {
+//   return <div>s</div>;
+// };
