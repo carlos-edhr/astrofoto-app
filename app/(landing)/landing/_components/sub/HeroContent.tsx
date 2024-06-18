@@ -7,7 +7,6 @@ import {
   slideInFromTop,
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-
 import Image from "next/image";
 import Spline from "@splinetool/react-spline";
 
