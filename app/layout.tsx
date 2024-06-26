@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Astrofoto - El sitio web del Congreso Internacional de Astrofotografía.",
 };
-
+// Fix Auth
 export default function RootLayout({
   children,
 }: Readonly<{
