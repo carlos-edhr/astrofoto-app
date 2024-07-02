@@ -12,8 +12,14 @@ interface CreatorLayoutProps {
 const CreatorLayout = async ({ params, children }: CreatorLayoutProps) => {
   const self = await getSelfByUsername(params.username);
 
+  console.log(self.isAdmin);
+
   if (!self) {
     redirect("/");
+  }
+
+  if (!self.isAdmin) {
+    redirect("/transmisiones");
   }
 
   return (

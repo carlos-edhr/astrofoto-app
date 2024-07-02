@@ -18,6 +18,9 @@ interface ResultCardProps {
 }
 
 export const ResultCard = ({ data }: ResultCardProps) => {
+  if (!data.user.isAdmin) {
+    return <></>;
+  }
   return (
     <Link href={`/${data.user.username}/`}>
       <div className="w-full flex gap-x-4">

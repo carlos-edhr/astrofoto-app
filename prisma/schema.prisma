@@ -24,6 +24,8 @@ model User {
   externalUserId String @unique 
   bio String? @db.Text 
 
+  isAdmin Boolean @default(false)
+
   following Follow[] @relation("Following")
   followedBy Follow[] @relation("FollowedBy")
 
@@ -43,6 +45,7 @@ model Stream {
   ingressId String? @unique 
   serverUrl String? @db.Text
   streamKey String? @db.Text
+  
 
   isLive Boolean @default(false)
   isChatEnabled Boolean @default(true)

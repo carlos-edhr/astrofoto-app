@@ -1,5 +1,5 @@
-import { NavBar } from "./landing/_components/main/navbar";
-import StarsCanvas from "./landing/_components/main/StarBackground";
+import { NavBar } from "./(home)/_components/main/navbar";
+import StarsCanvas from "./(home)/_components/main/StarBackground";
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
