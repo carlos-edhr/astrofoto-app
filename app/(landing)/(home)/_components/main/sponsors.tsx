@@ -4,43 +4,73 @@ type Props = {};
 import Image from "next/image";
 const rowOneImages = [
   {
-    url: "https://i2.wp.com/www.caneckleyva.com/wp-content/uploads/2023/07/CLL8194_2560px.jpg?resize=1025%2C1536&ssl=1",
+    url: "/logos/LogoNatGeo REVISTA W.png",
   },
   {
-    url: "https://i1.wp.com/www.caneckleyva.com/wp-content/uploads/2016/07/Proyecto-Final-5.jpg?fit=1700%2C705",
+    url: "/logos/IFN Logo General2.png",
   },
   {
-    url: "https://i0.wp.com/www.caneckleyva.com/wp-content/uploads/2020/08/IMG_2699.jpg?resize=1024%2C682&ssl=1",
+    url: "/logos/SDM logo circular v2 blanco.png",
   },
   {
-    url: "https://i2.wp.com/www.caneckleyva.com/wp-content/uploads/2023/10/CLL9998-Pano-scaled.jpg?resize=878%2C1024&ssl=1",
+    url: "/logos/Logos Canon-02.png",
   },
   {
-    url: "https://i0.wp.com/www.caneckleyva.com/wp-content/uploads/2023/01/Yucatan-4-1.jpg?w=790&ssl=1",
+    url: "/logos/CL Logo Black2.png",
+  },
+  {
+    url: "/logos/Logo Sazón.png",
+  },
+  {
+    url: "/logos/Logo PhotoPills W.png",
+  },
+  {
+    url: "/logos/Logo CETYS1.png",
+  },
+  {
+    url: "/logos/Logo Brandon.png",
+  },
+  {
+    url: "/logos/Logo Caliente4.png",
+  },
+  {
+    url: "/logos/Logo Andromeda1.png",
   },
 ];
 
 const rowTwoImages = [
   {
-    url: "https://i0.wp.com/www.caneckleyva.com/wp-content/uploads/2020/08/IMG_2693.jpg?resize=1024%2C812&ssl=1",
+    url: "/logos/CL Logo Black2.png",
   },
   {
-    url: "https://i1.wp.com/www.caneckleyva.com/wp-content/uploads/2023/07/CLL8183-Pano_2560px.jpg?resize=1024%2C477&ssl=1",
+    url: "/logos/MTP LOGO VECTOR W.png",
   },
   {
-    url: "https://i1.wp.com/www.caneckleyva.com/wp-content/uploads/2016/09/MG_7123.jpg?resize=683%2C1024&ssl=1",
+    url: "/logos/Logo ValeyStudio W.png",
   },
   {
-    url: "https://i1.wp.com/www.caneckleyva.com/wp-content/uploads/2020/08/LEY1761.jpg?resize=1024%2C1024&ssl=1",
+    url: "/logos/Logo Optolong2.png",
   },
   {
-    url: "https://i1.wp.com/www.caneckleyva.com/wp-content/uploads/2020/08/LEY2504-HDR.jpg?resize=1024%2C683&ssl=1",
+    url: "/logos/Logo Las Rocas.png",
+  },
+  {
+    url: "/logos/Logo Fuego Santo W.png",
+  },
+  {
+    url: "/logos/Logo Cruz.png",
+  },
+  {
+    url: "/logos/Logo Brandon.png",
+  },
+  {
+    url: "/logos/IFN Logo General2.png",
   },
 ];
 function MarqueeGaleria({}: Props) {
   return (
     <div className="w-[100vw] mb-5:mb-20 relative">
-      <div className="mt-10 md:mt-[6.5rem]">
+      <div className=" ">
         <MarQuee>
           {rowOneImages.map((i, index) => (
             <Image
@@ -53,7 +83,7 @@ function MarqueeGaleria({}: Props) {
             />
           ))}
         </MarQuee>
-        <MarQuee>
+        <MarQuee direction="right">
           {rowTwoImages.map((i, index) => (
             <Image
               src={i.url}
