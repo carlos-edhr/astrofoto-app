@@ -12,8 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Congreso de Astrofotografía",
-  description:
-    "Astrofoto - El sitio web del Congreso Internacional de Astrofotografía.",
+  description: "El sitio web del Congreso Internacional de Astrofotografía.",
 };
 // Fix Auth
 export default function RootLayout({

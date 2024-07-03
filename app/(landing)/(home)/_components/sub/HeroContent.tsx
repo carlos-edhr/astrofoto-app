@@ -9,15 +9,17 @@ import {
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Spline from "@splinetool/react-spline";
+import { Clapperboard, Instagram, Youtube, Facebook } from "lucide-react";
 
+import Link from "next/link";
 const HeroContent = () => {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20   w-full h-full z-[20]"
+      className="flex flex-row items-center align-middle justify-center px-20   w-full h-full z-[20]"
     >
-      <div className="h-full w-full pl-4 flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full w-full pl-4 flex flex-col gap-5 align-middle justify-center m-auto text-start">
         {/*  <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[17px] border border-[#7042f88b] opacity-[0.9]"
@@ -50,10 +52,34 @@ const HeroContent = () => {
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
-          className="flex flex-row items-center justify-center py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="flex  items-center w-full align-middle justify-center py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[500px]"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          ¡Regístrate!
+          <div className="flex flex-col  align-middle justify-center">
+            <Link
+              target="_blank"
+              href="https://www.eventbrite.com.mx/e/vii-congreso-internacional-de-astrofotografia-tickets-905558348397?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"
+            >
+              <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-full" />
+              <p className="flex flex-col">¡Regístrate!</p>
+            </Link>
+          </div>
+        </motion.a>
+        <motion.a className="flex m-5  ">
+          <Link target="_blank" href="https://www.instagram.com/ifnastro/">
+            <Instagram className="h-8 w-8 m-5 lg:mr-2" />
+          </Link>
+
+          <Link target="_blank" href="https://www.youtube.com/@ifnastro/videos">
+            <Youtube className="h-8 w-8 m-5 lg:mr-2" />
+          </Link>
+
+          <Link target="_blank" href="https://www.facebook.com/ifnastro">
+            <Facebook className="h-8 w-8 m-5 lg:mr-2" />
+          </Link>
+
+          <Link target="_blank" href="/transmisiones">
+            <Clapperboard className="h-8 w-8 m-5 lg:mr-2" />
+          </Link>
         </motion.a>
       </div>
       <div className="hidden w-full h-full md:block  justify-center items-center">

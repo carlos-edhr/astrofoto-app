@@ -1,3 +1,5 @@
+import { Youtube } from "lucide-react";
+
 export const Skill_data = [
   {
     skill_name: "Html 5",
@@ -81,8 +83,8 @@ export const Skill_data = [
 
 export const Socials = [
   {
-    name: "Discord",
-    src: "/instagram.svg",
+    name: "Youtube",
+    src: "/youtube.svg",
   },
   {
     name: "Facebook",
@@ -90,7 +92,7 @@ export const Socials = [
   },
   {
     name: "Instagram",
-    src: "/discord.svg",
+    src: "/instagram.svg",
   },
 ];
 

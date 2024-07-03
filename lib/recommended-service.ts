@@ -20,6 +20,7 @@ export const getRecommended = async () => {
           {
             NOT: {
               id: userId,
+              isAdmin: false,
             },
           },
           {
@@ -30,6 +31,7 @@ export const getRecommended = async () => {
                 },
               },
             },
+            isAdmin: true,
           },
           {
             NOT: {

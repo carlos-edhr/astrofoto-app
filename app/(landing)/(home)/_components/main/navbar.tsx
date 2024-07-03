@@ -1,34 +1,38 @@
 import React from "react";
 import Image from "next/image";
 import { Socials } from "@/constants";
+import { currentUser } from "@clerk/nextjs/server";
+import { Button } from "@/components/ui/button";
+import { Clapperboard } from "lucide-react";
+import Link from "next/link";
+import { SignInButton, UserButton, SignUpButton } from "@clerk/nextjs";
 
-export const NavBar = () => {
+export const NavBar = async () => {
+  const user = await currentUser();
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[@2A0E61]/50  bg-[#03001417] backdrop-blur-md z-50 px-10 ">
-      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-        <a
-          href="#acerca-de"
-          className="h-auto w-auto flex flex-row items-center"
-        >
+    <div className="z-50 w-full h-[65px] fixed top-0 shadow-lg shadow-[@2A0E61]/50  bg-[#03001417] backdrop-blur-md  px-10 ">
+      <div className="w-full h-full flex flex-row items-center justify-between  px-[10px]">
+        <a href="#acerca-de" className=" flex flex-row items-center">
           <Image
-            src="/vector-3.svg"
+            src="/CIAF7 Logo-35.png"
             alt="logo"
-            width={40}
-            height={40}
-            className="cursor-pointer hover:animate-slowspin"
+            width={100}
+            height={100}
+            className="cursor-pointer "
           />
-          <span className="ml-[10px] text-2xl font-semibold hidden md:block text-gray-300">
-            Astrofoto
+
+          <span className="hidden sm:block ml-[10px] text-2xl font-semibold   text-primaryLanding">
+            Astrofotografía
           </span>
         </a>
 
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="hidden md:flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+          <div className="hidden xl:flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="#acerca-de" className="cursor-pointer">
               Acerca del congreso
             </a>
-            <a href="#participantes" className="cursor-pointer">
-              Participantes
+            <a href="#conferencias" className="cursor-pointer">
+              Conferencias
             </a>
             <a href="#galeria" className="cursor-pointer">
               Galería
@@ -39,18 +43,62 @@ export const NavBar = () => {
           </div>
         </div>
 
-        <div className="flex flex-row gap-5">
-          {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
-              key={social.name}
-              width={24}
-              height={24}
-            />
-          ))}
+        <div className="flex flex-row gap-5 ">
+          <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
+            {!user && (
+              <SignInButton>
+                <Button size="sm" variant="outline">
+                  Login
+                </Button>
+              </SignInButton>
+            )}
+          </div>
+          <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
+            {!user && (
+              <SignUpButton>
+                <Button size="sm" variant="primary">
+                  Crear cuenta
+                </Button>
+              </SignUpButton>
+            )}
+          </div>
+          {!!user && (
+            <div className="flex items-center gap-x-4 ">
+              <Button
+                size="sm"
+                variant="ghost"
+                className="text-muted-foreground hover:text-primary"
+                asChild
+              >
+                <Link href={`/u/${user.username}`}>
+                  <Clapperboard className="h-5 w-5 lg:mr-2" />
+                  <span className="hidden lg:block">Transmisiones</span>
+                </Link>
+              </Button>
+              <UserButton afterSignOutUrl="/" />
+            </div>
+          )}
         </div>
       </div>
+      {/* for mobile screen */}
+      {/* <div className="z-50 w-full md:hidden flex items-center justify-between">
+        <div>
+          <div className="flex  items-center justify-center">
+            <Image
+              src="/CIAF7 Logo-35.png"
+              alt="logo"
+              width={75}
+              height={75}
+              className="cursor-pointer hover:animate-slowspin"
+            />
+            <div>
+              <h1 className="z-50 font-Inter text-3xl cursor-pointer">
+                <span className="text-primaryLanding">Astrofotografía</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 };
