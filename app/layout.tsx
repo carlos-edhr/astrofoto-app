@@ -4,6 +4,7 @@ import { dark } from "@clerk/themes";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import { esES } from "@clerk/localizations";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
@@ -31,6 +32,7 @@ export default function RootLayout({
           >
             <Toaster theme="light" position="bottom-center" />
             {children}
+            <Analytics />
           </ThemeProvider>
         </body>
       </html>
