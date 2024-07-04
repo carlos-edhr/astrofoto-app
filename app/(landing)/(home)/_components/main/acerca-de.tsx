@@ -15,9 +15,15 @@ const AcercaDe = () => {
   return (
     <section
       id="acerca-de"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-8 py-5"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden  "
       style={{ transform: "scale(0.9)" }}
     >
+      <div className=" align-center justify-center my-4 font-black text-4xl !leading-snug">
+        Itinerario del Congreso Internacional de{" "}
+        <span className=" leading-none tracking-tight  md:text-5xl lg:text-6xl xt-wdark:tehite bg-gradient-to-l pt-5 md:mt-5 from-sky-200 to-sky-600 text-transparent bg-clip-text bg-300% animate-gradient">
+          Astrofotografía{" "}
+        </span>
+      </div>
       <div className="mx-auto max-w-screen-lg">
         <Image
           width={800}
@@ -27,13 +33,46 @@ const AcercaDe = () => {
           className="mb-4 h-[28rem] w-full rounded-xl object-cover"
         />
 
-        <div className="my-4 font-black text-4xl !leading-snug">
-          Acerca del congreso Internacional de{" "}
-          <span className=" leading-none tracking-tight  md:text-5xl lg:text-6xl xt-wdark:tehite bg-gradient-to-l pt-5 md:mt-5 from-sky-200 to-sky-600 text-transparent bg-clip-text bg-300% animate-gradient">
-            Astrofotografía{" "}
-          </span>
-        </div>
-        <div className="font-normal !text-white text-2xl">
+        <Image
+          width={800}
+          height={800}
+          src={"/itinerario/CIAF7_Itinerario.jpg"}
+          alt="Congreso"
+          className="mb-1  w-full rounded-xl object-cover"
+        />
+
+        <img
+          width={500}
+          height={800}
+          src={"/itinerario/CIAF7_Itinerario2.jpg"}
+          alt="Congreso 2"
+          className="mb-1  w-full rounded-xl object-cover"
+        />
+
+        <img
+          width={800}
+          height={800}
+          src={"/itinerario/CIAF7_Itinerario3.jpg"}
+          alt="Congreso"
+          className="mb-1  w-full rounded-xl object-cover"
+        />
+
+        <img
+          width={800}
+          height={800}
+          src={"/itinerario/CIAF7_Itinerario4.jpg"}
+          alt="Congreso"
+          className="mb-1  w-full rounded-xl object-cover"
+        />
+
+        <img
+          width={800}
+          height={800}
+          src={"/itinerario/CIAF7_Itinerario5.jpg"}
+          alt="Congreso"
+          className="mb-1  w-full rounded-xl object-cover"
+        />
+        {/* <div className="font-normal !text-white text-2xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
           odio? Sequi quaerat asperiores debitis voluptatem natus suscipit
           mollitia facere perferendis dolores nobis laborum repellendus tempora,
@@ -54,7 +93,7 @@ const AcercaDe = () => {
           asperiores debitis voluptatem natus suscipit mollitia facere
           perferendis dolores nobis laborum repellendus tempora, repudiandae
           nesciunt molestias delectus accusamus!
-        </div>
+        </div> */}
       </div>
       {/* <SkillText />
 

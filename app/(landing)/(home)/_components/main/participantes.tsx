@@ -5,7 +5,7 @@ const Participantes = () => {
   return (
     <div
       id="conferencistas"
-      className="z-50 flex flex-col items-center justify-center mt-[-5] "
+      className="z-40 flex flex-col items-center justify-center mt-[-5] "
     >
       <div className="mb-10 font-black text-4xl !leading-snug bg-gradient-to-l pt-5 md:mt-5 from-sky-200 to-sky-600 text-transparent bg-clip-text bg-300% animate-gradient">
         Conferencistas

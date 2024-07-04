@@ -21,7 +21,7 @@ export const NavBar = async () => {
             alt="logo"
             width={100}
             height={100}
-            className="cursor-pointer  "
+            className="cursor-pointer h-45 w-45 "
           />
 
           <p className="hidden md:block ml-[10px] text-2xl font-semibold w-max">

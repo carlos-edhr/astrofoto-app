@@ -69,7 +69,7 @@ const rowTwoImages = [
 ];
 function MarqueeGaleria({}: Props) {
   return (
-    <div className="w-[100vw] mb-5:mb-20 relative">
+    <div className="w-[100vw] mt-20 sm:mt-5 relative">
       <div className=" ">
         <MarQuee>
           {rowOneImages.map((i, index) => (

@@ -78,7 +78,14 @@ const HeroContent = () => {
           </Link>
 
           <Link target="_blank" href="/transmisiones">
-            <Clapperboard className="h-8 w-8 m-5 lg:mr-2" />
+            <Image
+              src="/CIAF7 Logo-35.png"
+              alt="logo"
+              width={45}
+              height={45}
+              className="m-5 lg:mr-2  "
+            />
+            {/* <Image src="/CIAF7 Logo-35.png" className="h-8 w-8 m-5 lg:mr-2" /> */}
           </Link>
         </motion.a>
       </div>
