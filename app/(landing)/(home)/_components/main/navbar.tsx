@@ -10,18 +10,24 @@ import { SignInButton, UserButton, SignUpButton } from "@clerk/nextjs";
 export const NavBar = async () => {
   const user = await currentUser();
   return (
-    <div className=" z-50 w-full h-[65px] fixed top-0 shadow-lg shadow-[@2A0E61]/50  bg-[#03001417] backdrop-blur-md  px-10 ">
+    <div className=" z-50 w-full h-[65px] pt-3 fixed top-1 shadow-lg shadow-[@2A0E61]/50  bg-[#03001417] backdrop-blur-md  px-10 ">
       <div className="w-full h-full flex flex-row items-center justify-between  px-[10px]">
-        <a href="#acerca-de" className=" flex flex-row items-center">
+        <a
+          href="#acerca-de"
+          className=" flex flex-row items-center w-max h-max"
+        >
           <Image
             src="/CIAF7 Logo-35.png"
             alt="logo"
             width={100}
             height={100}
-            className="cursor-pointer "
+            className="cursor-pointer  "
           />
 
-          <span className="hidden sm:block ml-[10px] text-2xl font-semibold   text-primaryLanding">
+          <p className="hidden md:block ml-[10px] text-2xl font-semibold w-max">
+            Congreso de
+          </p>
+          <span className=" ml-[10px] text-2xl hidden sm:block font-semibold   text-primaryLanding">
             Astrofotografía
           </span>
         </a>
