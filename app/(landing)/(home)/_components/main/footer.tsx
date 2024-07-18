@@ -74,7 +74,7 @@ const Footer = () => {
           <p className="flex align-middle justify-center">
             Developed with &nbsp; <Heart className="text-primaryLanding" />{" "}
             &nbsp; by &nbsp;
-            <Link target="_blank" href="https://www.carlos-ehr.com/">
+            <Link target="_blank" href="https://github.com/carlos-edhr">
               <span className="text-primaryLanding">carlos-ehr</span>
             </Link>
           </p>
