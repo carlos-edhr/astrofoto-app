@@ -4,6 +4,7 @@ import { Container } from "./_components/container";
 import Navbar from "./_components/navbar";
 import { Sidebar, SidebarSkeleton } from "./_components/sidebar";
 import { getSelfByUsername } from "@/lib/auth-service";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 interface BrowseLayoutProps {
   params: { username: string };
@@ -17,6 +18,11 @@ const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
   //   redirect("/sign-up");
   // }
 
+  //TODO: UPWARD COMMUNICATION FROM CHILD TO PARENT
+  //NEED TO PASS streamId prop FROM RESULT CARD TO HERE
+  const streamId = "ddb73711-f7fc-41e3-bbb8-07db43027e29";
+  const price = 2000;
+
   return (
     <>
       <Navbar />
@@ -25,7 +31,10 @@ const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
           <Sidebar />
         </Suspense>
 
-        <Container>{children}</Container>
+        <Container>
+          <ModalProvider streamId={streamId} price={price} />
+          {children}
+        </Container>
       </div>
     </>
   );

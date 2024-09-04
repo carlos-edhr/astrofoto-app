@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 export default authMiddleware({
   publicRoutes: [
     "/",
+    "/api/webhook",
     "/sign-in(.*)",
     "/sign-up(.*)",
     "/api/webhooks(.*)",

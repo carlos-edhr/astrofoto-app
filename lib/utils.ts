@@ -17,3 +17,7 @@ export const stringToColor = (str: string) => {
   }
   return color;
 };
+
+export function absoluteUrl(path: string) {
+  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+}
