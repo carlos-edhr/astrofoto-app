@@ -5,6 +5,7 @@ import { Actions } from "./_components/actions";
 import { isBlockedbyUser } from "@/lib/block-service";
 import { StreamPlayer } from "@/components/stream-player";
 import { checkStreamPayment } from "@/lib/check-stream-payment";
+import StreamProductPage from "./_components/stream-product-page";
 
 interface UserPageProps {
   params: {
@@ -23,7 +24,7 @@ const UserPage = async ({ params }: UserPageProps) => {
   const isStreamFree = user.stream?.isFree;
 
   if (!isPurchased && !isStreamFree) {
-    notFound();
+    return <StreamProductPage />;
   }
   const isFollowing = await isFollowingUser(user.id);
   const isBlocked = await isBlockedbyUser(user.id);

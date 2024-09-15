@@ -20,8 +20,8 @@ const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
 
   //TODO: UPWARD COMMUNICATION FROM CHILD TO PARENT
   //NEED TO PASS streamId prop FROM RESULT CARD TO HERE
-  const streamId = "ddb73711-f7fc-41e3-bbb8-07db43027e29";
-  const price = 2000;
+  // const streamId = "ddb73711-f7fc-41e3-bbb8-07db43027e29";
+  // const price = 2000;
 
   return (
     <>
@@ -32,7 +32,7 @@ const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
         </Suspense>
 
         <Container>
-          <ModalProvider streamId={streamId} price={price} />
+          {/* <ModalProvider streamId={streamId} price={price} /> */}
           {children}
         </Container>
       </div>

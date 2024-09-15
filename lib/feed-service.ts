@@ -33,6 +33,8 @@ export const getStreams = async () => {
         thumbnailUrl: true,
         name: true,
         isLive: true,
+        price: true,
+        isFree: true,
       },
       orderBy: [
         {
@@ -51,6 +53,8 @@ export const getStreams = async () => {
         thumbnailUrl: true,
         name: true,
         isLive: true,
+        price: true,
+        isFree: true,
       },
       orderBy: [
         {

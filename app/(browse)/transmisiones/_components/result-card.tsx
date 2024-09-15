@@ -20,16 +20,20 @@ interface ResultCardProps {
     isLive: boolean;
     name: string;
     thumbnailUrl: string | null;
+    price: number | null;
+    isFree: boolean;
+    id: string;
   };
 }
 
 export const ResultCard = async ({ data }: ResultCardProps) => {
   const cardUser = await getUserByUsername(data.user.username);
   //@ts-ignore
-  const streamId = cardUser.stream.id;
-  const price = cardUser?.stream?.price;
+  const streamId = data.id;
+  // cardUser.stream.id;
+  const price = data.price;
   // const userId = data.user.id;
-  const isStreamFree = cardUser?.stream?.isFree;
+  const isStreamFree = data.isFree;
 
   // const purchaseModal = usePurchaseModal();
 
@@ -59,9 +63,9 @@ export const ResultCard = async ({ data }: ResultCardProps) => {
   }
 
   // If the stream is not free and it has not been purchased'
-  if (!isStreamFree && !isPurchased) {
-    return <PurchaseModalCard data={data} streamId={streamId} price={price!} />;
-  }
+  // if (!isStreamFree && !isPurchased) {
+  //   return <PurchaseModalCard data={data} streamId={streamId} price={price!} />;
+  // }
   // If the stream is Free or already purchased
   return (
     <Link href={`/${data.user.username}`}>
@@ -86,9 +90,9 @@ export const ResultCard = async ({ data }: ResultCardProps) => {
             <p className="text-muted-foreground">{data.user.username}</p>
           </div>
         </div>
-        {/* {!isStreamFree && !isPurchased && (
+        {!isStreamFree && !isPurchased && (
           <StreamPurchaseButton price={price!} streamId={streamId} />
-        )} */}
+        )}
         {isPurchased && (
           <p className="flex text-xs text-muted-foreground justify-start  text-primaryLanding">
             <TicketCheck className="flex h-4 w-4 mr-2" />

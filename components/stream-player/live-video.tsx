@@ -13,7 +13,7 @@ interface LiveVideoProps {
 
 export const LiveVideo = ({ participant }: LiveVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLVideoElement>(null);
 
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [volume, setVolume] = useState(0);
@@ -64,6 +64,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
       }
     });
   return (
+    //@ts-ignore
     <div ref={wrapperRef} className="relative h-full flex">
       <video ref={videoRef} width="100%" />
       <div className="absolute top-0 h-full w-full opacity-0 hover:opacity-100 hover:transition-all">
