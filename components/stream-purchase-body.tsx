@@ -33,10 +33,11 @@ export function StreamPurchaseBody() {
         <div className="grid gap-6">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold">
-              Acme Smart Vacuum
+              Congreso Internacional de Astrofotografía
             </h1>
             <p className="text-muted-foreground text-lg">
-              The ultimate cleaning companion for your home.
+              The live stream and recording is only available after purchasing
+              this event.
             </p>
           </div>
           <div className="grid gap-4">
@@ -44,7 +45,7 @@ export function StreamPurchaseBody() {
               <DollarSignIcon className="w-6 h-6 text-primary" />
               <div>
                 <h3 className="font-semibold text-2xl">$199.99</h3>
-                <p className="text-muted-foreground">Free Shipping</p>
+                <p className="text-muted-foreground">Lifetime access </p>
               </div>
             </div>
             <div>
@@ -52,19 +53,22 @@ export function StreamPurchaseBody() {
               <ul className="grid gap-2 mt-2">
                 <li className="flex items-center gap-2">
                   <CheckIcon className="w-5 h-5 text-primary" />
-                  <span>Powerful suction for deep cleaning</span>
+                  <span>
+                    Expedita eum mollitia officia nam eius doloremque nostrum
+                    corporis nemo.
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckIcon className="w-5 h-5 text-primary" />
-                  <span>Smart navigation with obstacle avoidance</span>
+                  <span>id itaque minima ut incidunt dolores sint.</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckIcon className="w-5 h-5 text-primary" />
-                  <span>Automatic dust bin emptying</span>
+                  <span> Deleniti earum laudantium nobis sapiente?</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckIcon className="w-5 h-5 text-primary" />
-                  <span>Voice control and app integration</span>
+                  <span> Deleniti earum laudantium nobis sapiente?</span>
                 </li>
               </ul>
             </div>
