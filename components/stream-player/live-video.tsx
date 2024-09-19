@@ -22,6 +22,12 @@ function makeIphoneFullscreen() {
   div.style.display = "block";
 }
 
+function exitIphoneFullscreen() {
+  var div = document.getElementById("fullscreenDivOnIphone");
+  //@ts-ignore
+  div.style.display = "grid";
+}
+
 export const LiveVideo = ({ participant }: LiveVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -116,10 +122,21 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
   // Handle if user is using an iPhone
   if (isIphone()) {
     console.log("User is on an iPhone.");
+
+    const toggleFullscreenIphone = () => {
+      if (isFullscreen) {
+        console.log("User is on an iPhone. (Exit Fullscreen)");
+        exitIphoneFullscreen();
+      } else if (wrapperRef?.current) {
+        console.log("User is on an iPhone. (Fullscreen)");
+        // wrapperRef.current.requestFullscreen();
+        makeIphoneFullscreen();
+      }
+    };
     return (
       <div
         id="fullscreenDivOnIphone"
-        // ref={wrapperRef}
+        ref={toggleFullscreenIphone}
         className="relative h-full flex"
       >
         <video ref={videoRef} width="100%" />
