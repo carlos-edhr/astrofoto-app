@@ -1,5 +1,5 @@
 "use client";
-
+//@ts-nocheck
 import { useTracks } from "@livekit/components-react";
 import { Participant, Track } from "livekit-client";
 import { useRef, useState, useEffect } from "react";
@@ -15,6 +15,39 @@ interface LiveVideoProps {
 export const LiveVideo = ({ participant }: LiveVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // const requestFullscreen = () => {
+  //   if (wrapperRef.current) {
+  //     const element = wrapperRef.current;
+  //     if (element.requestFullscreen) {
+  //       element.requestFullscreen();
+  //     } else if (element.mozRequestFullScreen) {
+  //       // Firefox
+  //       element.mozRequestFullScreen();
+  //     } else if (element.webkitRequestFullscreen) {
+  //       // Safari
+  //       element.webkitRequestFullscreen();
+  //     } else if (element.msRequestFullscreen) {
+  //       // IE/Edge
+  //       element.msRequestFullscreen();
+  //     }
+  //   }
+  // };
+
+  // const exitFullscreen = () => {
+  //   if (document.exitFullscreen) {
+  //     document.exitFullscreen();
+  //   } else if (document.mozCancelFullScreen) {
+  //     // Firefox
+  //     document.mozCancelFullScreen();
+  //   } else if (document.webkitExitFullscreen) {
+  //     // Safari
+  //     document.webkitExitFullscreen();
+  //   } else if (document.msExitFullscreen) {
+  //     // IE/Edge
+  //     document.msExitFullscreen();
+  //   }
+  // };
 
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [volume, setVolume] = useState(0);
@@ -47,7 +80,26 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
       document.exitFullscreen();
     } else if (wrapperRef?.current) {
       // wrapperRef.current.requestFullscreen();
-      toggleFullscreenAll(wrapperRef.current);
+      // toggleFullscreenAll(wrapperRef.current);
+
+      if (wrapperRef.current.requestFullscreen) {
+        wrapperRef.current.requestFullscreen();
+        //@ts-ignore
+      } else if (wrapperRef.current.mozRequestFullScreen) {
+        // Firefox
+        //@ts-ignore
+        wrapperRef.current.mozRequestFullScreen();
+        //@ts-ignore
+      } else if (wrapperRef.current.webkitRequestFullscreen) {
+        // Safari
+        //@ts-ignore
+        wrapperRef.current.webkitRequestFullscreen();
+        //@ts-ignore
+      } else if (wrapperRef.current.msRequestFullscreen) {
+        // IE/Edge
+        //@ts-ignore
+        wrapperRef.current.msRequestFullscreen();
+      }
     }
   };
 
