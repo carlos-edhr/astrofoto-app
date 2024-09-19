@@ -12,6 +12,16 @@ interface LiveVideoProps {
   participant: Participant;
 }
 
+function isIphone() {
+  return /iPhone/i.test(navigator.userAgent);
+}
+
+function makeIphoneFullscreen() {
+  var div = document.getElementById("fullscreenDivOnIphone");
+  //@ts-ignore
+  div.style.display = "block";
+}
+
 export const LiveVideo = ({ participant }: LiveVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -79,27 +89,12 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
     if (isFullscreen) {
       document.exitFullscreen();
     } else if (wrapperRef?.current) {
-      // wrapperRef.current.requestFullscreen();
-      // toggleFullscreenAll(wrapperRef.current);
-
-      if (wrapperRef.current.requestFullscreen) {
-        wrapperRef.current.requestFullscreen();
-        //@ts-ignore
-      } else if (wrapperRef.current.mozRequestFullScreen) {
-        // Firefox
-        //@ts-ignore
-        wrapperRef.current.mozRequestFullScreen();
-        //@ts-ignore
-      } else if (wrapperRef.current.webkitRequestFullscreen) {
-        // Safari
-        //@ts-ignore
-        wrapperRef.current.webkitRequestFullscreen();
-        //@ts-ignore
-      } else if (wrapperRef.current.msRequestFullscreen) {
-        // IE/Edge
-        //@ts-ignore
-        wrapperRef.current.msRequestFullscreen();
-      }
+      console.log("User is not on an iPhone.");
+      wrapperRef.current.requestFullscreen();
+      // if (!isIphone()) {
+      //   console.log("User is on an iPhone.");
+      //   makeIphoneFullscreen();
+      // }
     }
   };
 
@@ -117,8 +112,40 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
         track.publication.track?.attach(videoRef.current);
       }
     });
+
+  // Handle if user is using an iPhone
+  if (isIphone()) {
+    console.log("User is on an iPhone.");
+    return (
+      <div
+        id="fullscreenDivOnIphone"
+        // ref={wrapperRef}
+        className="relative h-full flex"
+      >
+        <video ref={videoRef} width="100%" />
+
+        <div className="absolute top-0 h-full w-full opacity-0 hover:opacity-100 hover:transition-all">
+          <div className="absolute bottom-0 flex h-14 w-full items-center justify-between bg-gradient-to-r from-neutral-900 px-4">
+            <VolumeControl
+              onChange={onVolumeChange}
+              value={volume}
+              onToggle={toggleMute}
+            />
+            <FullscreenControl
+              isFullscreen={isFullscreen}
+              onToggle={toggleFullscreen}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
-    <div ref={wrapperRef} className="relative h-full flex">
+    <div
+      // id="fullscreenDivOnIphone"
+      ref={wrapperRef}
+      className="relative h-full flex"
+    >
       <video ref={videoRef} width="100%" />
 
       <div className="absolute top-0 h-full w-full opacity-0 hover:opacity-100 hover:transition-all">

@@ -91,6 +91,18 @@ body,
   }
 }
 
+/* Stream - iPhone fullscreen fix */
+#fullscreenDivOnIphone {
+  display: flex; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black; /* Or any color */
+  z-index: 9999; /* Ensure it appears on top */
+}
+
 /* LANNDING PAGE */
 
 .Welcome-text {
