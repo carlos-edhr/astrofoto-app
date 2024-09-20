@@ -17,53 +17,23 @@ function isIphone() {
 }
 
 function makeIphoneFullscreen() {
-  var div = document.getElementById("fullscreenDivOnIphone");
-  //@ts-ignore
-  div.style.display = "block";
+  const div = document.getElementById("fullscreenDivOnIphone");
+  if (div) {
+    div.style.display = "block";
+  }
 }
 
 function exitIphoneFullscreen() {
-  var div = document.getElementById("fullscreenDivOnIphone");
-  //@ts-ignore
-  div.style.display = "grid";
+  const div = document.getElementById("fullscreenDivOnIphone");
+
+  if (div) {
+    div.style.display = "flex";
+  }
 }
 
 export const LiveVideo = ({ participant }: LiveVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-
-  // const requestFullscreen = () => {
-  //   if (wrapperRef.current) {
-  //     const element = wrapperRef.current;
-  //     if (element.requestFullscreen) {
-  //       element.requestFullscreen();
-  //     } else if (element.mozRequestFullScreen) {
-  //       // Firefox
-  //       element.mozRequestFullScreen();
-  //     } else if (element.webkitRequestFullscreen) {
-  //       // Safari
-  //       element.webkitRequestFullscreen();
-  //     } else if (element.msRequestFullscreen) {
-  //       // IE/Edge
-  //       element.msRequestFullscreen();
-  //     }
-  //   }
-  // };
-
-  // const exitFullscreen = () => {
-  //   if (document.exitFullscreen) {
-  //     document.exitFullscreen();
-  //   } else if (document.mozCancelFullScreen) {
-  //     // Firefox
-  //     document.mozCancelFullScreen();
-  //   } else if (document.webkitExitFullscreen) {
-  //     // Safari
-  //     document.webkitExitFullscreen();
-  //   } else if (document.msExitFullscreen) {
-  //     // IE/Edge
-  //     document.msExitFullscreen();
-  //   }
-  // };
 
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [volume, setVolume] = useState(0);
@@ -118,13 +88,13 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
         track.publication.track?.attach(videoRef.current);
       }
     });
-  const [isIphoneFullscreen, setIphoneIsFullscreen] = useState<boolean>(false);
 
   //react logic for iPhone case
+  const [isIphoneFullscreen, setIphoneIsFullscreen] = useState(false);
   const toggleFullscreenIphone = () => {
     if (isIphoneFullscreen) {
       exitIphoneFullscreen();
-    } else if (wrapperRef?.current) {
+    } else {
       // wrapperRef.current.requestFullscreen();
       makeIphoneFullscreen();
     }
@@ -132,26 +102,20 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
 
   const handleFullScreenChangeIphone = () => {
     setIphoneIsFullscreen(!isIphoneFullscreen);
-    const isFullscreenHere = isIphoneFullscreen;
-    const isCurrentlyFullscreen = isFullscreenHere;
-    setIsFullscreen(isCurrentlyFullscreen);
+
     // Confirm that CSS property is added
     console.log("Added fullscreenDivOnIphone property");
   };
 
-  useEventListener(
-    "fullscreenchange",
-    handleFullScreenChangeIphone,
-    wrapperRef,
-  );
+  useEventListener("click", handleFullScreenChangeIphone, wrapperRef);
 
-  useTracks([Track.Source.Camera, Track.Source.Microphone])
-    .filter((track) => track.participant.identity === participant.identity)
-    .forEach((track) => {
-      if (videoRef.current) {
-        track.publication.track?.attach(videoRef.current);
-      }
-    });
+  // useTracks([Track.Source.Camera, Track.Source.Microphone])
+  //   .filter((track) => track.participant.identity === participant.identity)
+  //   .forEach((track) => {
+  //     if (videoRef.current) {
+  //       track.publication.track?.attach(videoRef.current);
+  //     }
+  //   });
 
   // If user is using an iPhone iOS - Safari Mobile Web version
   if (isIphone()) {
@@ -159,7 +123,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
 
     return (
       <div
-        id={isFullscreen ? "fullscreenDivOnIphone" : ""}
+        id={isIphoneFullscreen ? "fullscreenDivOnIphone" : ""}
         ref={wrapperRef}
         className="relative h-full flex"
       >
@@ -173,7 +137,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
               onToggle={toggleMute}
             />
             <FullscreenControl
-              isFullscreen={isFullscreen}
+              isFullscreen={isIphoneFullscreen}
               onToggle={toggleFullscreenIphone}
             />
           </div>
