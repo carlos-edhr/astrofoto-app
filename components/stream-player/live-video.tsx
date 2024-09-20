@@ -118,7 +118,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
         track.publication.track?.attach(videoRef.current);
       }
     });
-  const [isIphoneFullscreen, setIphoneIsFullscreen] = useState(false);
+  const [isIphoneFullscreen, setIphoneIsFullscreen] = useState<boolean>(false);
 
   //react logic for iPhone case
   const toggleFullscreenIphone = () => {
@@ -131,7 +131,9 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
   };
 
   const handleFullScreenChangeIphone = () => {
-    const isCurrentlyFullscreen = document.fullscreenElement !== null;
+    setIphoneIsFullscreen(!isIphoneFullscreen);
+    const isFullscreenHere = isIphoneFullscreen;
+    const isCurrentlyFullscreen = isFullscreenHere;
     setIsFullscreen(isCurrentlyFullscreen);
     // Confirm that CSS property is added
     console.log("Added fullscreenDivOnIphone property");
@@ -172,7 +174,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
             />
             <FullscreenControl
               isFullscreen={isFullscreen}
-              onToggle={toggleFullscreen}
+              onToggle={toggleFullscreenIphone}
             />
           </div>
         </div>
