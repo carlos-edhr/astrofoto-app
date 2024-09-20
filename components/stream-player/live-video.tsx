@@ -95,7 +95,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
     if (isFullscreen) {
       document.exitFullscreen();
     } else if (wrapperRef?.current) {
-      console.log("User is not on an iPhone.");
+      // console.log("User is not on an iPhone.");
       wrapperRef.current.requestFullscreen();
       // if (!isIphone()) {
       //   console.log("User is on an iPhone.");
@@ -118,25 +118,47 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
         track.publication.track?.attach(videoRef.current);
       }
     });
+  const [isIphoneFullscreen, setIphoneIsFullscreen] = useState(false);
 
-  // Handle if user is using an iPhone
+  //react logic for iPhone case
+  const toggleFullscreenIphone = () => {
+    if (isIphoneFullscreen) {
+      exitIphoneFullscreen();
+    } else if (wrapperRef?.current) {
+      // wrapperRef.current.requestFullscreen();
+      makeIphoneFullscreen();
+    }
+  };
+
+  const handleFullScreenChangeIphone = () => {
+    const isCurrentlyFullscreen = document.fullscreenElement !== null;
+    setIsFullscreen(isCurrentlyFullscreen);
+    // Confirm that CSS property is added
+    console.log("Added fullscreenDivOnIphone property");
+  };
+
+  useEventListener(
+    "fullscreenchange",
+    handleFullScreenChangeIphone,
+    wrapperRef,
+  );
+
+  useTracks([Track.Source.Camera, Track.Source.Microphone])
+    .filter((track) => track.participant.identity === participant.identity)
+    .forEach((track) => {
+      if (videoRef.current) {
+        track.publication.track?.attach(videoRef.current);
+      }
+    });
+
+  // If user is using an iPhone iOS - Safari Mobile Web version
   if (isIphone()) {
     console.log("User is on an iPhone.");
 
-    const toggleFullscreenIphone = () => {
-      if (isFullscreen) {
-        console.log("User is on an iPhone. (Exit Fullscreen)");
-        exitIphoneFullscreen();
-      } else if (wrapperRef?.current) {
-        console.log("User is on an iPhone. (Fullscreen)");
-        // wrapperRef.current.requestFullscreen();
-        makeIphoneFullscreen();
-      }
-    };
     return (
       <div
-        id="fullscreenDivOnIphone"
-        ref={toggleFullscreenIphone}
+        id={isFullscreen ? "fullscreenDivOnIphone" : ""}
+        ref={wrapperRef}
         className="relative h-full flex"
       >
         <video ref={videoRef} width="100%" />

@@ -93,7 +93,7 @@ body,
 
 /* Stream - iPhone fullscreen fix */
 #fullscreenDivOnIphone {
-  display: grid; /* Hidden by default */
+  display: flex; /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
