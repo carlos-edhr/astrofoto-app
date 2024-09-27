@@ -46,7 +46,7 @@ const Stars = () => {
 const StarfieldStream = () => {
   return (
     <div className="w-screen h-auto bg-bunkerBlue fixed inset-0 z-[-1]">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas camera={{ position: [0, 0, 1000], fov: 75 }}>
         <Suspense fallback={null}>
           <Stars />
         </Suspense>

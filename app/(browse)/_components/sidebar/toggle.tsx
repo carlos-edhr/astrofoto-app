@@ -2,12 +2,18 @@
 import { Hint } from "@/components/hint";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { getUserById } from "@/lib/user-service";
 import { useSidebar } from "@/store/use-sidebar";
+import { useUser } from "@clerk/nextjs";
+import { getAuth } from "@clerk/nextjs/server";
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 export const Toggle = () => {
   const { collapsed, onExpand, onCollapse } = useSidebar((state) => state);
 
   const label = collapsed ? "Expandir" : "Colapsar";
+
+  const { user } = useUser();
+  const username = user?.firstName;
 
   return (
     <>
@@ -23,7 +29,7 @@ export const Toggle = () => {
 
       {!collapsed && (
         <div className="p-3 pl-6 mb-6 flex items-center w-full ">
-          <p className="font-semibold text-primary">Usuarios</p>
+          <p className="font-semibold text-primary">¡Bienvenido {username}! </p>
           <Hint label={label} side="right" asChild>
             <Button
               onClick={onCollapse}
