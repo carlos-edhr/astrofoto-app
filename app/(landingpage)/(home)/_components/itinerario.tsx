@@ -39,7 +39,9 @@ const FloatingImage = () => {
   }, []);
 
   // (Optional) 3D tilt code for the image
-  const handleMouseMove = (e) => {
+  interface MouseMoveEvent extends React.MouseEvent<HTMLImageElement> {}
+
+  const handleMouseMove = (e: MouseMoveEvent) => {
     if (!frameRef.current) return;
     const rect = frameRef.current.getBoundingClientRect();
     const xPos = e.clientX - rect.left;
