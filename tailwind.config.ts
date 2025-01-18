@@ -19,7 +19,28 @@ const config = withUt({
       },
     },
     extend: {
+      fontFamily: {
+        zentry: ["zentry", "sans-serif"],
+        general: ["general", "sans-serif"],
+        "circular-web": ["circular-web", "sans-serif"],
+        "robert-medium": ["robert-medium", "sans-serif"],
+        "robert-regular": ["robert-medium", "sans-serif"],
+      },
       colors: {
+        blue: {
+          50: "#DFDFF0",
+          75: "#DFDFF2",
+          100: "#F0F2FA",
+          200: "#010101",
+          300: "#4FB7DD",
+        },
+        violet: {
+          300: "#5724FF",
+        },
+        yellow: {
+          100: "#8E983F",
+          300: "#EDFF66",
+        },
         bunkerBlue: "#05070A",
         primaryLanding: "#04BDFC",
         secondaryLanding: "#FB3783",
@@ -66,6 +87,14 @@ const config = withUt({
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "gradient-x": {
+          "0%, 100%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+        },
         animatedgradient: {
           "0%": {
             backgroundPosition: "0% 50%",
@@ -94,13 +123,14 @@ const config = withUt({
           },
         },
       },
-      backgroundSize: {
-        "300%": "300%",
-      },
+      // backgroundSize: {
+      //   "300%": "300%",
+      // },
       animation: {
-        gradient: "animatedgradient 6s ease infinite alternate",
+        gradient: "animatedgradient 9s ease infinite alternate",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient-x": "gradient-x 6s ease infinite",
       },
     },
   },

@@ -6,14 +6,28 @@ import { Toaster } from "sonner";
 import { esES } from "@clerk/localizations";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
-
 import { ThemeProvider } from "@/components/theme-provider";
+import { Roboto, Bebas_Neue } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"], // or any weights you need
+  variable: "--font-roboto", // optional custom CSS variable
+  display: "swap", // controls how the font is displayed
+});
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400", // Bebas Neue typically comes in one weight
+  variable: "--font-bebas-neue",
+  display: "swap",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Congreso de Astrofotografía",
-  description: "El sitio web del Congreso Internacional de Astrofotografía.",
+  description: "Sitio web del Congreso Internacional de Astrofotografía.",
 };
 // Fix Auth
 export default function RootLayout({
@@ -24,7 +38,7 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={esES} appearance={{ baseTheme: dark }}>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${roboto.variable} ${bebasNeue.variable}`}>
           <ThemeProvider
             attribute="class"
             forcedTheme="dark"

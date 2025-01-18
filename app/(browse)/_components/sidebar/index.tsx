@@ -12,9 +12,9 @@ export const Sidebar = async () => {
     <Wrapper>
       <Toggle />
       <div className=" pt-1 lg:pt-0 ">
-        {/* <Options /> */}
-        <Following data={following} />
-        <Recommended data={recommended} />
+        <Options />
+        {/* <Following data={following} />
+        <Recommended data={recommended} /> */}
       </div>
     </Wrapper>
   );
