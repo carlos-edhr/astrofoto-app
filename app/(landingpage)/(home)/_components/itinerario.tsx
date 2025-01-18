@@ -9,7 +9,7 @@ import ButtonHero from "./button-hero";
 gsap.registerPlugin(ScrollTrigger);
 
 const FloatingImage = () => {
-  const frameRef = useRef(null);
+  const frameRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

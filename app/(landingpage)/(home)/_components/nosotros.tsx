@@ -17,7 +17,7 @@ interface BentoTiltProps {
 
 export const BentoTilt = ({ children, className = "" }: BentoTiltProps) => {
   const [transformStyle, setTransformStyle] = useState("");
-  const itemRef = useRef(null);
+  const itemRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (event: any) => {
     if (!itemRef.current) return;
@@ -55,9 +55,19 @@ export const BentoTilt = ({ children, className = "" }: BentoTiltProps) => {
 const BentoCard = ({ src, title, description }: BentoCardProps) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
-  const hoverButtonRef = useRef(null);
+  const hoverButtonRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (event) => {
+  interface CursorPosition {
+    x: number;
+    y: number;
+  }
+
+  interface MouseEvent {
+    clientX: number;
+    clientY: number;
+  }
+
+  const handleMouseMove = (event: MouseEvent) => {
     if (!hoverButtonRef.current) return;
     const rect = hoverButtonRef.current.getBoundingClientRect();
 
