@@ -129,12 +129,10 @@ const Hero = () => {
 
   useGSAP(() => {
     gsap.set("#video-frame", {
-      clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
-      borderRadius: "0% 0% 40% 10%",
+      clipPath: "circle(0% at 50% 50%)",
     });
     gsap.from("#video-frame", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      borderRadius: "0% 0% 0% 0%",
+      clipPath: "circle(50% at 50% 50%)",
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: "#video-frame",
@@ -179,7 +177,7 @@ const Hero = () => {
     <div className="relative h-dvh w-screen overflow-x-hidden">
       <div
         id="video-frame"
-        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
+        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-slate-900"
       >
         <div>
           <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
@@ -252,8 +250,8 @@ const Hero = () => {
           Astrofotografía
         </h1>
 
-        <div className="absolute left-0 top-0 z-40 size-full">
-          <div className="mt-24 px-5 sm:px-10">
+        <div className="absolute left-10 top-0 z-40 size-full">
+          <div className="absolute mt-24 px-5 left-36 sm:px-10">
             <h1 className="special-font hero-heading text-blue-100 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
               Congreso <br />
               Internacional de
@@ -283,9 +281,56 @@ const Hero = () => {
        * SEGUNDO TÍTULO con gradiente animado
        * (Si deseas ocultarlo o estilizarlo distinto, puedes modificar a conveniencia)
        */}
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
+      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-white">
         Astrofotografía
       </h1>
+
+      <div className="absolute left-10 top-0  size-full">
+        <div className="absolute mt-24 px-5 left-36 sm:px-10">
+          <h1 className="special-font hero-heading text-blue-100 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
+            Congreso <br />
+            Internacional de
+          </h1>
+
+          {/**
+           * 5) Use displayedPhrase for text,
+           *    and attach phraseRef for GSAP anims
+           */}
+          <p
+            ref={phraseRef}
+            className="hero-paragraph mb-5 max-w-64 font-robert-regular text-blue-100"
+            dangerouslySetInnerHTML={{ __html: displayedPhrase }}
+          />
+
+          <ButtonHero
+            id="watch-trailer"
+            title="Regístrate"
+            rightIcon={<Telescope className="size-5" />}
+            containerClass="bg-sky-500 flex-center gap-1 hero-paragraph"
+          />
+        </div>
+      </div>
+
+      {/* <div className="absolute mt-24 px-5 sm:px-10">
+        <h1 className="special-font hero-heading text-blue-100 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
+          Congreso <br />
+          Internacional de
+        </h1>
+
+        <p
+          ref={phraseRef}
+          className="hero-paragraph mb-5 max-w-64 font-robert-regular text-blue-100"
+          dangerouslySetInnerHTML={{ __html: displayedPhrase }}
+        />
+
+        <ButtonHero
+          id="watch-trailer"
+          title="Regístrate"
+          rightIcon={<Telescope className="size-5" />}
+          containerClass="bg-sky-500 flex-center gap-1 hero-paragraph"
+        />
+      </div>
+      */}
     </div>
   );
 };

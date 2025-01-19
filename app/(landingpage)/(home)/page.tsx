@@ -10,10 +10,10 @@ import Footer from "./_components/footer";
 
 const LandingPage = () => {
   return (
-    <main className="bg-blue-50 relative min-h-screen w-screen overflow-x-hidden">
+    <main className="bg-black relative min-h-screen w-screen overflow-x-hidden">
       <Navbar />
       <Hero />
-      <About />
+      {/* <About /> */}
       <Features />
       <Story />
       <Contact />
