@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import ButtonHero from "./button-hero";
 import { LogInIcon } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   "Nosotros",
@@ -78,7 +79,12 @@ const NavBar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            <img src="icon.png" alt="logo" className="w-10" />
+            <Image
+              src="/CIAF7 Logo-33.png"
+              alt="logo"
+              width={250}
+              height={100}
+            />
 
             <ButtonHero
               id="product-button"
