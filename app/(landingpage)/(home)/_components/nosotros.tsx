@@ -3,6 +3,7 @@ import { ArrowBigRightDashIcon } from "lucide-react";
 import { ReactNode, useRef, useState } from "react";
 import StarsCanvas from "./landing-star-background";
 import Spline from "@splinetool/react-spline";
+import { Invitacion } from "./invitacion";
 
 interface BentoCardProps {
   src: string;
@@ -123,11 +124,11 @@ const BentoCard = ({ src, title, description }: BentoCardProps) => {
 };
 
 const Features = () => (
-  <section className="bg-black z-10 relative w-full min-h-[90vh] pb-52 overflow-hidden">
+  <section className="bg-black z-10 relative w-full min-h-[90vh]  my-16 pb-52 overflow-hidden">
     {/* Our star background behind the features */}
     <StarsCanvas />
     <div className="container relative z-10 mx-auto px-3 md:px-10">
-      <div className="flex flex-row items-center align-middle justify-center px-5 py-32 w-full h-full z-[20]">
+      <div className="flex flex-row items-center align-middle min-h-screen justify-center px-5 py-32 w-full  z-[20]">
         <div className="flex flex-col">
           <p className="special-font section-heading ">Nosotros</p>
           <p className="max-w-md  text-lg text-slate-200 opacity-80">
@@ -151,7 +152,9 @@ const Features = () => (
         </div>
       </div>
 
-      <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
+      <Invitacion videoSrc="public/videos/astrofoto-vid-2.mp4" />
+
+      <BentoTilt className="border-hsla relative mt-16 mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
           src="videos/astrofoto-vid-5.mp4"
           title={<>Talleres</>}

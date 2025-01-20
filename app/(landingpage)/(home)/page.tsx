@@ -15,6 +15,7 @@ const LandingPage = () => {
       <Hero />
       {/* <About /> */}
       <Features />
+
       <Story />
       <Contact />
       <Footer />

@@ -15,7 +15,7 @@ const ImageClipBox = ({ src, clipClass }: ImageClipBox) => {
 };
 const Contact = () => {
   return (
-    <div id="contact" className="my-20 min-h-96 w-screen px-10 ">
+    <div id="contact" className="my-20 min-h-96 w-screen px-10 bg-slate-800 ">
       <div className="relative rounded-lg bg-black  text-blue-50 sm:overflow-hidden z-10">
         <section className="py-10 relative w-full h-full flex flex-col justify-center items-center bg-transparent text-white">
           {/* The star background */}
