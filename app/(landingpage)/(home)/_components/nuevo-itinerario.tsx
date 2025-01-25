@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import StarBackground from "@/app/(landing)/(home)/_components/main/StarBackground";
+import StarsCanvas from "./landing-star-background";
 
 const Itinerario: FC = () => {
   return (
@@ -78,8 +79,10 @@ const Itinerario: FC = () => {
             border-white/20 
             shadow-lg 
             text-slate-200
+            z-50
           "
         >
+          <StarsCanvas />
           <div className="flex flex-col md:flex-row">
             {/* Left side: article list */}
             <div className="md:w-1/2 space-y-6">
@@ -166,6 +169,7 @@ const Itinerario: FC = () => {
             text-slate-200
           "
         >
+          <StarsCanvas />
           <div className="flex flex-col md:flex-row">
             {/* Left side: main portrait/poster + author label */}
             <div className="relative md:w-1/2 mt-8 md:mt-0 md:pl-8">

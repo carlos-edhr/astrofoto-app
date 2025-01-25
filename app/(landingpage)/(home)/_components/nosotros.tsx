@@ -8,7 +8,7 @@ import { Invitacion } from "./invitacion";
 interface BentoCardProps {
   src: string;
   title: ReactNode;
-  description: string;
+  description?: string;
 }
 
 interface BentoTiltProps {
@@ -158,7 +158,7 @@ const Features = () => (
         <BentoCard
           src="videos/astrofoto-vid-5.mp4"
           title={<>Talleres</>}
-          description="Los talleres están diseñados para enriquecer tanto la comprensión científica como las habilidades artísticas relacionadas con la captura del cielo nocturno."
+          description=""
         />
       </BentoTilt>
 
@@ -167,7 +167,7 @@ const Features = () => (
           <BentoCard
             src="videos/astrofoto-vid-2.mp4"
             title={<>Ciencia</>}
-            description="Se abordan temas técnicos esenciales, como la correcta configuración de equipos de observación (telescopios, monturas y cámaras especializadas), la calibración de instrumentos, la práctica de adquisición de datos astronómicos y el procesado avanzado de imágenes."
+            description=""
           />
         </BentoTilt>
 
@@ -175,7 +175,7 @@ const Features = () => (
           <BentoCard
             src="videos/astrofoto-vid-7.mp4"
             title={<>Divulgación</>}
-            description="Se fomenta la perspectiva artística y fotográfica, explorando la composición y la narrativa visual de las imágenes cósmicas."
+            description=""
           />
         </BentoTilt>
 
@@ -183,7 +183,7 @@ const Features = () => (
           <BentoCard
             src="videos/astrofoto-vid-4.mp4"
             title={<>Arte</>}
-            description="A lo largo de las sesiones, expertos en astrofotografía, astronomía y bellas artes comparten sus conocimientos, ofreciendo una experiencia integral que combina rigor científico con la creatividad propia del arte fotográfico, inspirando a cada participante a capturar la belleza del universo con mayor profundidad y destreza."
+            description=""
           />
         </BentoTilt>
 
