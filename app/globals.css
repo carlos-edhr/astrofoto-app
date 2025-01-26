@@ -205,6 +205,7 @@ html {
 
   .floating-nav {
     @apply bg-black rounded-lg border;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .absolute-center {

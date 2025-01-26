@@ -8,7 +8,7 @@ import ButtonHero from "./button-hero";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FloatingImage = () => {
+const Itinerario = () => {
   const frameRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -74,7 +74,7 @@ const FloatingImage = () => {
   };
 
   return (
-    <div id="story" className="relative w-screen min-h-dvh bg-slate-600 ">
+    <div id="itinerario" className="relative w-screen min-h-dvh bg-slate-600 ">
       {/*
         1) Black overlay that covers the entire <Itinerario /> section.
         We'll fade this out with GSAP when user scrolls here.
@@ -132,4 +132,4 @@ const FloatingImage = () => {
   );
 };
 
-export default FloatingImage;
+export default Itinerario;

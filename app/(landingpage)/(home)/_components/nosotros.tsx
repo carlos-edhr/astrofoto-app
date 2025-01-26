@@ -123,8 +123,11 @@ const BentoCard = ({ src, title, description }: BentoCardProps) => {
   );
 };
 
-const Features = () => (
-  <section className="bg-black z-10 relative w-full min-h-[90vh]  my-16 pb-52 overflow-hidden">
+const Talleres = () => (
+  <section
+    id="nosotros"
+    className="bg-black z-10 relative w-full min-h-[90vh]  my-16 pb-52 overflow-hidden"
+  >
     {/* Our star background behind the features */}
     <StarsCanvas />
     <div className="container relative z-10 mx-auto px-3 md:px-10">
@@ -154,61 +157,63 @@ const Features = () => (
 
       <Invitacion videoSrc="public/videos/astrofoto-vid-2.mp4" />
 
-      <BentoTilt className="border-hsla relative mt-16 mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
-        <BentoCard
-          src="videos/astrofoto-vid-5.mp4"
-          title={<>Talleres</>}
-          description=""
-        />
-      </BentoTilt>
-
-      <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+      <div id="talleres">
+        <BentoTilt className="border-hsla relative mt-16 mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
           <BentoCard
-            src="videos/astrofoto-vid-2.mp4"
-            title={<>Ciencia</>}
+            src="videos/astrofoto-vid-5.mp4"
+            title={<>Talleres</>}
             description=""
           />
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-          <BentoCard
-            src="videos/astrofoto-vid-7.mp4"
-            title={<>Divulgación</>}
-            description=""
-          />
-        </BentoTilt>
+        <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
+          <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+            <BentoCard
+              src="videos/astrofoto-vid-2.mp4"
+              title={<>Ciencia</>}
+              description=""
+            />
+          </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-          <BentoCard
-            src="videos/astrofoto-vid-4.mp4"
-            title={<>Arte</>}
-            description=""
-          />
-        </BentoTilt>
+          <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+            <BentoCard
+              src="videos/astrofoto-vid-7.mp4"
+              title={<>Divulgación</>}
+              description=""
+            />
+          </BentoTilt>
 
-        <BentoTilt className="bento-tilt_2 h-full">
-          <div className="flex size-full flex-col justify-between bg-primaryLanding p-5">
-            <h1 className="bento-title  max-w-64  text-black">
-              Regístrate y se parte de nuestra comunidad
-            </h1>
+          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+            <BentoCard
+              src="videos/astrofoto-vid-4.mp4"
+              title={<>Arte</>}
+              description=""
+            />
+          </BentoTilt>
 
-            <ArrowBigRightDashIcon className="m-5 scale-[5] self-end" />
-          </div>
-        </BentoTilt>
+          <BentoTilt className="bento-tilt_2 h-full">
+            <div className="flex size-full flex-col justify-between bg-primaryLanding p-5">
+              <h1 className="bento-title  max-w-64  text-black">
+                Regístrate y se parte de nuestra comunidad
+              </h1>
 
-        <BentoTilt className="bento-tilt_2">
-          <video
-            src="videos/astrofoto-vid-3.mp4"
-            loop
-            muted
-            autoPlay
-            className="size-full object-cover object-center"
-          />
-        </BentoTilt>
+              <ArrowBigRightDashIcon className="m-5 scale-[5] self-end" />
+            </div>
+          </BentoTilt>
+
+          <BentoTilt className="bento-tilt_2">
+            <video
+              src="videos/astrofoto-vid-3.mp4"
+              loop
+              muted
+              autoPlay
+              className="size-full object-cover object-center"
+            />
+          </BentoTilt>
+        </div>
       </div>
     </div>
   </section>
 );
 
-export default Features;
+export default Talleres;
