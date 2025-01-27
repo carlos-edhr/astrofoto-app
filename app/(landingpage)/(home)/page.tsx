@@ -9,6 +9,7 @@ import Inscripciones from "./_components/inscripciones";
 import Footer from "./_components/footer";
 import Itinerario from "./_components/nuevo-itinerario";
 import Gallery from "./_components/galeria";
+import PreguntasFrecuentes from "./_components/preguntas-frecuentes";
 
 const LandingPage = () => {
   return (
@@ -34,6 +35,7 @@ const LandingPage = () => {
       </div>
 
       <Inscripciones />
+      <PreguntasFrecuentes />
       <Footer />
       {/* <section className="z-0 min-h-screen bg-blue-500" /> */}
     </main>
