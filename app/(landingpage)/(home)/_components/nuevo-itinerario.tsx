@@ -26,7 +26,7 @@ const Itinerario: FC = () => {
         {/* Top row: headings + small collage  */}
         <div className="relative flex flex-col md:flex-row">
           <div className="flex-1">
-            <h1 className="special-font section-heading   text-6xl sm:text-7xl lg:text-8xl font-bold leading-none">
+            <h1 className="special-font section-heading   text-6xl sm:text-7xl lg:text-8xl  leading-none">
               Itinerario
             </h1>
           </div>

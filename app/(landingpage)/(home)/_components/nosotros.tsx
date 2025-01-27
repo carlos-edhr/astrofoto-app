@@ -133,7 +133,9 @@ const Talleres = () => (
     <div className="container relative z-10 mx-auto px-3 md:px-10">
       <div className="flex flex-row items-center align-middle min-h-screen justify-center px-5 py-32 w-full  z-[20]">
         <div className="flex flex-col">
-          <p className="special-font section-heading ">Nosotros</p>
+          <p className="special-font section-heading   text-6xl sm:text-7xl lg:text-8xl  leading-none ">
+            Nosotros
+          </p>
           <p className="max-w-md  text-lg text-slate-200 opacity-80">
             El Congreso Internacional de{" "}
             <span className="text-primaryLanding">Astrofotografía</span> es un

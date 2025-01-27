@@ -13,7 +13,7 @@ const navItems = [
   "Talleres",
   "Itinerario",
   "Inscripciones",
-  "Galeria",
+  "Galería",
 ];
 
 const NavBar = () => {

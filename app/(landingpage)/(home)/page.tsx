@@ -8,6 +8,7 @@ import Talleres from "./_components/nosotros";
 import Inscripciones from "./_components/inscripciones";
 import Footer from "./_components/footer";
 import Itinerario from "./_components/nuevo-itinerario";
+import Gallery from "./_components/galeria";
 
 const LandingPage = () => {
   return (
@@ -19,6 +20,19 @@ const LandingPage = () => {
 
       {/* <Story /> */}
       <Itinerario />
+      <div className="bg-gradient-to-br from-[#020814]  via-[#030916] to-[#062945]">
+        <Gallery
+          title={""}
+          images={[
+            "CIAF7-D1-04 Daniela.jpg",
+            "CIAF7-D2-06 Rogelio.jpg",
+            "CIAF7-D2-07 Juan.jpg",
+            "CIAF7-D2-09 Braulio.jpg",
+            "CIAF7-D2-10 Yuri.jpg",
+          ]}
+        />
+      </div>
+
       <Inscripciones />
       <Footer />
       {/* <section className="z-0 min-h-screen bg-blue-500" /> */}
