@@ -13,6 +13,12 @@ body,
   /* @apply bg-neutral-900/80; */
 }
 
+@layer components {
+  .profile-image-fallback {
+    @apply bg-gray-800 rounded-full animate-pulse;
+  }
+}
+
 .hidden-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

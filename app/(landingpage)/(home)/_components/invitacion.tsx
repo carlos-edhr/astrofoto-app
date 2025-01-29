@@ -57,7 +57,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
     p-6
     md:p-12
     shadow-lg
-
+    mt-8
     /* Gradient background */
     bg-gradient-to-br from-[#062945] via-[#030916] to-[#020814]
 

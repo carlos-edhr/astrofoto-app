@@ -59,7 +59,7 @@ const ImagenDeGaleria = ({ images, imgIndex }: ImagenDeGaleriaProps) => {
       </button>
       {/* Modal for Image Carousel */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center flex-col">
+        <div className="fixed w-screen h-screen inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center flex-col scroll">
           <div className="relative w-full max-w-4xl">
             <button
               onClick={closeModal}
