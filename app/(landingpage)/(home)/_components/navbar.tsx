@@ -124,16 +124,16 @@ const NavBar = () => {
             <ButtonHero
               id="product-button"
               title="Log In"
-              rightIcon={<LogInIcon className="size-5" />}
+              // rightIcon={<LogInIcon className="size-4" />}
               containerClass="
-                bg-green-500 text-white 
+                bg-sky-700 text-white 
                 px-3 py-2 rounded-md 
-                hover:bg-green-600 
+                hover:bg-sky-800 
                 font-medium
               "
             />
             {/* Audio Toggle */}
-            <button
+            {/* <button
               onClick={toggleAudioIndicator}
               className="flex items-center space-x-0.5"
               title="Toggle audio"
@@ -155,7 +155,7 @@ const NavBar = () => {
                   }}
                 />
               ))}
-            </button>
+            </button> */}
           </div>
 
           {/* MOBILE: Hamburger or X button (only visible below md) */}
@@ -214,7 +214,7 @@ const NavBar = () => {
                 <hr className="my-2 border-slate-600" />
 
                 {/* Audio Toggle for mobile */}
-                <button
+                {/* <button
                   onClick={toggleAudioIndicator}
                   className="flex items-center space-x-0.5"
                   title="Toggle audio"
@@ -236,7 +236,7 @@ const NavBar = () => {
                       }}
                     />
                   ))}
-                </button>
+                </button> */}
               </div>
             </div>
           )}

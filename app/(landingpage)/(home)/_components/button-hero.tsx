@@ -27,9 +27,10 @@ const ButtonHero = ({
     >
       {leftIcon}
       <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
-        <div>{title}</div>
+        <div>
+          {title} {rightIcon}
+        </div>
       </span>
-      {rightIcon}
     </button>
   );
 };

@@ -6,6 +6,7 @@ import Spline from "@splinetool/react-spline";
 import { Invitacion } from "./invitacion";
 import { AboutMe } from "./about-me";
 import { Fundadores } from "./fundadores";
+import LogoCarousel from "./logo-carousel";
 
 interface BentoCardProps {
   src: string;
@@ -128,12 +129,11 @@ const BentoCard = ({ src, title, description }: BentoCardProps) => {
 const Talleres = () => (
   <section
     id="nosotros"
-    className="bg-black z-10 relative w-full min-h-[90vh]  my-16 pb-52 overflow-hidden"
+    className="bg-black z-10 relative w-full  my-8 pb-52 overflow-hidden"
   >
-    {/* Our star background behind the features */}
     <StarsCanvas />
     <div className="container relative z-10 mx-auto px-3 md:px-10">
-      <div className="flex flex-row items-center align-middle min-h-screen justify-center px-5 py-32 w-full  z-[20]">
+      <div className="flex flex-row items-center align-middle h-full justify-center px-5 py-8 w-full  z-[20]">
         <div className="flex flex-col">
           <p className="special-font section-heading   text-6xl sm:text-7xl lg:text-8xl  leading-none ">
             Nosotros
@@ -159,6 +159,8 @@ const Talleres = () => (
         </div>
       </div>
 
+      <LogoCarousel />
+
       <Fundadores
         heading="Sobre el fundador"
         subheading="De la Ingeniería a la Fotografía "
@@ -174,6 +176,8 @@ const Talleres = () => (
                    efficient and scalable web apps." /> */}
 
       <Invitacion videoSrc="/videos/astrofoto-vid-2.mp4" />
+
+      <LogoCarousel />
 
       <div id="talleres">
         <BentoTilt className="border-hsla relative mt-16 mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
