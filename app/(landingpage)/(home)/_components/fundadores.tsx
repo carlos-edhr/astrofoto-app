@@ -102,7 +102,7 @@ export function Fundadores({
                 <div className="flex flex-col items-center justify-center align-middle mt-16 w-full md:w-1/2  overflow-hidden aspect-auto mx-auto rounded-2xl">
                   <a href="https://www.caneckleyva.com/" target="_blank">
                     <video
-                      src="/videos/astrofoto-vid-2.mp4"
+                      src="/videos/caneck-leyva-fundador.mp4"
                       autoPlay
                       muted
                       loop
