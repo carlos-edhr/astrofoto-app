@@ -17,7 +17,7 @@ export const Actions = () => {
           Salir
         </Link>
       </Button>
-      <UserButton afterSignOutUrl="/" />
+      <UserButton />
     </div>
   );
 };
