@@ -63,7 +63,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           where: { id: twoFactorConfirmation.id },
         });
       }
-      console.log("Existing user: >>>> ", existingUser);
+      // console.log("Existing user: >>>> ", existingUser);
       return true;
     },
     async session({ token, session }) {

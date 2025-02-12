@@ -89,7 +89,7 @@ export async function POST(
 
     return NextResponse.json({ url: session.url });
   } catch (error) {
-    console.log("[STREAM_ID_CHECKOUT]", error);
+    // console.log("[STREAM_ID_CHECKOUT]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

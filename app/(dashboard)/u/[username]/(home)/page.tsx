@@ -31,7 +31,7 @@ const CreatorPage = async ({ params }: CreatorPageProps) => {
   if (!user) {
     throw new Error("Unauthorized");
   }
-  console.log(user);
+  // console.log(user);
   return (
     <div className="h-full ">
       <p>Protected route: VIDEO DASHBOARD</p>

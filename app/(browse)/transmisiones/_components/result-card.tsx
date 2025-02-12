@@ -43,11 +43,11 @@ export const ResultCard = async ({ data }: ResultCardProps) => {
 
   const handleModalOn = () => {
     "use client";
-    console.log("Client talking");
+    // console.log("Client talking");
   };
-  console.log("Stream Id =>>>>>> ", streamId);
+  // console.log("Stream Id =>>>>>> ", streamId);
   const isPurchased = await checkStreamPayment(streamId);
-  console.log("isPurchased ->>>>>>> ", isPurchased);
+  // console.log("isPurchased ->>>>>>> ", isPurchased);
   // const externalUserId = data.user.externalUserId;
 
   // const { userId: externalUserId } = auth();

@@ -104,7 +104,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
     setIphoneIsFullscreen(!isIphoneFullscreen);
 
     // Confirm that CSS property is added
-    console.log("Added fullscreenDivOnIphone property");
+    // console.log("Added fullscreenDivOnIphone property");
   };
 
   useEventListener("click", handleFullScreenChangeIphone, wrapperRef);
@@ -119,7 +119,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
 
   // If user is using an iPhone iOS - Safari Mobile Web version
   if (isIphone()) {
-    console.log("User is on an iPhone.");
+    // console.log("User is on an iPhone.");
 
     return (
       <div

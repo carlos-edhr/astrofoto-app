@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export const Results = async () => {
   const data = await getStreams();
-  console.log(data);
+  // console.log(data);
   return (
     <div className="text-lg font-semibold mb-4">
       <h2>Transmisiones para ti</h2>

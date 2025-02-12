@@ -28,7 +28,7 @@ export const updateStream = async (values: Partial<Stream>) => {
       isChatDelayed: values.isChatDelayed,
     };
 
-    console.log({ validData });
+    // console.log({ validData });
 
     const stream = await db.stream.update({
       where: {
