@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Image from "next/image";
-import StarBackground from "@/app/(landing)/(home)/_components/main/StarBackground";
 import StarsCanvas from "./landing-star-background";
 
 const Itinerario: FC = () => {
