@@ -1,6 +1,6 @@
 import React from "react";
 import HeroStreamPurchase from "./hero-stream-purchase";
-import SponsorsStreamPurchase from "./sponsors-stream-purchase";
+// import SponsorsStreamPurchase from "./sponsors-stream-purchase";
 import ProductFeaturesStreamPurchase from "./product-features-stream-purchase";
 import TestimonialsStreamPurchase from "./testimonials-stream-purchase";
 import HighlightsStreamPurchase from "./highlights-stream-purchase";
@@ -8,7 +8,7 @@ import PricingStreamPurchase from "./pricing-stream-purchase";
 import FAQStreamPurchase from "./faq-stream-purchase";
 import { Separator } from "../ui/separator";
 import StarfieldStream from "./StarfieldStream";
-import StarsCanvas from "@/app/(landing)/(home)/_components/main/StarBackground";
+// import StarsCanvas from "@/app/(landing)/(home)/_components/main/StarBackground";
 const StreamPurchasePage = () => {
   return (
     <div className="h-full w-full  ">

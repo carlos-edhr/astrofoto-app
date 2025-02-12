@@ -16,7 +16,7 @@ const testimonials = [
     companyLogo: "/logos/company1.png",
   },
   {
-    text: "I love the simplicity and functionality. It’s a real game-changer for our team.",
+    text: "I love the simplicity and functionality. It is a real game-changer for our team.",
     name: "Jane Smith",
     position: "CTO",
     avatar: "/avatars/jane.jpg",
@@ -44,7 +44,7 @@ const testimonials = [
     companyLogo: "/logos/company5.png",
   },
   {
-    text: "We’ve seen a significant improvement in our workflow since adopting this tool.",
+    text: "We have seen a significant improvement in our workflow since adopting this tool.",
     name: "David Lee",
     position: "Operations Manager",
     avatar: "/avatars/david.jpg",

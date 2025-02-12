@@ -1,9 +1,9 @@
 import { db } from "./db";
-import { getSelf } from "./auth-service";
+import { currentUser } from "./auth";
 
 export const isBlockedbyUser = async (id: string) => {
   try {
-    const self = await getSelf();
+    const self = await currentUser();
 
     const otherUser = await db.user.findUnique({
       where: { id },
@@ -13,7 +13,7 @@ export const isBlockedbyUser = async (id: string) => {
       throw new Error("User not found");
     }
 
-    if (otherUser.id === self.id) {
+    if (otherUser.id === self?.id) {
       return false;
     }
 
@@ -21,7 +21,7 @@ export const isBlockedbyUser = async (id: string) => {
       where: {
         blockerId_blockedId: {
           blockerId: otherUser.id,
-          blockedId: self.id,
+          blockedId: self!.id,
         },
       },
     });
@@ -33,9 +33,9 @@ export const isBlockedbyUser = async (id: string) => {
 };
 
 export const blockUser = async (id: string) => {
-  const self = await getSelf();
+  const self = await currentUser();
 
-  if (self.id === id) {
+  if (self!.id === id) {
     throw new Error("Cannot block yourself");
   }
 
@@ -52,7 +52,7 @@ export const blockUser = async (id: string) => {
   const existingBlock = await db.block.findUnique({
     where: {
       blockerId_blockedId: {
-        blockerId: self.id,
+        blockerId: self!.id,
         blockedId: otherUser.id,
       },
     },
@@ -64,7 +64,7 @@ export const blockUser = async (id: string) => {
 
   const block = await db.block.create({
     data: {
-      blockerId: self.id,
+      blockerId: self!.id,
       blockedId: otherUser.id,
     },
     include: {
@@ -76,9 +76,9 @@ export const blockUser = async (id: string) => {
 };
 
 export const unblockUser = async (id: string) => {
-  const self = await getSelf();
+  const self = await currentUser();
 
-  if (self.id === id) {
+  if (self!.id === id) {
     throw new Error("Cannot unblock yourself");
   }
 
@@ -93,7 +93,7 @@ export const unblockUser = async (id: string) => {
   const existingBlock = await db.block.findUnique({
     where: {
       blockerId_blockedId: {
-        blockerId: self.id,
+        blockerId: self!.id,
         blockedId: otherUser.id,
       },
     },
@@ -116,11 +116,11 @@ export const unblockUser = async (id: string) => {
 };
 
 export const getBlockedUsers = async () => {
-  const self = await getSelf();
+  const self = await currentUser();
 
   const blockedUsers = await db.block.findMany({
     where: {
-      blockerId: self.id,
+      blockerId: self!.id,
     },
     include: {
       blocked: true,

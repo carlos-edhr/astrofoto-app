@@ -6,7 +6,10 @@ import { MinusCircle, MinusCircleIcon } from "lucide-react";
 
 import { Hint } from "../hint";
 import { onBlock } from "@/actions/block";
-import { cn, stringToColor } from "@/lib/utils";
+import {
+  cn,
+  // stringToColor
+} from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 interface CommunityItemProps {
@@ -23,7 +26,7 @@ export const CommunityItem = ({
   participantName,
 }: CommunityItemProps) => {
   const [isPending, startTransition] = useTransition();
-  const color = stringToColor(participantName || "");
+  // const color = stringToColor(participantName || "");
   const isSelf = participantName === viewerName;
   const isHost = viewerName === hostName;
   const handleBlock = () => {
@@ -42,7 +45,15 @@ export const CommunityItem = ({
         isPending && "opacity-50 pointer-events-none",
       )}
     >
-      <p style={{ color: color }}>{participantName}</p>
+      <p
+        style={
+          {
+            // color: color
+          }
+        }
+      >
+        {participantName}
+      </p>
       {isHost && !isSelf && (
         <Hint label="Block">
           <Button

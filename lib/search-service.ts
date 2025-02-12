@@ -1,12 +1,12 @@
 import { db } from "./db";
-import { getSelf } from "./auth-service";
+import { currentUser } from "./auth";
 
 export const getSearch = async (term?: string) => {
   let userId;
 
   try {
-    const self = await getSelf();
-    userId = self.id;
+    const self = await currentUser();
+    userId = self!.id;
   } catch {
     userId = null;
   }
