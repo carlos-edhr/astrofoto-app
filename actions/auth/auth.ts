@@ -2,7 +2,9 @@
 
 import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
-import { authenticate } from "@/lib/auth";
+import { signIn } from "@/auth";
+import { redirect } from "next/navigation";
+// import { authenticate } from "@/lib/auth";
 
 export async function signUp(prevState: any, formData: FormData) {
   try {
@@ -42,21 +44,21 @@ export async function signUp(prevState: any, formData: FormData) {
   }
 }
 
-// export async function authenticate(
-//   prevState: string | undefined,
-//   formData: FormData,
-// ) {
-//   try {
-//     await signIn({
-//       email: formData.get("email") as string,
-//       password: formData.get("password") as string,
-//     });
-//   } catch (error) {
-//     if (error instanceof Error) {
-//       return error.message;
-//     }
-//     return "An unknown error occurred";
-//   }
+export async function authenticate(
+  prevState: string | undefined,
+  formData: FormData,
+) {
+  try {
+    await signIn("credentials", {
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+    });
+  } catch (error) {
+    if (error instanceof Error) {
+      return error.message;
+    }
+    return "An unknown error occurred";
+  }
 
-//   redirect("/transmisiones");
-// }
+  redirect("/transmisiones");
+}
