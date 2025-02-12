@@ -18,7 +18,7 @@ interface ChatProps {
   hostName: string;
   hostIdentity: string;
   viewerName: string;
-  isFollowing: boolean;
+  // isFollowing: boolean;
   isChatEnabled: boolean;
   isChatDelayed: boolean;
   isChatFollowersOnly: boolean;
@@ -28,7 +28,7 @@ export const Chat = ({
   viewerName,
   hostName,
   hostIdentity,
-  isFollowing,
+  // isFollowing,
   isChatEnabled,
   isChatDelayed,
   isChatFollowersOnly,
@@ -79,7 +79,7 @@ export const Chat = ({
             isHidden={isHidden}
             isFollowersOnly={isChatFollowersOnly}
             isDelayed={isChatDelayed}
-            isFollowing={isFollowing}
+            // isFollowing={isFollowing}
           />
         </>
       )}

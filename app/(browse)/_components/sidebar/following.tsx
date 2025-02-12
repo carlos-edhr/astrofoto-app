@@ -30,8 +30,8 @@ export const Following = ({ data }: FollowingProps) => {
         {data.map((follow) => (
           <UserItem
             key={follow.following.id}
-            username={follow.following.username}
-            imageUrl={follow.following.imageUrl}
+            username={follow.following.username ?? "Unknown"}
+            imageUrl={follow.following.image ?? "default-image-url"}
             isLive={follow.following.stream?.isLive}
           />
         ))}
@@ -40,7 +40,7 @@ export const Following = ({ data }: FollowingProps) => {
   );
 };
 
-export const FollowingSkeleton = () => {
+export const FollowingSkeleton: React.FC = () => {
   return (
     <ul className="px-2 pt-2 lg:pt-0">
       {[...Array(3)].map((_, i) => (

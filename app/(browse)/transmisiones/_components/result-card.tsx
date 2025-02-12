@@ -1,6 +1,6 @@
 import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
 import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
-import { User } from "@prisma/client";
+import { User, UserRole } from "@prisma/client";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { getUserByUsername } from "@/lib/user-service";
@@ -23,14 +23,16 @@ interface ResultCardProps {
     price: number | null;
     isFree: boolean;
     id: string;
+    role: UserRole;
   };
 }
 
 export const ResultCard = async ({ data }: ResultCardProps) => {
-  const cardUser = await getUserByUsername(data.user.username);
+  const cardUser = data.user.username
+    ? await getUserByUsername(data.user.username)
+    : null;
   //@ts-ignore
-  const streamId = data.id;
-  // cardUser.stream.id;
+  const streamId = cardUser?.stream?.id || data.id;
   const price = data.price;
   // const userId = data.user.id;
   const isStreamFree = data.isFree;
@@ -43,8 +45,9 @@ export const ResultCard = async ({ data }: ResultCardProps) => {
     "use client";
     console.log("Client talking");
   };
-
+  console.log("Stream Id =>>>>>> ", streamId);
   const isPurchased = await checkStreamPayment(streamId);
+  console.log("isPurchased ->>>>>>> ", isPurchased);
   // const externalUserId = data.user.externalUserId;
 
   // const { userId: externalUserId } = auth();
@@ -58,7 +61,7 @@ export const ResultCard = async ({ data }: ResultCardProps) => {
   //   },
   // });
 
-  if (!data.user.isAdmin) {
+  if (data.user.role === "USER") {
     return <></>;
   }
 
@@ -72,15 +75,15 @@ export const ResultCard = async ({ data }: ResultCardProps) => {
       <div className="h-full w-full space-y-4">
         <Thumbnail
           src={data.thumbnailUrl}
-          fallback={data.user.imageUrl}
+          fallback={data.user.image || "/CIAF7 Logo-35.png"}
           isLive={data.isLive}
-          username={data.user.username}
+          username={data.user.username || ""}
         />
 
         <div className="flex gap-x-3">
           <UserAvatar
-            username={data.user.username}
-            imageUrl={data.user.imageUrl}
+            username={data.user.username || ""}
+            imageUrl={data.user.image || "/CIAF7 Logo-35.png"}
             isLive={data.isLive}
           />
           <div className="flex flex-col text-sm overflow-hidden">

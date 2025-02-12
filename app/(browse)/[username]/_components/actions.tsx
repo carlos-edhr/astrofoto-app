@@ -1,6 +1,7 @@
 "use client";
 import { onBlock, onUnblock } from "@/actions/block";
 import { onFollow, onUnfollow } from "@/actions/follow";
+import { UserButton } from "@/components/auth/user-button";
 import { Button } from "@/components/ui/button";
 import { useTransition } from "react";
 import { toast } from "sonner";

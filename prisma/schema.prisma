@@ -17,14 +17,29 @@ generator client{
   previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
+enum UserRole {
+  ADMIN
+  USER
+}
+
 model User {
   id String @id @default(uuid())
-  username String @unique
-  imageUrl String @db.Text
-  externalUserId String @unique 
+  //New fields for auth.js
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  username String? @unique
+  image String? 
+  password      String?   // Only for credentials provider
+    role UserRole @default(USER)
+  accounts      Account[]
+    isTwoFactorEnabled Boolean @default(false)
+  twoFactorConfirmation TwoFactorConfirmation?
+stream Stream?
+//New fields end here
+ 
   bio String? @db.Text 
 
-  isAdmin Boolean @default(false)
 
   following Follow[] @relation("Following")
   followedBy Follow[] @relation("FollowedBy")
@@ -32,11 +47,33 @@ model User {
   blocking Block[] @relation("Blocking")
   blockedBy Block[] @relation("BlockedBy")
 
-  stream Stream?
+  
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt 
 }
+
+//New model for auth.js
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+  user               User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+
 
 model Stream {
   id String @id @default(uuid())
@@ -138,4 +175,45 @@ model StripeCustomer {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// New auth models
+
+model VerificationToken { 
+  id    String @id @default(cuid())
+  email String
+  token String @unique 
+  expires DateTime
+
+  @@unique([email, token])
+
+}
+
+
+model PasswordResetToken{
+  id String @id @default(cuid())
+  email String 
+  token String @unique 
+  expires DateTime 
+
+  @@unique([email, token])
+}
+
+
+model TwoFactorToken {
+  id String @id @default(cuid())
+  email String 
+  token String @unique 
+  expires DateTime 
+
+  @@unique([email, token])
+}
+
+model TwoFactorConfirmation {
+  id String @id @default(cuid())
+
+  userId String 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId])
 }

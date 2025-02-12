@@ -20,6 +20,9 @@ const config = withUt({
     },
     extend: {
       fontFamily: {
+        roboto: ["var(--font-roboto)", "sans-serif"],
+        robotoCondensed: ["var(--font-roboto-condensed)", "sans-serif"],
+        bebas: ["var(--font-bebas-neue)", "sans-serif"],
         zentry: ["zentry", "sans-serif"],
         general: ["general", "sans-serif"],
         "circular-web": ["circular-web", "sans-serif"],
@@ -27,19 +30,26 @@ const config = withUt({
         "robert-regular": ["robert-medium", "sans-serif"],
       },
       colors: {
+        blackSpace: "#0D0D0D",
+        azulAstro: "#01B9FF",
+        azulMar: "#0075AFm",
+        plata: "#B7B7B7",
+        carbon: "#232323",
+        amarillo: "#FFC200",
+        magenta: "#FF3386",
         blue: {
-          50: "#DFDFF0",
-          75: "#DFDFF2",
-          100: "#F0F2FA",
-          200: "#010101",
-          300: "#4FB7DD",
+          "50": "#DFDFF0",
+          "75": "#DFDFF2",
+          "100": "#F0F2FA",
+          "200": "#010101",
+          "300": "#4FB7DD",
         },
         violet: {
-          300: "#5724FF",
+          "300": "#5724FF",
         },
         yellow: {
-          100: "#8E983F",
-          300: "#EDFF66",
+          "100": "#8E983F",
+          "300": "#EDFF66",
         },
         bunkerBlue: "#05070A",
         primaryLanding: "#04BDFC",
@@ -79,6 +89,13 @@ const config = withUt({
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))",
         },
       },
       borderRadius: {
@@ -123,9 +140,6 @@ const config = withUt({
           },
         },
       },
-      // backgroundSize: {
-      //   "300%": "300%",
-      // },
       animation: {
         gradient: "animatedgradient 9s ease infinite alternate",
         "accordion-down": "accordion-down 0.2s ease-out",

@@ -3,8 +3,8 @@ import { redirect } from "next/navigation";
 import { Container } from "./_components/container";
 import Navbar from "./_components/navbar";
 import { Sidebar, SidebarSkeleton } from "./_components/sidebar";
-import { getSelfByUsername } from "@/lib/auth-service";
 import { ModalProvider } from "@/components/providers/modal-provider";
+import { currentUser } from "@/lib/auth";
 
 interface BrowseLayoutProps {
   params: { username: string };
@@ -12,11 +12,11 @@ interface BrowseLayoutProps {
 }
 
 const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
-  // try {
-  //   const self = await getSelfByUsername(params.username);
-  // } catch {
-  //   redirect("/sign-up");
-  // }
+  try {
+    const self = await currentUser();
+  } catch {
+    redirect("/auth/login");
+  }
 
   //TODO: UPWARD COMMUNICATION FROM CHILD TO PARENT
   //NEED TO PASS streamId prop FROM RESULT CARD TO HERE

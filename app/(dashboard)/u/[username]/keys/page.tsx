@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { UrlCard } from "./_components/url-card";
-import { getSelf } from "@/lib/auth-service";
 import { getStreamByUserId } from "@/lib/stream-service";
 import { KeyCard } from "./_components/key-card";
 import ConnectModal from "./_components/connect-modal";
+import { currentUser } from "@/lib/auth";
 
 const KeysPage = async () => {
-  const self = await getSelf();
+  const self = await currentUser();
+
+  if (!self || !self.id) {
+    throw new Error("User not found or user ID is undefined");
+  }
+
   const stream = await getStreamByUserId(self.id);
 
   if (!stream) {

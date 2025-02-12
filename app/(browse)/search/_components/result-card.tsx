@@ -2,7 +2,7 @@ import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
 import { formatDistanceToNow } from "date-fns";
 import { VerifiedMark } from "@/components/verified-mark";
 import { User } from "@prisma/client";
-import sp from "date-fns/locale/es";
+import { es as sp } from "date-fns/locale";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -18,7 +18,7 @@ interface ResultCardProps {
 }
 
 export const ResultCard = ({ data }: ResultCardProps) => {
-  if (!data.user.isAdmin) {
+  if (data.user.role === "USER") {
     return <></>;
   }
   return (
@@ -27,9 +27,9 @@ export const ResultCard = ({ data }: ResultCardProps) => {
         <div className="relative h-[9rem] w-[16rem]">
           <Thumbnail
             src={data.thumbnailUrl}
-            fallback={data.user.imageUrl}
+            fallback={data.user.image || "/default-fallback-image.jpg"}
             isLive={data.isLive}
-            username={data.user.username}
+            username={data.user.username || "unknown"}
           />
         </div>
         <div className="space-y-1 ">
@@ -43,7 +43,6 @@ export const ResultCard = ({ data }: ResultCardProps) => {
           <p className="text-sm text-muted-foreground">
             {formatDistanceToNow(new Date(data.updatedAt), {
               addSuffix: true,
-              // @ts-expect-error
               locale: sp,
             })}
           </p>

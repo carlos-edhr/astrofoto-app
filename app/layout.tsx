@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import { ClerkProvider } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
-import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
-import { esES } from "@clerk/localizations";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Roboto, Bebas_Neue } from "next/font/google";
+import { Roboto, Bebas_Neue, Roboto_Condensed } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "700"], // or any weights you need
+  weight: ["300", "400"], // or any weights you need
+  variable: "--font-roboto", // optional custom CSS variable
+  display: "swap", // controls how the font is displayed
+});
+
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  weight: ["200", "300", "400"], // or any weights you need
   variable: "--font-roboto", // optional custom CSS variable
   display: "swap", // controls how the font is displayed
 });
@@ -23,22 +28,23 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Congreso de Astrofotografía",
   description: "Sitio web del Congreso Internacional de Astrofotografía.",
 };
 // Fix Auth
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
-    <ClerkProvider localization={esES} appearance={{ baseTheme: dark }}>
+    <SessionProvider session={session}>
       <html lang="en">
-        <body className={`${roboto.variable} ${bebasNeue.variable}`}>
+        <body
+          className={`${roboto.variable} ${robotoCondensed.variable} ${bebasNeue.variable}`}
+        >
           <ThemeProvider
             attribute="class"
             forcedTheme="dark"
@@ -50,6 +56,6 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+    </SessionProvider>
   );
 }

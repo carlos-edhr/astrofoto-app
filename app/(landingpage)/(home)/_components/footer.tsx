@@ -3,7 +3,6 @@ import React from "react";
 import { Heart } from "lucide-react";
 import Link from "next/link";
 import { Instagram, Youtube, Facebook } from "lucide-react";
-import { SignUpButton } from "@clerk/nextjs";
 
 const Footer = () => {
   return (

@@ -11,8 +11,8 @@ import {
 import { TrackSource } from "livekit-server-sdk/dist/proto/livekit_models";
 
 import { db } from "@/lib/db";
-import { getSelf } from "@/lib/auth-service";
 import { revalidatePath } from "next/cache";
+import { currentUser } from "@/lib/auth";
 
 const roomService = new RoomServiceClient(
   process.env.LIVEKIT_API_URL!,
@@ -41,10 +41,14 @@ export const resetIngresses = async (hostIdentity: string) => {
 };
 
 export const createIngress = async (ingressType: IngressInput) => {
-  const self = await getSelf();
+  const self = await currentUser();
   //TODO: reset previous ingress
 
-  await resetIngresses(self.id);
+  if (self && typeof self.id === "string") {
+    await resetIngresses(self.id);
+  } else {
+    throw new Error("User is not authenticated or user ID is invalid");
+  }
 
   const options: CreateIngressOptions = {
     name: self.username,

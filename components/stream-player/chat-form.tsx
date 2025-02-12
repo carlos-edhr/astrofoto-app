@@ -14,7 +14,7 @@ interface ChatFormProps {
   onChange: (value: string) => void;
   isHidden: boolean;
   isFollowersOnly: boolean;
-  isFollowing: boolean;
+  // isFollowing: boolean;
   isDelayed: boolean;
 }
 
@@ -24,15 +24,15 @@ export const ChatForm = ({
   onChange,
   isHidden,
   isFollowersOnly,
-  isFollowing,
+  // isFollowing,
   isDelayed,
 }: ChatFormProps) => {
   const [isDelayBlocked, setIsDelayBlocked] = useState(false);
 
-  const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing;
+  // const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing;
 
-  const isDisabled =
-    isHidden || isDelayBlocked || isFollowersOnlyAndNotFollowing;
+  const isDisabled = isHidden || isDelayBlocked;
+  // || isFollowersOnlyAndNotFollowing;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -1,8 +1,8 @@
-import { getSelfByUsername } from "@/lib/auth-service";
 import { redirect } from "next/navigation";
 import Navbar from "./_components/navbar";
 import Sidebar from "./_components/sidebar";
 import { Container } from "./_components/container";
+import { currentUser } from "@/lib/auth";
 
 interface CreatorLayoutProps {
   params: { username: string };
@@ -10,15 +10,15 @@ interface CreatorLayoutProps {
 }
 
 const CreatorLayout = async ({ params, children }: CreatorLayoutProps) => {
-  const self = await getSelfByUsername(params.username);
+  const self = await currentUser();
 
-  console.log(self.isAdmin);
+  console.log(self?.role);
 
   if (!self) {
     redirect("/");
   }
 
-  if (!self.isAdmin) {
+  if (self.role !== "ADMIN") {
     redirect("/transmisiones");
   }
 

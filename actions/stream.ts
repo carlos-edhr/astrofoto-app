@@ -3,11 +3,14 @@
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { Stream } from "@prisma/client";
-import { getSelf } from "@/lib/auth-service";
+import { currentUser } from "@/lib/auth";
 
 export const updateStream = async (values: Partial<Stream>) => {
   try {
-    const self = await getSelf();
+    const self = await currentUser();
+    if (!self) {
+      throw new Error("User not found");
+    }
     const selfStream = await db.stream.findUnique({
       where: {
         userId: self.id,

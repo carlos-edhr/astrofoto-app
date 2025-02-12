@@ -1,12 +1,15 @@
 "use server";
 
-import { getSelf } from "@/lib/auth-service";
+import { currentUser } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { User } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
 export const updateUser = async (values: Partial<User>) => {
-  const self = await getSelf();
+  const self = await currentUser();
+  if (!self) {
+    throw new Error("User not found");
+  }
   const validData = {
     bio: values.bio,
   };

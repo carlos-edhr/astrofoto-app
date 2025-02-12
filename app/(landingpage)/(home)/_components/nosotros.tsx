@@ -129,7 +129,7 @@ const BentoCard = ({ src, title, description }: BentoCardProps) => {
 const Talleres = () => (
   <section
     id="nosotros"
-    className="bg-black z-10 relative w-full  my-8 pb-52 overflow-hidden"
+    className=" z-10 relative w-full  my-8 pb-52 overflow-hidden"
   >
     <StarsCanvas />
     <div className="container relative z-10 mx-auto px-3 md:px-10">

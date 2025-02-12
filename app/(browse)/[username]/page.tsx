@@ -16,30 +16,32 @@ interface UserPageProps {
 
 const UserPage = async ({ params }: UserPageProps) => {
   const user = await getUserByUsername(params.username);
+  console.log(user?.stream);
 
   if (!user || !user.stream) {
     notFound();
   }
+  // if (!user) {
+  //   notFound();
+  // }
+  // const isPurchased = await checkStreamPayment(user.stream.id);
+  // const isStreamFree = user.stream?.isFree;
 
-  const isPurchased = await checkStreamPayment(user.stream.id);
-  const isStreamFree = user.stream?.isFree;
+  // if (!isPurchased && !isStreamFree) {
+  //   return <StreamPurchasePage />;
+  // }
+  // const isFollowing = await isFollowingUser(user.id);
+  // const isBlocked = await isBlockedbyUser(user.id);
 
-  if (!isPurchased && !isStreamFree) {
-    return <StreamPurchasePage />;
-    // return <StreamProductPage />;
-  }
-  const isFollowing = await isFollowingUser(user.id);
-  const isBlocked = await isBlockedbyUser(user.id);
-
-  if (isBlocked) {
-    notFound();
-  }
+  // if (isBlocked) {
+  //   notFound();
+  // }
   return (
     <div>
       <StreamPlayer
         user={user}
         stream={user.stream}
-        isFollowing={isFollowing}
+        // isFollowing={isFollowing}
       />
     </div>
   );

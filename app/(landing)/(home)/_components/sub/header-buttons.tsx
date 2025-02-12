@@ -1,9 +1,11 @@
 "use server";
-import { currentUser } from "@clerk/nextjs/server";
+import { currentUser } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Clapperboard } from "lucide-react";
 import Link from "next/link";
-import { SignInButton, UserButton, SignUpButton } from "@clerk/nextjs";
+
+import { UserButton } from "@/components/auth/user-button";
+import { SignInButton } from "@/components/auth/sign-in-button";
 
 const HeaderButtons = async () => {
   const user = await currentUser();
@@ -20,11 +22,11 @@ const HeaderButtons = async () => {
       </div>
       <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
         {!user && (
-          <SignUpButton>
+          <SignInButton>
             <Button size="sm" variant="primary">
               Crear cuenta
             </Button>
-          </SignUpButton>
+          </SignInButton>
         )}
       </div>
       {!!user && (

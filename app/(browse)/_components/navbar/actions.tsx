@@ -1,20 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { SignInButton, UserButton } from "@clerk/nextjs";
-import { currentUser } from "@clerk/nextjs/server";
+import { currentUser } from "@/lib/auth";
 import { Clapperboard } from "lucide-react";
 import Link from "next/link";
+import { UserButton } from "@/components/auth/user-button";
+// import { SignInButton } from "@/components/auth/sign-in-button";
 
 export const Actions = async () => {
   const user = await currentUser();
+
+  // console.log("Transimisiones: --->>> ", { user });
   return (
     <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
-      {!user && (
-        <SignInButton>
-          <Button size="sm" variant="primary">
-            Login
-          </Button>
-        </SignInButton>
-      )}
+      {/* {!user && <SignInButton />} */}
       {!!user && (
         <div className="flex items-center gap-x-4 ">
           <Button
@@ -28,7 +25,7 @@ export const Actions = async () => {
               <span className="hidden lg:block">Dashboard</span>
             </Link>
           </Button>
-          <UserButton afterSignOutUrl="/" />
+          {/* <UserButton afterSignOutUrl="/" /> */}
         </div>
       )}
     </div>

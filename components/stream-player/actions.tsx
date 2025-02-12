@@ -2,27 +2,27 @@
 import { useTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useAuth } from "@clerk/nextjs";
 import { Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { onFollow, onUnfollow } from "@/actions/follow";
 import { toast } from "sonner";
 import { Skeleton } from "../ui/skeleton";
-
+import { useCurrentUser } from "@/hooks/use-current-user";
 interface ActionsProps {
   hostIdentity: string;
-  isFollowing: boolean;
+  // isFollowing: boolean;
   isHost: boolean;
 }
 
 export const Actions = ({
   hostIdentity,
-  isFollowing,
+  // isFollowing,
   isHost,
 }: ActionsProps) => {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
-  const { userId } = useAuth();
+  const user = useCurrentUser();
+  const userId = user?.id;
 
   const handleFollow = () => {
     startTransition(() => {
@@ -52,25 +52,26 @@ export const Actions = ({
 
     if (!isHost) return;
 
-    if (isFollowing) {
-      handleUnfollow();
-    } else {
-      handleFollow();
-    }
+    // if (isFollowing) {
+    //   handleUnfollow();
+    // } else {
+    //   handleFollow();
+    // }
   };
   return (
-    <Button
-      disabled={isPending || isHost}
-      onClick={toggleFollow}
-      variant="primary"
-      size="sm"
-      className="w-full lg:w-auto"
-    >
-      <Heart
-        className={cn("h-4 w-4 mr-2", isFollowing ? "fill-white" : "fill-none")}
-      />
-      {isFollowing ? "Dejar de seguir" : "Seguir"}
-    </Button>
+    <></>
+    // <Button
+    //   disabled={isPending || isHost}
+    //   onClick={toggleFollow}
+    //   variant="primary"
+    //   size="sm"
+    //   className="w-full lg:w-auto"
+    // >
+    //   <Heart
+    //     className={cn("h-4 w-4 mr-2", isFollowing ? "fill-white" : "fill-none")}
+    //   />
+    //   {isFollowing ? "Dejar de seguir" : "Seguir"}
+    // </Button>
   );
 };
 

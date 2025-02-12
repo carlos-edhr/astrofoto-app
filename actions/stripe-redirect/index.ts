@@ -1,7 +1,6 @@
 // "use server";
 // import { db } from "@/lib/db";
 // import { InputType, ReturnType } from "./types";
-// import { auth, currentUser } from "@clerk/nextjs/server";
 // import { revalidatePath } from "next/cache";
 // import { createSafeAction } from "@/lib/create-safe-action";
 // import { StripeRedirect } from "./schema";

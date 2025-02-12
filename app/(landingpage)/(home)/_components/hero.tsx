@@ -197,7 +197,7 @@ const Hero = () => {
    *    conditionally render the small `isMobile` parts.
    */
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden">
+    <div className="relative h-dvh w-screen overflow-x-hidden ">
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-slate-900"

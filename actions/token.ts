@@ -2,14 +2,18 @@
 
 import { v4 } from "uuid";
 import { AccessToken } from "livekit-server-sdk";
-import { getSelf } from "@/lib/auth-service";
+
 import { getUserById } from "@/lib/user-service";
 import { isBlockedbyUser } from "@/lib/block-service";
+import { currentUser } from "@/lib/auth";
 
 export const createViewerToken = async (hostIdentity: string) => {
   let self;
   try {
-    self = await getSelf();
+    self = await currentUser();
+    if (!self) {
+      throw new Error("User not found");
+    }
   } catch {
     const id = v4();
     const username = `guest#${Math.floor(Math.random() * 1000)}`;

@@ -1,10 +1,23 @@
-import { auth } from "@clerk/nextjs/server";
+import { currentUser } from "./auth";
 import { db } from "./db";
 
 export const checkStreamPayment = async (streamId: string) => {
-  const { userId } = auth();
+  const user = await currentUser();
+  if (!user) {
+    console.log("User not found");
+    return false;
+  }
+  const userId = user.id;
+  // console.log("User inside checkStreamPayment ---------->>>>>>>> ", user);
 
   if (!userId) {
+    return false;
+  }
+  const { id } = user;
+
+  // console.log("User ID ======>>>>> ", id);
+
+  if (!id) {
     return false;
   }
 
@@ -16,7 +29,7 @@ export const checkStreamPayment = async (streamId: string) => {
       },
     },
   });
-
+  // console.log(" <<<<<<------ Purchased ---->>>> ", purchased);
   if (purchased) {
     return true;
   }

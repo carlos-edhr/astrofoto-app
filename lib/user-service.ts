@@ -7,11 +7,10 @@ export const getUserByUsername = async (username: string) => {
     },
     select: {
       id: true,
-      externalUserId: true,
+
       username: true,
       bio: true,
-      isAdmin: true,
-      imageUrl: true,
+      image: true,
       stream: {
         select: {
           id: true,

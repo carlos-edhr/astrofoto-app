@@ -102,7 +102,7 @@ const PreguntasFrecuentes: React.FC = () => {
           faq
         </div>
 
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10">
+        <h2 className="font-robotoCondensed text-3xl sm:text-4xl  mb-10">
           Preguntas más <br className="sm:hidden" /> frecuentes
         </h2>
 
