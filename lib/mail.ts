@@ -13,7 +13,7 @@ export const sendTwoFactorTokenEmail = async (
   token: string,
 ) => {
   await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "onboarding@congresodeastrofotografia.com",
     to: email,
     subject: "Authentication Code",
     react: TwoFactorAuthenticationEmail({ username: name, email, token }),
@@ -25,7 +25,7 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
   const resetLink = `${domain}/auth/new-password?token=${token}`;
 
   await resend.emails.send({
-    from: "Acme <onboarding@resend.dev>",
+    from: "Congreso de Astrofotografía <onboarding@congresodeastrofotografia.com>",
     to: [email],
     subject: "Reset your password",
     react: PasswordResetEmail({ resetLink: resetLink }),
@@ -40,7 +40,7 @@ export const sendVerificationEmail = async (
   const confirmLink = `${domain}/auth/new-verification?token=${token}`;
 
   await resend.emails.send({
-    from: "Acme <onboarding@resend.dev>",
+    from: "Congreso de Astrofotografía <onboarding@congresodeastrofotografia.com>",
     to: [email],
     subject: "Welcome! Confirm your email",
     react: ConfirmRegisterEmail({ name: name, confirmLink: confirmLink }),
