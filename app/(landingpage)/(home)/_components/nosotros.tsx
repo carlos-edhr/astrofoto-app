@@ -133,7 +133,7 @@ const Talleres = () => (
   >
     <StarsCanvas />
     <div className="container relative z-10 mx-auto px-3 md:px-10">
-      <div className="flex flex-row items-center align-middle h-full justify-center px-5 py-8 w-full  z-[20]">
+      {/* <div className="flex flex-row items-center align-middle h-full justify-center px-5 py-8 w-full  z-[20]">
         <div className="flex flex-col">
           <p className="special-font section-heading   text-6xl sm:text-7xl lg:text-8xl  leading-none ">
             Nosotros
@@ -150,21 +150,20 @@ const Talleres = () => (
         </div>
 
         <div className="hidden w-full h-full md:block  justify-center items-center">
-          {/* SPLINE SCENE START */}
-          {/* <Spline scene="https://prod.spline.design/0ABX-F8AcLXFZ2hI/scene.splinecode" /> */}
-          {/* <Spline scene="https://prod.spline.design/EiDOgcOIiL5Z-SBm/scene.splinecode" /> */}
+        
           <Spline scene="https://prod.spline.design/SCTGujpbmLheztnm/scene.splinecode" />
 
-          {/* SPLINE SCENE END */}
         </div>
-      </div>
+      </div> */}
 
-      <LogoCarousel />
+      {/* <LogoCarousel /> */}
+
+      <Invitacion videoSrc="/videos/astrofoto-vid-2.mp4" />
 
       <Fundadores
-        heading="Sobre el fundador"
-        subheading="De la Ingeniería a la Fotografía "
-        founderImageUrl="/caneck-leyva-fundador.jpg" // Place your actual image path here
+        heading="Caneck Leyva"
+        // subheading="De la Ingeniería a la Fotografía "
+        founderImageUrl="/retratos/Caneck Square1.jpg" // Place your actual image path here
         founderName="Caneck Leyva"
         description={`La pasión por la astrofotografía y la divulgación científica llevó a Caneck a crear este Congreso de Astrofotografía, un espacio donde entusiastas y profesionales pueden compartir su amor por la exploración del cielo. Con años de experiencia en observación astronómica y fotografía espacial, su misión es acercar el conocimiento del cosmos a más personas, combinando la tecnología con la emoción de descubrir el universo a través de la lente.🚀✨`}
       />
@@ -175,9 +174,7 @@ const Talleres = () => (
                    With years of experience in Next.js and TypeScript, I craft 
                    efficient and scalable web apps." /> */}
 
-      <Invitacion videoSrc="/videos/astrofoto-vid-2.mp4" />
-
-      <LogoCarousel />
+      {/* <LogoCarousel /> */}
 
       <div id="talleres">
         <BentoTilt className="border-hsla relative mt-16 mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">

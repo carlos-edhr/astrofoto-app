@@ -1,8 +1,9 @@
-"use client"; // Needed so React can run client-side effects in Next.js App Router
-
+"use client";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { Facebook, Youtube, Instagram } from "lucide-react";
 
 interface InvitacionProps {
   videoSrc: string;
@@ -48,18 +49,18 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
     mx-auto
     flex
     flex-col
-    md:flex-row
+   
     items-center
     justify-center
     rounded-xl
     overflow-hidden
     text-white
     p-6
-    md:p-12
+   
     shadow-lg
     mt-8
     /* Gradient background */
-    bg-gradient-to-br from-[#062945] via-[#030916] to-[#020814]
+    bg-gradient-to-b from-[#1c1c1c]  to-[#000000] 
 
   
   "
@@ -67,7 +68,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
       {/*after:border-[#78B3DB]*/}
 
       {/* Left Column - Video */}
-      <div
+      {/* <div
         className="
           w-1/2
           md:w-1/2
@@ -76,29 +77,37 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
           rounded-md
           bg-black
         "
-      >
-        <video
+      > */}
+      <div className="relative mx-auto w-[75vw] h-[75vw] max-w-[400px] max-h-[400px] sm:w-[60vw] sm:h-[60vw] md:w-[50vw] md:h-[50vw]">
+        <Image
+          src="/brand/CIAF8-Logo2.png"
+          alt="Congress Logo"
+          fill
+          className="object-contain z-50"
+          priority
+          // sizes="(max-width: 768px) 75vw, (max-width: 1200px) 50vw, 600px"
+        />
+      </div>
+      {/* <video
           src={videoSrc}
           autoPlay
           muted
           loop
           className="w-full h-full object-cover"
-        />
-      </div>
+        /> */}
+      {/* </div> */}
       {/* Right Column - Text & Button */}
       <div
         className="
           w-full
-          md:w-1/2
           flex
           flex-col
-          mt-6
-          md:mt-0
-          md:ml-8
+          mt-1
+     
         "
       >
         {/* “Reels” badge or pill */}
-        <span
+        {/* <span
           className="
             inline-block
             bg-gray-800
@@ -114,10 +123,10 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
           "
         >
           ¡Acompáñanos!
-        </span>
+        </span> */}
 
         {/* Main heading */}
-        <h2
+        {/* <h2
           className="
             text-3xl
             md:text-4xl
@@ -126,16 +135,18 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
           "
         >
           Invitación al Congreso Internacional de Fotografía
-        </h2>
+        </h2> */}
 
         {/* Subtitle / body text */}
         <p
           className="
+          font-robotoCondensed 
+          font-[200]
             text-base
             md:text-lg
-            mt-4
+            mt-2
             leading-relaxed
-            text-gray-300
+            text-white
           "
         >
           ¡Te invitamos al Congreso Internacional de Fotografía 2025! Un espacio
@@ -150,11 +161,27 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
         </p>
 
         {/* Waitlist Button */}
-        <div className="mt-6">
-          <Button variant="default" size="lg">
-            Join the Waitlist
+        <div className="mt-6 flex w-full">
+          <Button variant="azulAstro" size="lg" className="w-full">
+            REGÍSTRATE
           </Button>
         </div>
+      </div>
+      {/* Redes Sociales */}
+      <div className="mt-8 flex space-x-4">
+        {/* Cada ícono dentro de un círculo */}
+        <div className="p-2 rounded-full bg-cyan-500 text-black">
+          <Facebook size={24} />
+        </div>
+        <div className="p-2 rounded-full bg-cyan-500 text-black">
+          <Youtube size={24} />
+        </div>
+        <div className="p-2 rounded-full bg-cyan-500 text-black">
+          <Instagram size={24} />
+        </div>
+        {/* <div className="p-2 rounded-full bg-cyan-500 text-black">
+          <Whatsapp size={24} />
+        </div> */}
       </div>
     </div>
   );
