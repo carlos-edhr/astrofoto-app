@@ -149,15 +149,11 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
             text-white
           "
         >
-          ¡Te invitamos al Congreso Internacional de Fotografía 2025! Un espacio
-          único donde la pasión por la imagen se encuentra con la ciencia y la
-          creatividad. Únete a fotógrafos, investigadores y amantes del arte
-          visual de todo el mundo en un evento lleno de conferencias, talleres y
-          exposiciones que exploran el poder de la fotografía como herramienta
-          artística, documental y científica. Dirigido a estudiantes,
-          profesionales y público en general, este congreso es la oportunidad
-          perfecta para aprender, inspirarte y conectar con una comunidad
-          global. ¡No te lo pierdas!
+           Evento anual donde reunimos a varios fotógrafos, astrofotógrafos,
+            astrónomos y divulgadores científicos de diferentes países con el
+            objetivo de compartir a través de conferencias magistrales y de
+            talleres que nos ayudan a crecer en esta bonita disciplina de
+            capturar la luz del universo.
         </p>
 
         {/* Waitlist Button */}
