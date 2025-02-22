@@ -57,9 +57,10 @@ export const sendPurchaseConfirmationEmailToAdmin = async (
   userEmail: string,
   purchaseAmount: number,
 ) => {
+  const adminEmail = "eduardoh.rojas@protonmail.com";
   await resend.emails.send({
-    from: "Congreso de Astrofotografía <onboarding@resend.dev>",
-    to: "<eduardoh.rojas@protonmail.com>",
+    from: "Congreso de Astrofotografía <onboarding@congresodeastrofotografia.com>",
+    to: [adminEmail],
     subject: "Automated Purchase Confirmation",
     react: PurchaseConfirmationEmailToAdmin({
       streamName: streamName,

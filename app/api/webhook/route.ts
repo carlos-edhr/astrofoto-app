@@ -47,16 +47,23 @@ export async function POST(req: Request) {
     //get user by id
     const user = await getUserById(userId);
 
-    //send Email to Admin
-    await PurchaseConfirmationEmailToAdmin({
-      streamName: stream?.name || "",
-      purchaseId: purchase.id,
-      username: user?.username || "",
-      userEmail: user?.email || "",
-      purchaseAmount: stream?.price || 0,
-    });
+    console.log("Stream -->", stream);
+    console.log("User -->", user);
+    console.log("Purchase -->", purchase);
 
-    // Send email to user
+    try {
+      //send Email to Admin
+      await PurchaseConfirmationEmailToAdmin({
+        streamName: stream?.name || "",
+        purchaseId: purchase.id,
+        username: user?.username || "",
+        userEmail: user?.email || "",
+        purchaseAmount: stream?.price || 0,
+      });
+      // Send email to user
+    } catch (error: any) {
+      return "Webhook Error: Unable to send purchase confirmation admin Email: ${error}";
+    }
   } else {
     return new NextResponse(
       `Webhook Error: Unhandled event type ${event.type}`,
