@@ -1,4 +1,5 @@
 import { ConfirmRegisterEmail } from "@/components/auth/confirm-register-email-template";
+import { PurchaseConfirmationEmailToAdmin } from "@/components/auth/purchase-confirmation-email-to-admin";
 import { PasswordResetEmail } from "@/components/auth/reset-password-email-template";
 import { TwoFactorAuthenticationEmail } from "@/components/auth/two-factor-authentication-email-template";
 import { Resend } from "resend";
@@ -45,5 +46,27 @@ export const sendVerificationEmail = async (
     subject: "Welcome! Confirm your email",
     react: ConfirmRegisterEmail({ name: name, confirmLink: confirmLink }),
     // html: `<p>Click <a href="${confirmLink}">here</a> to confirm email.</p>`,
+  });
+};
+
+//Confirm Purchsae to Admin Email
+export const sendPurchaseConfirmationEmailToAdmin = async (
+  streamName: string,
+  purchaseId: string,
+  username: string,
+  userEmail: string,
+  purchaseAmount: number,
+) => {
+  await resend.emails.send({
+    from: "CIAF - Ventas  <onboarding@resend.dev>",
+    to: "<carlos.edhr@gmail.com>",
+    subject: "Automated Purchase Confirmation",
+    react: PurchaseConfirmationEmailToAdmin({
+      streamName: streamName,
+      purchaseId: purchaseId,
+      username: username,
+      userEmail: userEmail,
+      purchaseAmount: purchaseAmount,
+    }),
   });
 };

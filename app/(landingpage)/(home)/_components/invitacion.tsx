@@ -142,18 +142,17 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
           className="
           font-robotoCondensed 
           font-[200]
-            text-base
-            md:text-lg
+           
             mt-2
             leading-relaxed
             text-white
           "
         >
-           Evento anual donde reunimos a varios fotógrafos, astrofotógrafos,
-            astrónomos y divulgadores científicos de diferentes países con el
-            objetivo de compartir a través de conferencias magistrales y de
-            talleres que nos ayudan a crecer en esta bonita disciplina de
-            capturar la luz del universo.
+          Evento anual donde reunimos a varios fotógrafos, astrofotógrafos,
+          astrónomos y divulgadores científicos de diferentes países con el
+          objetivo de compartir a través de conferencias magistrales y de
+          talleres que nos ayudan a crecer en esta bonita disciplina de capturar
+          la luz del universo.
         </p>
 
         {/* Waitlist Button */}
