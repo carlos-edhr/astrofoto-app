@@ -1,7 +1,7 @@
-import { PurchaseConfirmationEmailToAdmin } from "@/components/auth/purchase-confirmation-email-to-admin";
 import { getStreamById } from "@/data/stream";
 import { getUserById } from "@/data/user";
 import { db } from "@/lib/db";
+import { sendPurchaseConfirmationEmailToAdmin } from "@/lib/mail";
 import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
@@ -47,26 +47,26 @@ export async function POST(req: Request) {
     //get user by id
     const user = await getUserById(userId);
 
-    console.log("Stream -->", stream);
-    console.log("User -->", user);
-    console.log("Purchase -->", purchase);
+    // console.log("Stream -->", stream);
+    // console.log("User -->", user);
+    // console.log("Purchase -->", purchase);
+    //send Email to Admin
+    await sendPurchaseConfirmationEmailToAdmin(
+      stream?.name ?? "Unknown Stream",
+      purchase.id,
+      user?.username ?? "Username not set",
+      user?.email ?? "Email not set",
+      stream?.price ?? 0,
+    );
 
-    try {
-      //send Email to Admin
-      await PurchaseConfirmationEmailToAdmin({
-        streamName: stream?.name || "",
-        purchaseId: purchase.id,
-        username: user?.username || "",
-        userEmail: user?.email || "",
-        purchaseAmount: stream?.price || 0,
-      });
-      // Send email to user
-    } catch (error: any) {
-      return new NextResponse(
-        `Webhook Error: Unable to send purchase confirmation admin Email: ${error}`,
-        { status: 500 },
-      );
-    }
+    // try {
+    //   // Send email to user
+    // } catch (error: any) {
+    //   return new NextResponse(
+    //     `Webhook Error: Unable to send purchase confirmation admin Email: ${error}`,
+    //     { status: 500 },
+    //   );
+    // }
   } else {
     return new NextResponse(
       `Webhook Error: Unhandled event type ${event.type}`,
