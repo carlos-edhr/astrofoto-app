@@ -62,7 +62,10 @@ export async function POST(req: Request) {
       });
       // Send email to user
     } catch (error: any) {
-      return `Webhook Error: Unable to send purchase confirmation admin Email: ${error}`;
+      return new NextResponse(
+        `Webhook Error: Unable to send purchase confirmation admin Email: ${error}`,
+        { status: 500 },
+      );
     }
   } else {
     return new NextResponse(
