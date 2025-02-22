@@ -57,7 +57,7 @@ export const sendPurchaseConfirmationEmailToAdmin = async (
   userEmail: string,
   purchaseAmount: number,
 ) => {
-  const adminEmail = ["carlos.edhr@protonmail.com", "carlos.edhr@gmail.com"];
+  const adminEmail = ["carlos.edhr@protonmail.com", "caneck.leyva@gmail.com"];
 
   await resend.emails.send({
     from: "Congreso de Astrofotografía <onboarding@congresodeastrofotografia.com>",
