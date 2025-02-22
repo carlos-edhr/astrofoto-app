@@ -29,8 +29,7 @@ export const PurchaseConfirmationEmailToAdmin: React.FC<
             {/* Header */}
             <div className="bg-slate-800 text-white text-center py-8">
               <h1 className="text-2xl font-bold tracking-wide">
-                Congreso Internacional de{" "}
-                <span className="text-azulAstro">Astrofotografía</span>
+                Congreso Internacional de Astrofotografía
               </h1>
               <h1 className="text-2xl font-bold tracking-wide">
                 Confirmación de Compra Exitosa
@@ -46,25 +45,25 @@ export const PurchaseConfirmationEmailToAdmin: React.FC<
                 Detalles de la compra:
               </p>
 
-              <div className="text-lg space-y-2 text-gray-700">
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-bold">Nombre del Stream: </span>
+              <div className="text-lg space-y-2 text-gray-900">
+                <div className="flex justify-between text-gray-900 border-b pb-2">
+                  <span className="font-bold">Nombre del Stream:{"    "}</span>
                   <span>{streamName}</span>
                 </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-bold">ID de Compra: </span>
+                <div className="flex justify-between text-gray-900 border-b pb-2">
+                  <span className="font-bold">ID de Compra:{"    "}</span>
                   <span>{purchaseId}</span>
                 </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-bold">Nombre de Usuario: </span>
+                <div className="flex justify-between text-gray-900 border-b pb-2">
+                  <span className="font-bold">Nombre de Usuario:{"    "}</span>
                   <span>{username}</span>
                 </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-bold">Email del Usuario: </span>
+                <div className="flex justify-between text-gray-900 border-b pb-2">
+                  <span className="font-bold">Email del Usuario:{"    "}</span>
                   <span>{userEmail}</span>
                 </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-bold">Monto Total: </span>
+                <div className="flex justify-between text-red-600 border-b pb-2">
+                  <span className="font-bold">Monto Total:{"    "}</span>
                   <span>${purchaseAmount.toLocaleString("es-ES")}</span>
                 </div>
               </div>
@@ -83,7 +82,7 @@ export const PurchaseConfirmationEmailToAdmin: React.FC<
                   Congreso Internacional de Astrofotografía
                 </p>
                 <p className="text-xs text-gray-500">Baja California, México</p>
-                <div className="flex justify-between space-x-4 mt-2">
+                {/* <div className="flex justify-between space-x-4 mt-2">
                   <a
                     href="https://www.youtube.com/@ifnastro/videos"
                     className="text-slate-700 hover:text-slate-900 text-sm"
@@ -102,7 +101,7 @@ export const PurchaseConfirmationEmailToAdmin: React.FC<
                   >
                     Facebook
                   </a>
-                </div>
+                </div> */}
                 <p className="text-xs text-gray-400 mt-4">
                   © {new Date().getFullYear()} Congreso Internacional de
                   Astrofotografía. Todos los derechos reservados.
