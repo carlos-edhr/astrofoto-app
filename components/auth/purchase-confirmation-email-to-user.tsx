@@ -26,7 +26,7 @@ export const PurchaseConfirmationEmailToUser: React.FC<
             </div> */}
 
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-800 to-slate-900 text-white text-center py-8">
+            <div className="bg-sky-700 text-white text-center py-8">
               <h1 className="text-2xl font-bold tracking-wide">
                 ¡Bienvenido al Congreso de Astrofotografía! 🌌
               </h1>
@@ -125,8 +125,8 @@ export const PurchaseConfirmationEmailToUser: React.FC<
                   ¡El universo nos espera! 🚀
                 </p>
                 <p className="text-xs text-gray-400 mt-2">
-                  © {new Date().getFullYear()} CIAF. Todos los derechos
-                  reservados.
+                  © {new Date().getFullYear()} Congreso Internacional de
+                  Astrofotografía. Todos los derechos reservados.
                 </p>
               </div>
             </div>
