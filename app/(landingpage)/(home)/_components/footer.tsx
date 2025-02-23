@@ -59,8 +59,7 @@ const Footer = () => {
         </div>
         <div className="flex z-40 mb-[20px] text-[15px] text-center justify-center align-center">
           <p className="flex align-middle justify-center">
-            Developed with &nbsp; <Heart className="text-primaryLanding" />{" "}
-            &nbsp; by &nbsp;
+            Developed by &nbsp;
             <Link target="_blank" href="https://github.com/carlos-edhr">
               <span className="text-primaryLanding">carlos-ehr</span>
             </Link>

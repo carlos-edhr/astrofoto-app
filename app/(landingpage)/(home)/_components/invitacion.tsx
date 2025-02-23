@@ -4,12 +4,14 @@ import gsap from "gsap";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Facebook, Youtube, Instagram } from "lucide-react";
+import Link from "next/link";
+import StarsCanvas from "./landing-star-background";
 
 interface InvitacionProps {
-  videoSrc: string;
+  // videoSrc: string;
 }
 
-export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
+export const Invitacion: React.FC<InvitacionProps> = ({}) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -65,6 +67,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
   
   "
     >
+      <StarsCanvas />
       {/*after:border-[#78B3DB]*/}
 
       {/* Left Column - Video */}
@@ -80,7 +83,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
       > */}
       <div className="relative mx-auto w-[75vw] h-[75vw] max-w-[400px] max-h-[400px] sm:w-[60vw] sm:h-[60vw] md:w-[50vw] md:h-[50vw]">
         <Image
-          src="/brand/CIAF8-Logo2.png"
+          src="/brand/CIAF8-Logo8.png"
           alt="Congress Logo"
           fill
           className="object-contain z-50"
@@ -157,22 +160,33 @@ export const Invitacion: React.FC<InvitacionProps> = ({ videoSrc }) => {
 
         {/* Waitlist Button */}
         <div className="mt-6 flex w-full">
-          <Button variant="azulAstro" size="lg" className="w-full">
-            REGÍSTRATE
-          </Button>
+          <Link
+            href={`${process.env.NEXTAUTH_URL}/auth/register`}
+            className="w-full"
+          >
+            <Button variant="azulAstro" size="lg" className="w-full">
+              REGÍSTRATE
+            </Button>
+          </Link>
         </div>
       </div>
       {/* Redes Sociales */}
       <div className="mt-8 flex space-x-4">
         {/* Cada ícono dentro de un círculo */}
         <div className="p-2 rounded-full bg-cyan-500 text-black">
-          <Facebook size={24} />
+          <Link target="_blank" href="https://www.facebook.com/ifnastro">
+            <Facebook size={24} />
+          </Link>
         </div>
         <div className="p-2 rounded-full bg-cyan-500 text-black">
-          <Youtube size={24} />
+          <Link target="_blank" href="https://www.youtube.com/@ifnastro/videos">
+            <Youtube size={24} />
+          </Link>
         </div>
         <div className="p-2 rounded-full bg-cyan-500 text-black">
-          <Instagram size={24} />
+          <Link target="_blank" href="https://www.instagram.com/ifnastro/">
+            <Instagram size={24} />
+          </Link>
         </div>
         {/* <div className="p-2 rounded-full bg-cyan-500 text-black">
           <Whatsapp size={24} />

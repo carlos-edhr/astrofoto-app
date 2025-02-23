@@ -97,7 +97,7 @@ export const PurchaseConfirmationEmailToUser: React.FC<
                 <p className="text-sm text-gray-600 font-semibold">
                   ¡Conéctate con la comunidad astrofotográfica! 📸
                 </p>
-                <div className="flex justify-center space-x-4 mt-2">
+                <div className="flex flex-col items-center space-y-2 mt-2">
                   <a
                     href="https://www.youtube.com/@ifnastro/videos"
                     className="text-blue-600 hover:text-blue-800 text-sm font-medium"

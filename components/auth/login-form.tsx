@@ -69,7 +69,7 @@ export const LoginForm = () => {
   return (
     <CardWrapper
       headerLabel="¡Bienvenido al Congreso Internacional de Astrofotografía!"
-      backButtonLabel="Don't have an account?"
+      backButtonLabel="¿No tienes cuenta?"
       backButtonHref="/auth/register"
       showSocial
     >
@@ -107,7 +107,7 @@ export const LoginForm = () => {
                         <Input
                           {...field}
                           disabled={isPending}
-                          placeholder="your@email.com"
+                          placeholder="tucorreo@email.com"
                           type="email"
                         />
                       </FormControl>
@@ -135,7 +135,9 @@ export const LoginForm = () => {
                         asChild
                         className="px-0 font-normal"
                       >
-                        <Link href="/auth/reset">Forgot password?</Link>
+                        <Link href="/auth/reset">
+                          ¿Olvidaste tu contraseña?
+                        </Link>
                       </Button>
                       <FormMessage />
                     </FormItem>

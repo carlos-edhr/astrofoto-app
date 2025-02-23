@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
@@ -12,6 +12,22 @@ interface NavItem {
 
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    // Add event listener immediately
+    window.addEventListener("scroll", handleScroll);
+
+    // Initial check
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const leftNavItems: NavItem[] = [
     { label: "NOSOTROS", href: "#nosotros" },
@@ -26,7 +42,9 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="font-robotoCondensed fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <nav
+      className={`font-robotoCondensed fixed top-0 left-0 right-0 z-20 bg-transparent transition-all duration-300  ${scrolled ? "md:backdrop-blur-md md:bg-white/30" : ""}`}
+    >
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-between h-16">
           {/* Mobile menu button */}
@@ -47,9 +65,13 @@ const NavBar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="font-robotoCondensed font-[400] relative text-white text-sm hover:text-white/60 transition-colors
+                  className={`font-robotoCondensed font-[400] relative text-sm hover:text-white/60 transition-colors
                              after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-azulAstro
-                             hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
+                             hover:after:w-full after:transition-all after:duration-300 cursor-pointer ${
+                               scrolled
+                                 ? "text-gray-800 hover:text-gray-800/60"
+                                 : "text-white"
+                             }`}
                 >
                   {item.label}
                 </a>
@@ -78,7 +100,9 @@ const NavBar = () => {
                               hover:after:w-full after:transition-all after:duration-300
                               ${
                                 item.label === "INVITADOS"
-                                  ? "text-white hover:text-white/60"
+                                  ? scrolled
+                                    ? "text-gray-800 hover:text-gray-800/60"
+                                    : "text-white hover:text-white/60"
                                   : "text-azulAstro hover:text-azulAstro/80"
                               }`}
                 >

@@ -158,15 +158,15 @@ const Talleres = () => (
 
       {/* <LogoCarousel /> */}
 
-      <Invitacion videoSrc="/videos/astrofoto-vid-2.mp4" />
+      {/* <Invitacion videoSrc="/videos/astrofoto-vid-2.mp4" /> */}
 
-      <Fundadores
+      {/* <Fundadores
         heading="Caneck Leyva"
         // subheading="De la Ingeniería a la Fotografía "
         founderImageUrl="/retratos/Caneck Square1.jpg" // Place your actual image path here
         founderName="Caneck Leyva"
-        description={`La pasión por la astrofotografía y la divulgación científica llevó a Caneck a crear este Congreso de Astrofotografía, un espacio donde entusiastas y profesionales pueden compartir su amor por la exploración del cielo. Con años de experiencia en observación astronómica y fotografía espacial, su misión es acercar el conocimiento del cosmos a más personas, combinando la tecnología con la emoción de descubrir el universo a través de la lente.🚀✨`}
-      />
+        description={`La pasión por la astrofotografía y la divulgación científica llevó a Caneck a crear este Congreso de Astrofotografía, un espacio donde entusiastas y profesionales pueden compartir su amor por la exploración del cielo. Con años de experiencia en observación astronómica y fotografía espacial, su misión es acercar el conocimiento del cosmos a más personas, combinando la tecnología con la emoción de descubrir el universo a través de la lente.`}
+      /> */}
       {/* <AboutMe name="Jane Doe"
         role="Frontend Developer"
         avatarUrl="/caneck-leyva-fundador.jpg"
