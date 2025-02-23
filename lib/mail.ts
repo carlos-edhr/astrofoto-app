@@ -99,10 +99,10 @@ export const sendPurchaseConfirmationEmailToUser = async (
       username: username,
       purchaseAmount: purchaseAmount,
     }),
-    attachments: [
-      {
-        filename: "/brand/CIAF8-Logo1.png", // Logo attachment
-      },
-    ],
+    // attachments: [
+    //   {
+    //     filename: "/brand/CIAF8-Logo1.png", // Logo attachment
+    //   },
+    // ],
   });
 };

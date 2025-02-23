@@ -17,13 +17,13 @@ export const PurchaseConfirmationEmailToUser: React.FC<
         <div className="bg-gray-50 font-sans p-4">
           <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
             {/* Logo */}
-            <div className="p-6 border-b bg-slate-900">
+            {/* <div className="p-6 border-b bg-slate-900">
               <img
                 src="/brand/CIAF8-Logo1.png"
                 alt="Congreso Internacional de Astrofotografía"
                 className="h-16 mx-auto"
               />
-            </div>
+            </div> */}
 
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-800 to-slate-900 text-white text-center py-8">
