@@ -1,5 +1,6 @@
 import { ConfirmRegisterEmail } from "@/components/auth/confirm-register-email-template";
 import { PurchaseConfirmationEmailToAdmin } from "@/components/auth/purchase-confirmation-email-to-admin";
+import { PurchaseConfirmationEmailToUser } from "@/components/auth/purchase-confirmation-email-to-user";
 import { PasswordResetEmail } from "@/components/auth/reset-password-email-template";
 import { TwoFactorAuthenticationEmail } from "@/components/auth/two-factor-authentication-email-template";
 import { Resend } from "resend";
@@ -49,7 +50,7 @@ export const sendVerificationEmail = async (
   });
 };
 
-//Confirm Purchsae to Admin Email
+//Confirm Purchase to Admin Email
 export const sendPurchaseConfirmationEmailToAdmin = async (
   streamName: string,
   purchaseId: string,
@@ -57,10 +58,13 @@ export const sendPurchaseConfirmationEmailToAdmin = async (
   userEmail: string,
   purchaseAmount: number,
 ) => {
-  const adminEmail = ["carlos.edhr@protonmail.com", "caneck.leyva@gmail.com"];
+  const adminEmail = [
+    "carlos.edhr@protonmail.com",
+    //  "caneck.leyva@gmail.com" <--- PENDING PRODUCTION READY DEPLOYMENT --->
+  ];
 
   await resend.emails.send({
-    from: "Congreso de Astrofotografía <onboarding@congresodeastrofotografia.com>",
+    from: "Congreso de Astrofotografía <ventas@congresodeastrofotografia.com>",
     to: [...adminEmail],
     subject: "Automated Purchase Confirmation",
     react: PurchaseConfirmationEmailToAdmin({
@@ -70,5 +74,35 @@ export const sendPurchaseConfirmationEmailToAdmin = async (
       userEmail: userEmail,
       purchaseAmount: purchaseAmount,
     }),
+  });
+};
+//Confirm Purchase to User Email
+export const sendPurchaseConfirmationEmailToUser = async (
+  streamName: string,
+  purchaseId: string,
+  username: string,
+  userEmail: string,
+  purchaseAmount: number,
+) => {
+  const adminEmail = [
+    userEmail,
+    // "caneck.leyva@gmail.com" <--- PENDING PRODUCTION READY DEPLOYMENT --->
+  ];
+
+  await resend.emails.send({
+    from: "Congreso de Astrofotografía <ventas@congresodeastrofotografia.com>",
+    to: [...adminEmail],
+    subject: "¡Gracias por tu compra!",
+    react: PurchaseConfirmationEmailToUser({
+      streamName: streamName,
+      purchaseId: purchaseId,
+      username: username,
+      purchaseAmount: purchaseAmount,
+    }),
+    attachments: [
+      {
+        filename: "/brand/CIAF8-Logo1.png", // Logo attachment
+      },
+    ],
   });
 };

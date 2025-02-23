@@ -1,7 +1,10 @@
 import { getStreamById } from "@/data/stream";
 import { getUserById } from "@/data/user";
 import { db } from "@/lib/db";
-import { sendPurchaseConfirmationEmailToAdmin } from "@/lib/mail";
+import {
+  sendPurchaseConfirmationEmailToAdmin,
+  sendPurchaseConfirmationEmailToUser,
+} from "@/lib/mail";
 import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
@@ -52,6 +55,14 @@ export async function POST(req: Request) {
     // console.log("Purchase -->", purchase);
     //send Email to Admin
     await sendPurchaseConfirmationEmailToAdmin(
+      stream?.name ?? "Unknown Stream",
+      purchase.id,
+      user?.username ?? "Username not set",
+      user?.email ?? "Email not set",
+      stream?.price ?? 0,
+    );
+
+    await sendPurchaseConfirmationEmailToUser(
       stream?.name ?? "Unknown Stream",
       purchase.id,
       user?.username ?? "Username not set",

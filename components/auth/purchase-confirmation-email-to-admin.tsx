@@ -64,7 +64,7 @@ export const PurchaseConfirmationEmailToAdmin: React.FC<
                 </div>
                 <div className="flex justify-between text-red-600 border-b pb-2">
                   <span className="font-bold">Monto Total:{"    "}</span>
-                  <span>${purchaseAmount.toLocaleString("es-ES")}</span>
+                  <span>${purchaseAmount.toLocaleString("es-ES")} MXN</span>
                 </div>
               </div>
 
