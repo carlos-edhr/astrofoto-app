@@ -1,6 +1,6 @@
 import { Results } from "./_components/results";
 import { Suspense } from "react";
-function Home() {
+function Transmisiones() {
   return (
     <div className="h-full p-8 max-w-screen-2xl mx-auto ">
       <p>PROTECTED ROUTE: DASHBAORD RESULTS</p>
@@ -10,7 +10,7 @@ function Home() {
     </div>
   );
 }
-export default Home;
+export default Transmisiones;
 // export const ResultsSkeleton = () => {
 //   return <div>s</div>;
 // };

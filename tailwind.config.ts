@@ -19,6 +19,10 @@ const config = withUt({
       },
     },
     extend: {
+      backdropFilter: {
+        none: "none",
+        blur: "blur(12px)",
+      },
       fontFamily: {
         roboto: ["var(--font-roboto)", "sans-serif"],
         robotoCondensed: ["var(--font-roboto-condensed)", "sans-serif"],
@@ -148,7 +152,7 @@ const config = withUt({
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-filters")],
 } satisfies Config);
 
 export default config;

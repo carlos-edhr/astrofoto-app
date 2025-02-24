@@ -21,6 +21,7 @@ import {
 } from "lucide-react"; // Lucide Icons
 import { useSidebar } from "@/store/use-sidebar";
 import { Toggle } from "./toggle";
+import Link from "next/link";
 
 const Options = () => {
   const [activeItem, setActiveItem] = useState("Dashboard");
@@ -38,14 +39,14 @@ const Options = () => {
   };
 
   const menuItems = [
-    { name: "Home", icon: <HomeIcon /> },
-    { name: "Streams", icon: <Video /> },
-    { name: "Videos", icon: <MonitorPlay /> },
-    { name: "Store", icon: <Store /> },
-    { name: "Gallery", icon: <Camera /> },
-    { name: "Purchases", icon: <ListChecks />, hasSubmenu: true },
-    { name: "Calendar", icon: <Calendar /> },
-    { name: "Profile", icon: <User /> },
+    { name: "Home", href: "/home", icon: <HomeIcon /> },
+    { name: "Streams", href: "/transmisiones", icon: <Video /> },
+    { name: "Videos", href: "", icon: <MonitorPlay /> },
+    { name: "Store", href: "", icon: <Store /> },
+    { name: "Gallery", href: "", icon: <Camera /> },
+    { name: "Purchases", href: "", icon: <ListChecks />, hasSubmenu: true },
+    { name: "Calendar", href: "", icon: <Calendar /> },
+    { name: "Profile", href: "", icon: <User /> },
   ];
 
   if (!collapsed) {
@@ -59,18 +60,19 @@ const Options = () => {
           <ul className="space-y-4">
             {menuItems.map((item) => (
               <li key={item.name}>
-                <button
-                  className={`flex items-center w-full p-2 rounded-lg 
+                <Link href={item.href}>
+                  <button
+                    className={`flex items-center w-full p-2 rounded-lg 
               ${activeItem === item.name ? "bg-gray-700" : "hover:bg-gray-700"}`}
-                  onClick={() => handleItemClick(item.name)}
-                >
-                  <span className="mr-4">{item.icon}</span>
-                  {item.name}
-                  {item.hasSubmenu && (
-                    <span className="ml-auto">{submenuOpen ? "▲" : "▼"}</span>
-                  )}
-                </button>
-
+                    onClick={() => handleItemClick(item.name)}
+                  >
+                    <span className="mr-4">{item.icon}</span>
+                    {item.name}
+                    {item.hasSubmenu && (
+                      <span className="ml-auto">{submenuOpen ? "▲" : "▼"}</span>
+                    )}
+                  </button>
+                </Link>
                 {/* Submenu */}
                 {item.hasSubmenu && submenuOpen && (
                   <ul className="ml-6 mt-2 space-y-2">
