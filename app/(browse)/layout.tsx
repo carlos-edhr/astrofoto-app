@@ -5,6 +5,7 @@ import Navbar from "./_components/navbar";
 import { Sidebar, SidebarSkeleton } from "./_components/sidebar";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { currentUser } from "@/lib/auth";
+import DashboardFooter from "./_components/dashboard-footer";
 
 interface BrowseLayoutProps {
   params: { username: string };
@@ -26,7 +27,7 @@ const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex h-full pt-20">
+      <div className="flex h-full pt-20 bg-blackSpace">
         <Suspense fallback={<SidebarSkeleton />}>
           <Sidebar />
         </Suspense>

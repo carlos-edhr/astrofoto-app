@@ -6,7 +6,7 @@ export const Results = async () => {
   const data = await getStreams();
   // console.log(data);
   return (
-    <div className="text-lg font-semibold mb-4">
+    <div className="min-h-screen text-lg font-semibold mb-4">
       <h2>Transmisiones para ti</h2>
       {data.length === 0 && (
         <div className="text-muted-foreground text-sm">

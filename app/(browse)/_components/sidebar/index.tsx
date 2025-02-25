@@ -11,7 +11,7 @@ export const Sidebar = async () => {
   return (
     <Wrapper>
       <Toggle />
-      <div className=" pt-1 lg:pt-0 ">
+      <div className="font-roboto pt-1 lg:pt-0 ">
         <Options />
         {/* <Following data={following} />
         <Recommended data={recommended} /> */}
@@ -22,7 +22,7 @@ export const Sidebar = async () => {
 
 export const SidebarSkeleton = () => {
   return (
-    <aside className="fixed left-0 flex flex-col w-[70px] lg:w-60 h-full bg-background border-r border-[#2d2e35] z-50">
+    <aside className="fixed left-0 flex flex-col w-[70px] lg:w-60 h-full bg-background border-r border-[#2d2e35] bg-opacity-50 z-50">
       <ToggleSkeleton />
       <FollowingSkeleton />
       {/* <RecommendedSkeleton /> */}

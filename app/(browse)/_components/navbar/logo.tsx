@@ -13,15 +13,15 @@ export const Logo = () => {
       <div className="flex items-center gap-x-4 hover:opacity-75 transition">
         <div className=" p-1 mr-12 shrink-0 lg:mr-0 lg:shrink">
           <Image
-            src="/CIAF7 Logo-35.png"
+            src="/brand/CIAF8-Estrella1.png"
             alt="Astrofoto-logo"
-            height="150"
-            width="100"
+            height="125"
+            width="75"
           />
         </div>
         <div className={cn("hidden lg:block", font.className)}>
-          <p className="text-lg font-semibold ">Astrofotografía</p>
-          <p className="text-xs text-muted-foreground text-primaryLanding">
+          <p className="font-roboto text-lg font-semibold ">Astrofotografía</p>
+          <p className="font-roboto text-xs text-muted-foreground text-primaryLanding">
             Congreso Internacional de Astrofotografía
           </p>
         </div>

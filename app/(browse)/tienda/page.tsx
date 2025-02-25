@@ -1,26 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { format } from "date-fns";
-import { Separator } from "@/components/ui/separator";
 import DashboardHeader from "../_components/dashboard-header";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { format } from "date-fns";
 import DashboardFooter from "../_components/dashboard-footer";
 
-const HomePage = () => {
-  const featuredPost = {
-    title:
-      "Únete al Congreso Internacional de Astrofotografía 2025: Pasión, Aprendizaje y Comunidad Global",
-    excerpt:
-      "¿Listo para sumergirte en el evento más inspirador del año para los amantes del cosmos? El Congreso Internacional de Astrofotografía 2025 reunirá a panelistas expertos de países como Chile, Japón, España y Australia, quienes compartirán técnicas innovadoras, avances tecnológicos y experiencias únicas. Del 10 al 13 de abril, en la vibrante ciudad de Barcelona, disfrutarás de conferencias magistrales, talleres prácticos con equipos de última generación y sesiones de networking con entusiastas y profesionales. ¡Reserva tus fechas y prepárate para vivir el cielo como nunca antes!",
-    category: "Design Trends",
-    slug: "/posts/2030-maya-louviere",
-    author: {
-      name: "Caneck Leyva",
-      avatar: "/retratos/Caneck Square1.jpg", // Add your avatar image path
-    },
-    date: "2024-03-15",
-  };
-
+const TiendaPage = () => {
   const posts = [
     {
       title:
@@ -97,86 +83,21 @@ const HomePage = () => {
       },
       date: "2024-03-15",
     },
-    {
-      title:
-        "Astrofotografía con DSLR vs. Cámaras Especializadas: ¿Cuál Elegir?",
-      excerpt:
-        "¿Vale la pena invertir en una cámara astronómica modificada o es suficiente una DSLR común? Comparamos ventajas y desventajas de ambos equipos, incluyendo sensibilidad al hidrógeno alfa, costo y versatilidad, para ayudarte a decidir.",
-      category: "Equipamiento",
-      slug: "/posts/achie-lauren",
-      author: {
-        name: "John Doe",
-        avatar: "/CIAF7-D1-01 Roberto.jpg", // Add your avatar image path
-      },
-      date: "2024-03-15",
-    },
+
     // Add more posts as needed
   ];
 
   return (
-    <div className=" h-full px-8 max-w-screen-2xl mx-auto">
+    <div className="h-full px-8 max-w-screen-2xl mx-auto ">
       <DashboardHeader
-        title={"Congreso Internacional de Astrofotografía"}
+        title={"Tienda"}
         subtitle={
-          "¡Bienvenido! Aquí encontrarás historias y artículos sobre el Congreso, Astrofotografía y divulgación científica."
+          "Aquí encontrarás mercancía relacionada al Congreso Internacional de Astrofotografía."
         }
       />
-
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="w-full md:w-1/2 relative aspect-video">
-            <Image
-              src="/fotografias/panoramica-1.jpg"
-              alt="Featured post"
-              fill
-              className="rounded-lg object-cover"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII="
-            />
-          </div>
-          <div className="w-full md:w-1/2 space-y-4">
-            <span className="text-sm font-medium text-primary">
-              {featuredPost.category}
-            </span>
-            <h1 className="font-roboto text-3xl md:text-4xl font-bold tracking-tight">
-              {featuredPost.title}
-            </h1>
-            <p className="font-roboto text-muted-foreground line-clamp-3">
-              {featuredPost.excerpt}
-            </p>
-            {/* Add Author Metadata Section */}
-            <div className="flex items-center gap-3 pt-2">
-              <div className="relative h-10 w-10">
-                <Image
-                  src={featuredPost.author.avatar}
-                  alt={featuredPost.author.name}
-                  fill
-                  className="rounded-full object-cover"
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII="
-                />
-              </div>
-              <div>
-                <p className="font-bebas text-sm font-medium">
-                  {featuredPost.author.name}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {format(new Date(featuredPost.date), "MMM dd, yyyy")}
-                </p>
-              </div>
-            </div>
-            <Button asChild>
-              <Link href={featuredPost.slug}>Read More</Link>
-            </Button>
-          </div>
-        </div>
-        <Separator className="w-full h-[1px] bg-slate-500 mt-16" />
-      </section>
-
       {/* Recent Posts Grid */}
       <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold mb-8">Últimos artículos</h2>
+        <h2 className="text-2xl font-bold mb-8">Mercancía del Congreso</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <div key={post.slug} className="relative">
@@ -247,4 +168,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default TiendaPage;
