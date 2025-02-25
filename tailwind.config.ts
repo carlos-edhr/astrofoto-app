@@ -19,6 +19,9 @@ const config = withUt({
       },
     },
     extend: {
+      gridTemplateColumns: {
+        "5": "repeat(5, minmax(0, 1fr))",
+      },
       backdropFilter: {
         none: "none",
         blur: "blur(12px)",
