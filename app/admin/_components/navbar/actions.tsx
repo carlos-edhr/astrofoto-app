@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { currentUser } from "@/lib/auth";
-import { Clapperboard } from "lucide-react";
+import { Clapperboard, Undo2 } from "lucide-react";
 import Link from "next/link";
 import { UserButton } from "@/components/auth/user-button";
 // import { SignInButton } from "@/components/auth/sign-in-button";
@@ -36,9 +36,9 @@ export const Actions = async () => {
             className="text-muted-foreground hover:text-primary"
             asChild
           >
-            <Link href={`/admin/dashboard`}>
-              <Clapperboard className="h-5 w-5 lg:mr-2" />
-              <span className="hidden lg:block">Admin Dashboard</span>
+            <Link href={`/home`}>
+              <Undo2 className="h-5 w-5 lg:mr-2" />
+              <span className="hidden lg:block">Return</span>
             </Link>
           </Button>
           {/* <UserButton afterSignOutUrl="/" /> */}

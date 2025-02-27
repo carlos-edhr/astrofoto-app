@@ -7,10 +7,10 @@ body,
 :root {
   font-family: "General Sans", sans-serif;
   width: 100dvw;
-  background-color: "#dfdff0";
+  background-color: "#0D0D0D";
   overflow-x: hidden;
   height: 100%;
-  /* @apply bg-neutral-900/80; */
+  @apply bg-blackSpace;
 }
 
 @layer components {
@@ -486,5 +486,14 @@ html {
   50% {
     transform: translateY(66%) scale(0.65);
     opacity: 0.8;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

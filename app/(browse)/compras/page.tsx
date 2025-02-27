@@ -217,7 +217,7 @@ const ComprasPage = () => {
           "Aquí encontrarás todas tus compras realizadas en el sitio del Congreso (boletos o acceso al Congreso, videos pre-grabados del cursos ó mercancía de nuestra tienda)."
         }
       />
-      <section className="container min-h-screen mx-auto px-4 py-12">
+      <section className="container min-h-screen mx-auto px-4 py-12 bg-blackSpace">
         <h2 className="text-2xl font-bold mb-8">Compras realizadas</h2>
 
         <Separator className="w-full h-[1px]  m-7 bg-slate-500 mt-8" />

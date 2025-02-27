@@ -28,7 +28,7 @@ const config = withUt({
       },
       fontFamily: {
         roboto: ["var(--font-roboto)", "sans-serif"],
-        robotoCondensed: ["var(--font-roboto-condensed)", "sans-serif"],
+        robotoCondensed: ["var(--font-robotoCondensed)", "sans-serif"],
         bebas: ["var(--font-bebas-neue)", "sans-serif"],
         zentry: ["zentry", "sans-serif"],
         general: ["general", "sans-serif"],
