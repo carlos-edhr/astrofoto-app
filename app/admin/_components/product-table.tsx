@@ -1,4 +1,5 @@
 //product-table.tsx
+"use client";
 import {
   Table,
   TableBody,
@@ -15,6 +16,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Edit, Trash, MoreHorizontal, Plus, PlusIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationLink,
+  PaginationNext,
+} from "@/components/ui/pagination";
+import { useState } from "react";
+
 // Agrega estos datos antes del componente AdminDashboard
 const products = [
   {
@@ -45,17 +56,112 @@ const products = [
     sold: "72",
     profit: "$103",
   },
+  {
+    product: "Apple Watch Series 7",
+    category: "Electronics",
+    price: "$296",
+    sold: "22",
+    profit: "$45",
+  },
+  {
+    product: "Macbook Pro M1",
+    category: "Electronics",
+    price: "$546",
+    sold: "12",
+    profit: "$125",
+  },
+  {
+    product: "Dell Inspiron 15",
+    category: "Electronics",
+    price: "$443",
+    sold: "64",
+    profit: "$247",
+  },
+  {
+    product: "HP Probook 450",
+    category: "Electronics",
+    price: "$499",
+    sold: "72",
+    profit: "$103",
+  },
+  {
+    product: "Apple Watch Series 7",
+    category: "Electronics",
+    price: "$296",
+    sold: "22",
+    profit: "$45",
+  },
+  {
+    product: "Macbook Pro M1",
+    category: "Electronics",
+    price: "$546",
+    sold: "12",
+    profit: "$125",
+  },
+  {
+    product: "Dell Inspiron 15",
+    category: "Electronics",
+    price: "$443",
+    sold: "64",
+    profit: "$247",
+  },
+  {
+    product: "HP Probook 450",
+    category: "Electronics",
+    price: "$499",
+    sold: "72",
+    profit: "$103",
+  },
+  {
+    product: "Apple Watch Series 7",
+    category: "Electronics",
+    price: "$296",
+    sold: "22",
+    profit: "$45",
+  },
+  {
+    product: "Macbook Pro M1",
+    category: "Electronics",
+    price: "$546",
+    sold: "12",
+    profit: "$125",
+  },
+  {
+    product: "Dell Inspiron 15",
+    category: "Electronics",
+    price: "$443",
+    sold: "64",
+    profit: "$247",
+  },
+  {
+    product: "HP Probook 450",
+    category: "Electronics",
+    price: "$499",
+    sold: "72",
+    profit: "$103",
+  },
 ];
 
+const ITEMS_PER_PAGE = 7;
+
 const ProductTable = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
+
   //   const handleAddProduct = () => {
   //     // Lógica para añadir nuevo producto
   //     console.log("Añadir nuevo producto");
   //   };
+
+  const currentProducts = products.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE,
+  );
+
   return (
     <div className="bg-stone-800 p-6 rounded-lg shadow-sm border border-slate-700 mb-8">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold">Productos Destacados</h2>
+        <h2 className="text-xl font-semibold">Productos en venta</h2>
         <Button
           //   onClick={handleAddProduct}
           className="bg-slate-700 hover:bg-slate-600 text-slate-300"
@@ -77,7 +183,7 @@ const ProductTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {products.map((product, index) => (
+          {currentProducts.map((product, index) => (
             <TableRow key={index} className="hover:bg-stone-700/50">
               <TableCell className="font-medium">{product.product}</TableCell>
               <TableCell>{product.category}</TableCell>
@@ -105,6 +211,52 @@ const ProductTable = () => {
           ))}
         </TableBody>
       </Table>
+      <div className="mt-6">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                href="#"
+                className="text-slate-300 hover:bg-slate-700"
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                  e.preventDefault();
+                  setCurrentPage(Math.max(1, currentPage - 1));
+                }}
+              />
+            </PaginationItem>
+
+            {Array.from({ length: totalPages }, (_, i) => (
+              <PaginationItem key={i}>
+                <PaginationLink
+                  href="#"
+                  className={`${
+                    currentPage === i + 1
+                      ? "bg-slate-700 text-slate-300"
+                      : "hover:bg-slate-700 text-slate-400"
+                  }`}
+                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                    e.preventDefault();
+                    setCurrentPage(i + 1);
+                  }}
+                >
+                  {i + 1}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+
+            <PaginationItem>
+              <PaginationNext
+                href="#"
+                className="text-slate-300 hover:bg-slate-700"
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                  e.preventDefault();
+                  setCurrentPage(Math.min(totalPages, currentPage + 1));
+                }}
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
     </div>
   );
 };
