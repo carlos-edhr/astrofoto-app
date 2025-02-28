@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { WeekChart } from "../_components/week-chart";
 import ProductTable from "../_components/product-table";
+import AnalyticsDashboard from "../_components/analytics-section";
 
 // Dynamically import the chart component with SSR disabled
 const PaymentsChart = dynamic(
@@ -65,7 +66,6 @@ const AdminDashboard = () => {
           "¡Bienvenido! Aquí puedes revisar y modificar información crucial acerca de tu aplicación."
         }
       />
-
       {/* MAIN DASHBOARD SECTION HERE */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {stats.map((stat, index) => (
@@ -102,7 +102,6 @@ const AdminDashboard = () => {
           </div>
         ))}
       </div>
-
       <Separator className="w-full h-[1px] m-7 bg-slate-800 mt-8" />
       {/* Payments Overview Section */}
       <div className="bg-stone-800 p-6 rounded-lg shadow-sm border border-slate-700 mb-12">
@@ -116,12 +115,13 @@ const AdminDashboard = () => {
           <WeekChart />
         </div>
       </div>
-
       <Separator className="w-full h-[1px] m-7 bg-slate-800 mt-8" />
-
+      {/* // Add this section after your metrics cards */}
+      <Separator className="w-full h-[1px] m-7 bg-slate-800 mt-8" />
+      <AnalyticsDashboard />
+      <Separator className="w-full h-[1px] m-7 bg-slate-800 mt-8" />
       {/* TABLA */}
       <ProductTable />
-
       <DashboardFooter />
     </div>
   );
