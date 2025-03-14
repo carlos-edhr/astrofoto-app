@@ -15,23 +15,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     error: "/auth/error",
   },
   events: {
-    // Create stream related to user and username
-    // createUser: async ({ user }) => {
-    //   const email = user.email || "";
-    //   const username = generateFromEmail(email, 3);
-
-    //   await db.user.update({
-    //     where: { email },
-    //     data: {
-    //       username: username,
-    //       stream: {
-    //         create: {
-    //           name: `${username}'s stream`,
-    //         },
-    //       },
-    //     },
-    //   });
-    // },
     async linkAccount({ user }) {
       await db.user.update({
         where: { id: user.id },
