@@ -58,10 +58,7 @@ export const sendPurchaseConfirmationEmailToAdmin = async (
   userEmail: string,
   purchaseAmount: number,
 ) => {
-  const adminEmail = [
-    "carlos.edhr@protonmail.com",
-    //  "caneck.leyva@gmail.com" <--- PENDING PRODUCTION READY DEPLOYMENT --->
-  ];
+  const adminEmail = ["carlos.edhr@protonmail.com", "caneck.leyva@gmail.com"];
 
   await resend.emails.send({
     from: "Congreso de Astrofotografía <ventas@congresodeastrofotografia.com>",
@@ -84,10 +81,7 @@ export const sendPurchaseConfirmationEmailToUser = async (
   userEmail: string,
   purchaseAmount: number,
 ) => {
-  const adminEmail = [
-    userEmail,
-    // "caneck.leyva@gmail.com" <--- PENDING PRODUCTION READY DEPLOYMENT --->
-  ];
+  const adminEmail = [userEmail, "caneck.leyva@gmail.com"];
 
   await resend.emails.send({
     from: "Congreso de Astrofotografía <ventas@congresodeastrofotografia.com>",
