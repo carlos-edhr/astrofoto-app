@@ -43,6 +43,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
 
   return (
     <div
+      id="invitacion"
       ref={cardRef}
       className="
     relative

@@ -8,73 +8,123 @@ import {
   LinkedinIcon,
   GlobeIcon,
 } from "lucide-react";
-import StarsCanvas from "./landing-star-background";
+import FloatingArrow from "./floating-arrow";
 
-interface FoundersProps {
-  heading: string;
-  subheading?: string;
-  founderImageUrl: string;
-  founderName: string;
-  description: string;
-}
+export function Fundadores() {
+  const founders = [
+    {
+      name: "Caneck Leyva",
+      imageUrl: "/retratos/Caneck Bubble1.png",
+      description:
+        "La pasión por la astrofotografía y la divulgación científica llevó a Caneck a crear este Congreso de Astrofotografía, un espacio donde entusiastas y profesionales pueden compartir su amor por la exploración del cielo. ",
+      socialLinks: {
+        facebook: "https://www.facebook.com/kane.leyva",
+        instagram: "https://www.instagram.com/kaneleyva/",
+        website: "https://www.caneckleyva.com/",
+      },
+    },
+    {
+      name: "Brandon Echeverrys",
+      imageUrl: "/retratos/Brandon Bubble1.png",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. ",
+      socialLinks: {
+        facebook: "https://www.facebook.com/kane.leyva",
+        instagram: "https://www.instagram.com/kaneleyva/",
+        website: "https://www.caneckleyva.com/",
+      },
+    },
+  ];
 
-export function Fundadores({
-  heading,
-  subheading,
-  founderImageUrl,
-  founderName,
-  description,
-}: FoundersProps) {
   return (
-    <section
-      className="relative flex  w-full
-    max-w-[980px] mt-16 text-slate-200 py-16 rounded-2xl  overflow-hidden bg-gradient-to-br from-[#1c1c1c] to-[#000000] mx-auto"
-    >
-      <div className="container mx-auto flex flex-col items-start gap-8 px-4 md:flex-row md:px-8 z-30">
-        {/* Left Side: Founder Portrait */}
-        <div className="relative flex-shrink-0 w-full md:w-1/2 rounded-2xl">
-          <Image
-            src={founderImageUrl}
-            alt={founderName}
-            width={800}
-            height={800}
-            className="max-h-fit w-full rounded-2xl"
-          />
-        </div>
+    <section className="relative w-full max-w-[1380px] mt-16  py-16  overflow-hidden bg-gradient-to-b from-[#1c1c1c] to-[#000000] mx-auto">
+      <div className="container mx-auto px-4 md:px-8 z-30  md:pb-32">
+        <h1 className="font-bebas text-4xl font-bold text-center mb-12 uppercase text-white">
+          FUNDADORES
+        </h1>
 
-        {/* Right Side: Text Content */}
-        <div className="flex w-full flex-col justify-center h-full md:w-1/2 md:pl-8">
-          <div className="flex flex-col items-start">
-            <h2 className="text-3xl font-bold uppercase leading-tight md:text-4xl">
-              {heading}
-              <div className="h-1 w-full bg-blue-500 mt-4 mb-6" />
-            </h2>
-            {/* <div className="h-1 w-full bg-blue-500 mt-4 mb-6" />{" "} */}
-            {/* Added bar */}
-            <p className="text-gray-200 leading-relaxed text-left max-w-2xl">
-              {description}
-            </p>
-            <div className="mt-8 flex flex-row gap-4 items-center">
-              <a
-                className="flex"
-                href="https://www.caneckleyva.com/"
-                target="_blank"
-              >
-                <GlobeIcon className="w-6 h-6 text-white hover:text-blue-400 transition-colors" />
-              </a>
-              <a href="https://www.facebook.com/kane.leyva" target="_blank">
-                <FacebookIcon className="w-6 h-6 text-white hover:text-blue-400 transition-colors" />
-              </a>
-              <a href="https://www.instagram.com/kaneleyva/" target="_blank">
-                <InstagramIcon className="w-6 h-6 text-white hover:text-blue-400 transition-colors" />
-              </a>
-              <a href="https://www.linkedin.com/in/caneckleyva" target="_blank">
-                <LinkedinIcon className="w-6 h-6 text-white hover:text-blue-400 transition-colors" />
-              </a>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-8">
+          {founders.map((founder) => (
+            <div
+              key={founder.name}
+              className="w-full md:w-1/2 flex flex-col items-center"
+            >
+              {/* Founder Image */}
+              <div className="w-full max-w-[300px] flex-shrink-0 mb-8">
+                <Image
+                  src={founder.imageUrl}
+                  alt={founder.name}
+                  width={140}
+                  height={140}
+                  className="w-auto h-auto  object-cover"
+                />
+              </div>
+
+              {/* Founder Content */}
+              <div className="w-full flex flex-col items-center text-center">
+                <h2 className="font-bebas text-plata text-3xl font-bold uppercase mb-4">
+                  {founder.name}
+                </h2>
+
+                <div className="text-white leading-relaxed text-justify mb-6 px-4 md:px-0 max-w-[500px]">
+                  <div className="h-0.5 w-full bg-azulAstro mt-4 mb-6" />
+                  <p>{founder.description}</p>
+                </div>
+
+                {Object.keys(founder.socialLinks).length > 0 && (
+                  <div className="flex gap-4 justify-center">
+                    {founder.socialLinks.facebook && (
+                      <a
+                        href={founder.socialLinks.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          width={25}
+                          height={25}
+                          src={"/brand/icons/Icon-FB2.png"}
+                          alt="Facebook"
+                        />
+                      </a>
+                    )}
+                    {founder.socialLinks.instagram && (
+                      <a
+                        href={founder.socialLinks.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          width={25}
+                          height={25}
+                          src={"/brand/icons/Icon-IG2.png"}
+                          alt="Instagram"
+                        />
+                      </a>
+                    )}
+                    {founder.socialLinks.website && (
+                      <a
+                        href={founder.socialLinks.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          width={25}
+                          height={25}
+                          src={"/brand/icons/Icon-WEB2.png"}
+                          alt="Website"
+                        />
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
+      {/* Flecha flotante para hacer scroll a la siguiente sección */}
+
+      <FloatingArrow nextSectionId="nosotros" />
     </section>
   );
 }
