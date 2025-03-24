@@ -10,7 +10,7 @@ import LogoCarousel from "./logo-carousel";
 
 interface BentoCardProps {
   src: string;
-  title: ReactNode;
+  title?: ReactNode;
   description?: string;
 }
 
@@ -128,10 +128,10 @@ const BentoCard = ({ src, title, description }: BentoCardProps) => {
 
 const Talleres = () => (
   <section
-    id="nosotros"
+    id="talleres"
     className=" z-10 relative w-full  my-8 pb-52 overflow-hidden"
   >
-    <StarsCanvas />
+    {/* <StarsCanvas /> */}
     <div className="container relative z-10 mx-auto px-3 md:px-10">
       {/* <div className="flex flex-row items-center align-middle h-full justify-center px-5 py-8 w-full  z-[20]">
         <div className="flex flex-col">
@@ -178,39 +178,34 @@ const Talleres = () => (
 
       <div id="talleres">
         <BentoTilt className="border-hsla relative mt-16 mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
-          <BentoCard
-            src="videos/astrofoto-vid-5.mp4"
-            title={<>Talleres</>}
-            description=""
-          />
+          <BentoCard src="/videos/astrofoto-vid-2.mp4" description="" />
         </BentoTilt>
 
         <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-          <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+          {/* <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
             <BentoCard
               src="videos/astrofoto-vid-2.mp4"
               title={<>Ciencia</>}
               description=""
             />
-          </BentoTilt>
-
+          </BentoTilt> */}
           <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-            <BentoCard
-              src="videos/astrofoto-vid-7.mp4"
-              title={<>Divulgación</>}
-              description=""
-            />
+            <BentoCard src="videos/astrofoto-vid-7.mp4" description="" />
           </BentoTilt>
 
           <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-            <BentoCard
-              src="videos/astrofoto-vid-4.mp4"
-              title={<>Arte</>}
-              description=""
-            />
+            <BentoCard src="videos/astrofoto-vid-4.mp4" description="" />
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_2 h-full">
+          <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+            <BentoCard src="videos/astrofoto-vid-7.mp4" description="" />
+          </BentoTilt>
+
+          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+            <BentoCard src="videos/astrofoto-vid-4.mp4" description="" />
+          </BentoTilt>
+
+          {/* <BentoTilt className="bento-tilt_2 h-full">
             <div className="flex size-full flex-col justify-between bg-primaryLanding p-5">
               <h1 className="bento-title  max-w-64  text-black">
                 Regístrate y se parte de nuestra comunidad
@@ -218,9 +213,9 @@ const Talleres = () => (
 
               <ArrowBigRightDashIcon className="m-5 scale-[5] self-end" />
             </div>
-          </BentoTilt>
+          </BentoTilt> */}
 
-          <BentoTilt className="bento-tilt_2">
+          {/* <BentoTilt className="bento-tilt_2">
             <video
               src="videos/astrofoto-vid-3.mp4"
               loop
@@ -228,7 +223,7 @@ const Talleres = () => (
               autoPlay
               className="size-full object-cover object-center"
             />
-          </BentoTilt>
+          </BentoTilt> */}
         </div>
       </div>
     </div>

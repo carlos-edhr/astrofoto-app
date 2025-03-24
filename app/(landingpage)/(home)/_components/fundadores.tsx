@@ -9,8 +9,38 @@ import {
   GlobeIcon,
 } from "lucide-react";
 import FloatingArrow from "./floating-arrow";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 export function Fundadores() {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    // Create an animation timeline that lifts and scales the card slightly
+    const hoverTl = gsap.timeline({ paused: true });
+    hoverTl.to(card, {
+      y: -8,
+      scale: 1.02,
+      duration: 0.2,
+      ease: "power1.out",
+    });
+
+    // Play the animation on mouse enter, reverse it on mouse leave
+    const handleMouseEnter = () => hoverTl.play();
+    const handleMouseLeave = () => hoverTl.reverse();
+
+    card.addEventListener("mouseenter", handleMouseEnter);
+    card.addEventListener("mouseleave", handleMouseLeave);
+
+    // Cleanup listeners on unmount
+    return () => {
+      card.removeEventListener("mouseenter", handleMouseEnter);
+      card.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
   const founders = [
     {
       name: "Caneck Leyva",
@@ -37,7 +67,10 @@ export function Fundadores() {
   ];
 
   return (
-    <section className="relative w-full max-w-[1380px] mt-16  py-16  overflow-hidden bg-gradient-to-b from-[#1c1c1c] to-[#000000] mx-auto">
+    <section
+      ref={cardRef}
+      className="relative w-full max-w-[1380px] mt-16  py-16  overflow-hidden bg-gradient-to-b from-[#1c1c1c] to-[#000000] mx-auto"
+    >
       <div className="container mx-auto px-4 md:px-8 z-30  md:pb-32">
         <h1 className="font-bebas text-4xl font-bold text-center mb-12 uppercase text-white">
           FUNDADORES
@@ -124,7 +157,7 @@ export function Fundadores() {
       </div>
       {/* Flecha flotante para hacer scroll a la siguiente sección */}
 
-      <FloatingArrow nextSectionId="nosotros" />
+      <FloatingArrow nextSectionId="invitacion2" />
     </section>
   );
 }

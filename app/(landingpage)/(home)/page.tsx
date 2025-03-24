@@ -3,7 +3,7 @@ import React from "react";
 import Hero from "./_components/old-hero";
 import About from "./_components/about";
 import Navbar from "./_components/navbar";
-import Talleres from "./_components/nosotros";
+import Talleres from "./_components/talleres";
 
 // import Story from "./_components/itinerario";
 import Inscripciones from "./_components/inscripciones";
@@ -15,6 +15,7 @@ import NewHero from "./_components/new-hero";
 import StarsCanvas from "./_components/landing-star-background";
 import { Fundadores } from "./_components/fundadores";
 import { Invitacion } from "./_components/invitacion";
+import { Invitacion2 } from "./_components/invitacion2";
 
 const LandingPage = () => {
   return (
@@ -26,24 +27,24 @@ const LandingPage = () => {
 
       <Invitacion />
       <Fundadores />
-      {/* <Hero /> */}
-      {/* <About /> */}
+      <Invitacion2 />
+
       <Talleres />
 
       {/* <Story /> */}
-      <Itinerario />
-      <div className="bg-gradient-to-br from-[#020814]  via-[#030916] to-[#062945]">
-        <Gallery
-          title={""}
-          images={[
-            "CIAF7-D1-04 Daniela.jpg",
-            "CIAF7-D2-06 Rogelio.jpg",
-            "CIAF7-D2-07 Juan.jpg",
-            "CIAF7-D2-09 Braulio.jpg",
-            "CIAF7-D2-10 Yuri.jpg",
-          ]}
-        />
-      </div>
+      {/* <Itinerario /> */}
+      {/* <div className="bg-gradient-to-br from-[#020814]  via-[#030916] to-[#062945]"> */}
+      <Gallery
+        title={""}
+        images={[
+          "CIAF7-D1-04 Daniela.jpg",
+          "CIAF7-D2-06 Rogelio.jpg",
+          "CIAF7-D2-07 Juan.jpg",
+          "CIAF7-D2-09 Braulio.jpg",
+          "CIAF7-D2-10 Yuri.jpg",
+        ]}
+      />
+      {/* </div> */}
 
       <Inscripciones />
       <PreguntasFrecuentes />

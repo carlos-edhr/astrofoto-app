@@ -55,7 +55,6 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
    
     items-center
     justify-center
-    rounded-xl
     overflow-hidden
     text-white
     p-6
@@ -165,8 +164,12 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
             href={`${process.env.NEXTAUTH_URL}/auth/register`}
             className="w-full"
           >
-            <Button variant="azulAstro" size="lg" className="w-full">
-              REGÍSTRATE
+            <Button
+              variant="azulAstro"
+              size="lg"
+              className="w-full font-bebas "
+            >
+              <h1 className="font-bebas text-3xl">REGÍSTRATE</h1>
             </Button>
           </Link>
         </div>
@@ -174,24 +177,51 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
       {/* Redes Sociales */}
       <div className="mt-8 flex space-x-4">
         {/* Cada ícono dentro de un círculo */}
-        <div className="p-2 rounded-full bg-cyan-500 text-black">
+        <div className="p-2">
           <Link target="_blank" href="https://www.facebook.com/ifnastro">
-            <Facebook size={24} />
+            {/* <Facebook size={24} /> */}
+            <Image
+              width={35}
+              height={35}
+              src={"/brand/icons/Icon-FB.png"}
+              alt="Facebook"
+            />
           </Link>
         </div>
-        <div className="p-2 rounded-full bg-cyan-500 text-black">
+        <div className="p-2 ">
           <Link target="_blank" href="https://www.youtube.com/@ifnastro/videos">
-            <Youtube size={24} />
+            {/* <Youtube size={24} /> */}
+            <Image
+              width={35}
+              height={35}
+              src={"/brand/icons/Icon-YT.png"}
+              alt="Youtube"
+            />
           </Link>
         </div>
-        <div className="p-2 rounded-full bg-cyan-500 text-black">
+        <div className="p-2 ">
           <Link target="_blank" href="https://www.instagram.com/ifnastro/">
-            <Instagram size={24} />
+            {/* <Instagram size={24} /> */}
+            <Image
+              width={35}
+              height={35}
+              src={"/brand/icons/Icon-IN.png"}
+              alt="Youtube"
+            />
           </Link>
         </div>
-        {/* <div className="p-2 rounded-full bg-cyan-500 text-black">
-          <Whatsapp size={24} />
-        </div> */}
+        <div className="p-2 ">
+          {/* <Whatsapp size={24} /> */}
+          <Link target="_blank" href="https://www.instagram.com/ifnastro/">
+            {/* <Instagram size={24} /> */}
+            <Image
+              width={35}
+              height={35}
+              src={"/brand/icons/Icon-WA.png"}
+              alt="Youtube"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
