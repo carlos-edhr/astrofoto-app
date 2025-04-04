@@ -6,6 +6,7 @@ import { Sidebar, SidebarSkeleton } from "./_components/sidebar";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { currentUser } from "@/lib/auth";
 import DashboardFooter from "./_components/dashboard-footer";
+import StreamVideoProvider from "../providers/stream-client-providers";
 
 interface BrowseLayoutProps {
   params: { username: string };
@@ -21,17 +22,19 @@ const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
 
   return (
     <>
-      <Navbar />
-      <div className="flex h-full pt-20 bg-blackSpace">
-        <Suspense fallback={<SidebarSkeleton />}>
-          <Sidebar />
-        </Suspense>
+      <StreamVideoProvider>
+        <Navbar />
+        <div className="flex h-full pt-20 bg-blackSpace">
+          <Suspense fallback={<SidebarSkeleton />}>
+            <Sidebar />
+          </Suspense>
 
-        <Container>
-          {/* <ModalProvider streamId={streamId} price={price} /> */}
-          {children}
-        </Container>
-      </div>
+          <Container>
+            {/* <ModalProvider streamId={streamId} price={price} /> */}
+            {children}
+          </Container>
+        </div>
+      </StreamVideoProvider>
     </>
   );
 };

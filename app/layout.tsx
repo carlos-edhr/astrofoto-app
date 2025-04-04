@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
+import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Roboto, Bebas_Neue, Roboto_Condensed } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { Toaster as TemporalToaster } from "@/components/ui/toaster";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -52,6 +54,7 @@ export default async function RootLayout({
           >
             <Toaster theme="light" position="bottom-center" />
             {children}
+            <TemporalToaster />
             <Analytics />
           </ThemeProvider>
         </body>

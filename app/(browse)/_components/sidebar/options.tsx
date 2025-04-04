@@ -18,16 +18,20 @@ import {
   NotebookPen,
   Users,
   HomeIcon,
+  UsersRound,
 } from "lucide-react"; // Lucide Icons
 import { useSidebar } from "@/store/use-sidebar";
 import { Toggle } from "./toggle";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 const Options = () => {
   const [activeItem, setActiveItem] = useState("Dashboard");
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const { collapsed } = useSidebar((state) => state);
 
+  const searchParams = useSearchParams();
+  const isConferenciaPage = !!searchParams.get("conferencia");
   // Handles item selection and submenu toggle
   const handleItemClick = (item: string) => {
     setActiveItem(item);
@@ -41,6 +45,7 @@ const Options = () => {
   const menuItems = [
     { name: "Home", href: "/home", icon: <HomeIcon /> },
     { name: "Streams", href: "/transmisiones", icon: <Video /> },
+    { name: "Conferencias", href: "/conferencias", icon: <UsersRound /> },
     { name: "Videos", href: "/videos", icon: <MonitorPlay /> },
     { name: "Tienda", href: "/tienda", icon: <Store /> },
     { name: "Galería", href: "/galeria", icon: <Camera /> },
@@ -54,7 +59,7 @@ const Options = () => {
     { name: "Perfil", href: "/perfil", icon: <User /> },
   ];
 
-  if (!collapsed) {
+  if (!collapsed || !isConferenciaPage) {
     return (
       <div className="h-screen lg:w-60 text-white px-5 pb-4 flex flex-col overflow-y-scroll">
         {/* <Toggle /> */}
@@ -134,7 +139,7 @@ const Options = () => {
 
         {/* Admin Section */}
         <div className="mt-10">
-          <div className="text-sm text-gray-400 mb-2">ADMIN</div>
+          {/* <div className="text-sm text-gray-400 mb-2">ADMIN</div> */}
           <ul className="space-y-4">
             <li>
               <button
