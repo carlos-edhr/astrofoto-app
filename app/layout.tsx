@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
+import "stream-chat-react/dist/css/v2/index.css";
+import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Roboto, Bebas_Neue, Roboto_Condensed } from "next/font/google";
@@ -33,6 +35,9 @@ const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: "Congreso de Astrofotografía",
   description: "Sitio web del Congreso Internacional de Astrofotografía.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 // Fix Auth
 export default async function RootLayout({

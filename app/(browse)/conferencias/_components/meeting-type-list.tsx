@@ -12,6 +12,14 @@ import { Input } from "@/components/ui/input";
 import { currentUser } from "@/lib/auth";
 import { MeetingModal } from "@/components/modals/meeting-modal";
 import { useToast } from "@/components/ui/use-toast";
+import {
+  CalendarCheck2Icon,
+  PlusCircleIcon,
+  VideoIcon,
+  ListIcon,
+} from "lucide-react";
+import Link from "next/link";
+
 // export default function RootLayout({ children }) {
 //   return (
 //     <html lang="en">
@@ -94,42 +102,36 @@ export const MeetingTypeList = () => {
     }
   };
 
-  const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/organization/${params.organizationId}/meeting/${callDetails?.id}`;
+  const meetingLink = `${process.env.NEXT_PUBLIC_APP_URL}/conferencias/conferencia/${callDetails?.id}`;
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
       <HomeCard
-        img="/icons/add-meeting.svg"
-        title="New Meeting"
-        description="Start an instant meeting "
+        icon={PlusCircleIcon}
+        title="Nueva conferencia"
+        description="Inicia una conferencia instantánea"
         handleClick={() => setMeetingState("isInstantMeeting")}
-        className="bg-orange-600"
       />
-      {/* <HomeCard
-        img="/icons/schedule.svg"
-        title="Schedule Meeting"
-        description="Plan your meeting "
+      <HomeCard
+        icon={CalendarCheck2Icon}
+        title="Agenda una reunión"
+        description="Crea una reunión para más tarde"
         handleClick={() => setMeetingState("isScheduleMeeting")}
-        className="bg-blue-500"
       />
       <HomeCard
-        img="/icons/recordings.svg"
-        title="View Recording"
-        description="Check out your recording "
-        handleClick={() =>
-          router.push(
-            `/organization/${params.organizationId}/meeting/recordings`,
-          )
-        }
-        className="bg-purple-500"
+        icon={VideoIcon}
+        title="Ver Grabaciones"
+        description="Revisa tus grabaciones de conferencias anteriores "
+        handleClick={() => router.push(`/conferencias/recordings`)}
       />
-      <HomeCard
-        img="/icons/join-meeting.svg"
-        title="Join Meeting"
-        description="via invitation link "
-        handleClick={() => setMeetingState("isJoiningMeeting")}
-        className="bg-red-500"
-      /> */}
+      <Link href="/conferencias/previous">
+        <HomeCard
+          icon={ListIcon}
+          title="Ver conferencias"
+          description="Lista de todas las conferencias agendadas y previas"
+          handleClick={() => setMeetingState("isJoiningMeeting")}
+        />
+      </Link>
 
       {!callDetails ? (
         <MeetingModal
@@ -140,17 +142,17 @@ export const MeetingTypeList = () => {
         >
           <div className="flex flex-col gap-2.5">
             <label className="text-base text-normal leading-[22px] text-sky-2">
-              Add a description{" "}
+              Agrega una descripción{" "}
             </label>
             <Textarea
-              className="border-none bg-newDark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+              className="border-none bg-slate-600 focus-visible:ring-0 focus-visible:ring-offset-0"
               onChange={(e) => {
                 setValues({ ...values, description: e.target.value });
               }}
             />
             <div className="flex w-full flex-col gap-2.5">
               <label className="text-base text-normal leading-[22px] text-sky-2">
-                Select Date and Time
+                Selecciona la hora y fecha de la conferencia
                 <ReactDatePicker
                   selected={values.dateTime}
                   onChange={(date) => setValues({ ...values, dateTime: date! })}
@@ -159,7 +161,7 @@ export const MeetingTypeList = () => {
                   timeIntervals={15}
                   timeCaption="time"
                   dateFormat="MMMM d, yyyy h:mm aa"
-                  className="w-full rounded bg-newDark-3 p-2 focus:outline-none"
+                  className="w-full rounded bg-slate-600 p-2 focus:outline-none"
                 />
               </label>
             </div>
@@ -169,7 +171,7 @@ export const MeetingTypeList = () => {
         <MeetingModal
           isOpen={meetingState === "isScheduleMeeting"}
           onClose={() => setMeetingState(undefined)}
-          title="Meeting Created"
+          title="Se ha creado la reunión"
           className="text-center"
           handleClick={() => {
             navigator.clipboard.writeText(meetingLink);
@@ -177,7 +179,7 @@ export const MeetingTypeList = () => {
           }}
           image="/icons/checked.svg"
           buttonIcon="/icons/copy.svg"
-          buttonText="Copy Meeting Link"
+          buttonText="Copiar Vínculo URL de la reunión"
         />
       )}
 
@@ -190,7 +192,7 @@ export const MeetingTypeList = () => {
         handleClick={createMeeting}
       />
 
-      <MeetingModal
+      {/* <MeetingModal
         isOpen={meetingState === "isJoiningMeeting"}
         onClose={() => setMeetingState(undefined)}
         title="Type the link here"
@@ -200,10 +202,10 @@ export const MeetingTypeList = () => {
       >
         <Input
           placeholder="Meeting Link"
-          className="border-none bg-newDark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+          className="border-none bg-slate-600 focus-visible:ring-0 focus-visible:ring-offset-0"
           onChange={(e) => setValues({ ...values, link: e.target.value })}
         />
-      </MeetingModal>
+      </MeetingModal> */}
     </section>
   );
 };

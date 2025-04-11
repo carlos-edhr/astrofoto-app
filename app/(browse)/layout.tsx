@@ -15,7 +15,7 @@ interface BrowseLayoutProps {
 
 const BrowseLayout = async ({ params, children }: BrowseLayoutProps) => {
   try {
-    const self = await currentUser();
+    const user = await currentUser();
   } catch {
     redirect("/auth/login");
   }

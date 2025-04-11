@@ -89,9 +89,9 @@ export const CallList = ({ type }: CallListProps) => {
                   : "/icons/recordings.svg"
             }
             title={
-              (meeting as Call).state?.custom?.description ||
+              (meeting as Call).state?.custom?.description?.substring(0, 26) ||
               (meeting as CallRecording).filename?.substring(0, 20) ||
-              "No Description"
+              "Sala Personal"
             }
             date={
               (meeting as Call).state?.startsAt?.toLocaleString() ||
@@ -101,7 +101,7 @@ export const CallList = ({ type }: CallListProps) => {
             link={
               type === "recordings"
                 ? (meeting as CallRecording).url
-                : `${process.env.NEXT_PUBLIC_BASE_URL}/organization/${params.organizationId}/meeting/${(meeting as Call).id}`
+                : `${process.env.NEXT_PUBLIC_APP_URL}/conferencias/conferencia/${(meeting as Call).id}`
             }
             buttonIcon1={type === "recordings" ? "/icons/play.svg" : undefined}
             buttonText={type === "recordings" ? "Play" : "Start"}

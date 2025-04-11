@@ -34,7 +34,7 @@ export const MeetingCard = ({
   const user = useCurrentUser();
 
   return (
-    <section className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] bg-newDark-1 px-5 py-8 xl:max-w-[568px]">
+    <section className="flex  min-h-[258px] w-full flex-col justify-between rounded-[14px]  px-5 py-8 xl:max-w-[568px] bg-gradient-to-b from-[#1c1c1c] to-[#000000]">
       <article className="flex flex-col gap-5 ">
         <Image src={icon} alt="upcoming" width={28} height={28} />
         <div className="flex justify-between">
@@ -49,7 +49,7 @@ export const MeetingCard = ({
         <div className="relative flex w-full max-sm:hidden">
           {/* DEBUG: ROUNDED NOT WORKING */}
           <Image
-            src={user?.image ?? "/default-avatar.png"}
+            src={user?.image || "/default-avatar.png"}
             alt="attendees"
             width={40}
             height={40}
