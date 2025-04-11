@@ -58,6 +58,26 @@ export const MeetingRoom = () => {
           {/* <h1 className="text-3xl">Sala de Conferencias</h1> */}
           <CallLayout />
         </div>
+        {/* Participants list - mobile overlay */}
+        <div
+          className={cn(
+            "fixed inset-0 z-50 w-full h-full bg-[#19232d] transition-all duration-300 md:hidden",
+            {
+              "translate-y-0 opacity-100": showParticipants,
+              "translate-y-full opacity-0 pointer-events-none":
+                !showParticipants,
+            },
+          )}
+        >
+          <CallParticipantsList onClose={() => setShowParticipants(false)} />
+          <button
+            onClick={() => setShowParticipants(false)}
+            className="absolute top-4 right-4 text-white p-2 rounded-full bg-gray-700"
+          >
+            Close
+          </button>
+        </div>
+        {/* Participants list - desktop sidebar */}
         <div
           className={cn("h-[calc(100vh-86px)] hidden  ml-2", {
             "show-block": showParticipants,
