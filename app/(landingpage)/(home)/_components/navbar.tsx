@@ -66,7 +66,6 @@ const NavBar = () => {
                 className="w-10 h-8 md:w-16 md:h-16"
               />
             </div>
-
             {/* Right items */}
             <div className="flex items-center gap-6 lg:gap-8 px-6">
               {rightNavItems.map((item) => (
