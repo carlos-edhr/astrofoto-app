@@ -5,11 +5,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Facebook, Youtube, Instagram } from "lucide-react";
 import Link from "next/link";
-import StarsCanvas from "./landing-star-background";
 
-interface InvitacionProps {
-  // videoSrc: string;
-}
+interface InvitacionProps {}
 
 export const Invitacion: React.FC<InvitacionProps> = ({}) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -18,7 +15,6 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
     const card = cardRef.current;
     if (!card) return;
 
-    // Create an animation timeline that lifts and scales the card slightly
     const hoverTl = gsap.timeline({ paused: true });
     hoverTl.to(card, {
       y: -8,
@@ -27,14 +23,12 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
       ease: "power1.out",
     });
 
-    // Play the animation on mouse enter, reverse it on mouse leave
     const handleMouseEnter = () => hoverTl.play();
     const handleMouseLeave = () => hoverTl.reverse();
 
     card.addEventListener("mouseenter", handleMouseEnter);
     card.addEventListener("mouseleave", handleMouseLeave);
 
-    // Cleanup listeners on unmount
     return () => {
       card.removeEventListener("mouseenter", handleMouseEnter);
       card.removeEventListener("mouseleave", handleMouseLeave);
@@ -43,185 +37,167 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
 
   return (
     <div
-      id="invitacion"
+      id="2025"
       ref={cardRef}
       className="
-    relative
-    w-full
-    max-w-[980px]
-    mx-auto
-    flex
-    flex-col
-   
-    items-center
-    justify-center
-    overflow-hidden
-    text-white
-    p-6
-   
-    shadow-lg
-    mt-8
-    /* Gradient background */
-    bg-gradient-to-b from-[#1c1c1c]  to-[#000000] 
-
-  
-  "
+      font-robotoCondensed
+        relative
+        w-full
+        max-w-[980px]
+        mx-auto
+        flex
+        flex-col
+        items-center
+        justify-center
+        overflow-hidden
+        text-white
+        p-6
+        md:p-10
+        shadow-lg
+        mt-8
+        bg-[#191919]
+        rounded-lg
+      "
     >
-      <StarsCanvas />
-      {/*after:border-[#78B3DB]*/}
-
-      {/* Left Column - Video */}
-      {/* <div
-        className="
-          w-1/2
-          md:w-1/2
-          aspect-square
-          overflow-hidden
-          rounded-md
-          bg-black
-        "
-      > */}
-      <div className="relative mx-auto w-[75vw] h-[75vw] max-w-[400px] max-h-[400px] sm:w-[60vw] sm:h-[60vw] md:w-[50vw] md:h-[50vw]">
+      {/* Main Title */}
+      <div>
         <Image
           src="/brand/CIAF8-Logo8.png"
           alt="Congress Logo"
-          fill
-          className="object-contain z-50"
-          priority
-          // sizes="(max-width: 768px) 75vw, (max-width: 1200px) 50vw, 600px"
+          width={298}
+          height={250}
+          className="object-contain "
         />
       </div>
-      {/* <video
-          src={videoSrc}
-          autoPlay
-          muted
-          loop
-          className="w-full h-full object-cover"
-        /> */}
-      {/* </div> */}
-      {/* Right Column - Text & Button */}
+
+      {/* <h1
+        className="
+        text-center
+        text-4xl
+        md:text-5xl
+        lg:text-6xl
+        font-bold
+        font-bebas
+        uppercase
+        leading-tight
+        tracking-wide
+        mb-4
+      "
+      >
+        VIII CONGRESO INTERNACIONAL DE
+        <br />
+        <span className="text-azulAstro">ASTROFOTOGRAFÍA</span>
+      </h1> */}
+
+      {/* Dates */}
+      <h2
+        className="
+        text-center
+        text-xl
+        md:text-2xl
+        font-bold
+        font-bebas
+        uppercase
+        tracking-widest
+        mb-8
+        text-azulAstro
+      "
+      >
+        26.-27.-28 MÉXICO 2025
+      </h2>
+
+      {/* Description */}
       <div
         className="
-          w-full
-          flex
-          flex-col
-          mt-1
-     
-        "
+        w-full
+        max-w-3xl
+        text-center
+        mb-8
+        font-robotoCondensed
+        font-light
+        text-base
+        md:text-lg
+        leading-relaxed
+      "
       >
-        {/* “Reels” badge or pill */}
-        {/* <span
-          className="
-            inline-block
-            bg-gray-800
-            text-gray-200
-            text-xs
-            font-semibold
-            px-3
-            py-1
-            rounded-full
-            uppercase
-            tracking-wide
-            w-max
-          "
-        >
-          ¡Acompáñanos!
-        </span> */}
-
-        {/* Main heading */}
-        {/* <h2
-          className="
-            text-3xl
-            md:text-4xl
-            font-bold
-            mt-4
-          "
-        >
-          Invitación al Congreso Internacional de Fotografía
-        </h2> */}
-
-        {/* Subtitle / body text */}
-        <p
-          className="
-          font-robotoCondensed 
-          font-[200]
-           
-            mt-2
-            leading-relaxed
-            text-white
-          "
-        >
-          Evento anual donde reunimos a varios fotógrafos, astrofotógrafos,
-          astrónomos y divulgadores científicos de diferentes países con el
-          objetivo de compartir a través de conferencias magistrales y de
-          talleres que nos ayudan a crecer en esta bonita disciplina de capturar
-          la luz del universo.
+        <p className="mb-4 text-justify">
+          Congreso Internacional de Astrofotografía pionero en México fundado en
+          2018 con el objetivo de reunir a amateurs y profesionales de la
+          Astrofotografía y Astronomía en un solo foro. Este evento anual reúne
+          a talentos de distintos países para impartir conferencias magistrales,
+          talleres y campamentos diseñados exclusivamente para amantes de la
+          Astrofotografía y Astronomía.
         </p>
 
-        {/* Waitlist Button */}
-        <div className="mt-6 flex w-full">
-          <Link
-            href={`${process.env.NEXTAUTH_URL}/auth/register`}
-            className="w-full"
-          >
-            <Button
-              variant="azulAstro"
-              size="lg"
-              className="w-full font-bebas "
-            >
-              <h1 className="font-bebas text-3xl">REGÍSTRATE</h1>
-            </Button>
-          </Link>
-        </div>
+        <p className="mb-4">
+          Baja California es la sede de este congreso, un estado de México que
+          ofrece uno de los mejores cielos del mundo en la Sierra de Juárez y
+          San Pedro Mártir (Borte 2 y 1 sucesivamente).
+        </p>
+        <p
+          className="
+          text-xl
+          md:text-xl
+        
+          font-bebas
+          mt-6
+          
+        "
+        >
+          &quot;Bienvenidos al Congreso Internacional de Astrofotografía&quot;
+        </p>
       </div>
-      {/* Redes Sociales */}
-      <div className="mt-8 flex space-x-4">
-        {/* Cada ícono dentro de un círculo */}
-        <div className="p-2">
-          <Link target="_blank" href="https://www.facebook.com/ifnastro">
-            {/* <Facebook size={24} /> */}
-            <Image
-              width={35}
-              height={35}
-              src={"/brand/icons/Icon-FB.png"}
-              alt="Facebook"
-            />
+
+      {/* Registration Button */}
+      <div className="mt-4 w-full max-w-3xl">
+        <Link
+          href={`${process.env.NEXTAUTH_URL}/auth/register`}
+          className="w-full"
+        >
+          <Button
+            variant="azulAstro"
+            size="lg"
+            className="text-blackBackgroundNew w-full font-bebas py-6 text-2xl md:text-3xl"
+          >
+            REGÍSTRATE
+          </Button>
+        </Link>
+      </div>
+
+      {/* Social Media */}
+      <div className="mt-10 flex space-x-6">
+        {[
+          {
+            icon: <Facebook size={20} />,
+            href: "https://www.facebook.com/ifnastro",
+          },
+          {
+            icon: <Youtube size={20} />,
+            href: "https://www.youtube.com/@ifnastro/videos",
+          },
+          {
+            icon: <Instagram size={20} />,
+            href: "https://www.instagram.com/ifnastro/",
+          },
+        ].map((social, index) => (
+          <Link
+            key={index}
+            href={social.href}
+            target="_blank"
+            className="
+            text-black
+            bg-azulAstro
+              backdrop-blur-sm
+              p-3 
+              rounded-full 
+              transition-all 
+              hover:bg-white 
+              hover:scale-110
+            "
+          >
+            {social.icon}
           </Link>
-        </div>
-        <div className="p-2 ">
-          <Link target="_blank" href="https://www.youtube.com/@ifnastro/videos">
-            {/* <Youtube size={24} /> */}
-            <Image
-              width={35}
-              height={35}
-              src={"/brand/icons/Icon-YT.png"}
-              alt="Youtube"
-            />
-          </Link>
-        </div>
-        <div className="p-2 ">
-          <Link target="_blank" href="https://www.instagram.com/ifnastro/">
-            {/* <Instagram size={24} /> */}
-            <Image
-              width={35}
-              height={35}
-              src={"/brand/icons/Icon-IN.png"}
-              alt="Youtube"
-            />
-          </Link>
-        </div>
-        <div className="p-2 ">
-          {/* <Whatsapp size={24} /> */}
-          <Link target="_blank" href="https://www.instagram.com/ifnastro/">
-            {/* <Instagram size={24} /> */}
-            <Image
-              width={35}
-              height={35}
-              src={"/brand/icons/Icon-WA.png"}
-              alt="Youtube"
-            />
-          </Link>
-        </div>
+        ))}
       </div>
     </div>
   );

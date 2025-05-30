@@ -19,13 +19,13 @@ import { Invitacion2 } from "./_components/invitacion2";
 
 const LandingPage = () => {
   return (
-    <main className="bg-blackSpace z-10 relative min-h-screen w-screen  ">
+    <main className="bg-blackBackgroundNew z-10 relative min-h-screen w-screen  ">
       {/* <StarsCanvas /> */}
       <Navbar />
 
       <NewHero />
 
-      {/* <Invitacion /> */}
+      <Invitacion />
       {/* <Fundadores /> */}
       {/* <Invitacion2 /> */}
 
