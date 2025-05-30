@@ -90,7 +90,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
       </h1> */}
 
       {/* Dates */}
-      <h2
+      {/* <h2
         className="
         text-center
         text-xl
@@ -104,7 +104,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
       "
       >
         26.-27.-28 MÉXICO 2025
-      </h2>
+      </h2> */}
 
       {/* Description */}
       <div
@@ -112,7 +112,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
         w-full
         max-w-3xl
         text-center
-        mb-8
+        my-8
         font-robotoCondensed
         font-light
         text-base
@@ -120,7 +120,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
         leading-relaxed
       "
       >
-        <p className="mb-4 text-justify">
+        <p className="mb-4 text-justify font-robotoCondensed">
           Congreso Internacional de Astrofotografía pionero en México fundado en
           2018 con el objetivo de reunir a amateurs y profesionales de la
           Astrofotografía y Astronomía en un solo foro. Este evento anual reúne
@@ -139,7 +139,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
           text-xl
           md:text-xl
         
-          font-bebas
+          font-robotoCondensed
           mt-6
           
         "
@@ -157,7 +157,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
           <Button
             variant="azulAstro"
             size="lg"
-            className="text-blackBackgroundNew w-full font-bebas py-6 text-2xl md:text-3xl"
+            className="text-blackBackgroundNew w-full font-robotoCondensed py-6 text-2xl md:text-3xl"
           >
             REGÍSTRATE
           </Button>

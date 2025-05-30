@@ -20,7 +20,7 @@ const roboto = Roboto({
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
-  weight: ["200", "300", "400"], // or any weights you need
+  weight: ["100", "200", "300", "400", "500", "600", "700"], // or any weights you need
   variable: "--font-robotoCondensed", // optional custom CSS variable --font-roboto-condensed
   display: "swap", // controls how the font is displayed
 });
