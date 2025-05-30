@@ -9,7 +9,7 @@ interface NewHeroProps {
 
 const NewHero: React.FC<NewHeroProps> = () => {
   return (
-    <header className="bg-blackSpace z-10 relative min-h-screen overflow-hidden">
+    <header className="bg-blackBackgroundNew z-10 relative min-h-screen overflow-hidden">
       <StarsCanvas />
       {/* Navigation */}
 

@@ -25,16 +25,16 @@ const LandingPage = () => {
 
       <NewHero />
 
-      <Invitacion />
-      <Fundadores />
-      <Invitacion2 />
+      {/* <Invitacion /> */}
+      {/* <Fundadores /> */}
+      {/* <Invitacion2 /> */}
 
-      <Talleres />
+      {/* <Talleres /> */}
 
       {/* <Story /> */}
       {/* <Itinerario /> */}
       {/* <div className="bg-gradient-to-br from-[#020814]  via-[#030916] to-[#062945]"> */}
-      <Gallery
+      {/* <Gallery
         title={""}
         images={[
           "CIAF7-D1-04 Daniela.jpg",
@@ -43,11 +43,11 @@ const LandingPage = () => {
           "CIAF7-D2-09 Braulio.jpg",
           "CIAF7-D2-10 Yuri.jpg",
         ]}
-      />
+      /> */}
       {/* </div> */}
 
       <Inscripciones />
-      <PreguntasFrecuentes />
+      {/* <PreguntasFrecuentes /> */}
       <Footer />
       {/* <section className="z-0 min-h-screen bg-blue-500" /> */}
     </main>

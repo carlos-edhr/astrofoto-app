@@ -14,7 +14,7 @@ const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const leftNavItems: NavItem[] = [
-    { label: "NOSOTROS", href: "#nosotros" },
+    { label: "2025", href: "#nosotros" },
     { label: "FECHAS", href: "#fechas" },
     { label: "BOLETOS", href: "#boletos" },
   ];

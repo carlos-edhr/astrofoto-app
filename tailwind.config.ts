@@ -37,6 +37,7 @@ const config = withUt({
         "robert-regular": ["robert-medium", "sans-serif"],
       },
       colors: {
+        blackBackgroundNew: "#191919",
         blackSpace: "#0D0D0D",
         azulAstro: "#01B9FF",
         azulMar: "#0075AFm",
