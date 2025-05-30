@@ -16,6 +16,7 @@ import StarsCanvas from "./_components/landing-star-background";
 import { Fundadores } from "./_components/fundadores";
 import { Invitacion } from "./_components/invitacion";
 import { Invitacion2 } from "./_components/invitacion2";
+import { Fechas } from "./fechas";
 
 const LandingPage = () => {
   return (
@@ -26,6 +27,7 @@ const LandingPage = () => {
       <NewHero />
 
       <Invitacion />
+      <Fechas />
       {/* <Fundadores /> */}
       {/* <Invitacion2 /> */}
 
