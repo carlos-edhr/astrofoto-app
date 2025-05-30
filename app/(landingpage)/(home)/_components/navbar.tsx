@@ -16,7 +16,7 @@ const NavBar = () => {
   const leftNavItems: NavItem[] = [
     { label: "2025", href: "#2025" },
     { label: "FECHAS", href: "#fechas" },
-    { label: "BOLETOS", href: "#boletos" },
+    { label: "PRECIOS", href: "#precios" },
   ];
 
   const rightNavItems: NavItem[] = [
