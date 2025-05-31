@@ -16,13 +16,13 @@ const NavBar = () => {
   const leftNavItems: NavItem[] = [
     { label: "2025", href: "#2025" },
     { label: "FECHAS", href: "#fechas" },
-    { label: "PRECIOS", href: "#precios" },
+    { label: "PLANES", href: "#planes" },
   ];
 
   const rightNavItems: NavItem[] = [
     { label: "INVITADOS", href: "#invitados" },
-    { label: "LOG IN", href: "/auth/login" },
-    { label: "REGISTER", href: "/auth/register" },
+    { label: "GALERIA", href: "#galeria" },
+    { label: "SEDE", href: "#sede" },
   ];
 
   return (

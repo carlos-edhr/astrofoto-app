@@ -158,7 +158,7 @@ export function Fundadores() {
       </div>
       {/* Flecha flotante para hacer scroll a la siguiente sección */}
 
-      <FloatingArrow nextSectionId="invitacion2" />
+      {/* <FloatingArrow nextSectionId="invitacion2" /> */}
     </section>
   );
 }
