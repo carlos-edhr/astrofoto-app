@@ -57,19 +57,20 @@ export function Fundadores() {
       name: "Brandon Echeverrys",
       imageUrl: "/retratos/Brandon Bubble1.png",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. ",
+        "Astrofotógrafo colombiano, apasionado por la Astronomía y docente en esta área. Miembro de la Sociedad Astronómica de Baja California, colaborador de la revista National geographic en español y guía de astroturismo internacional en el continente americano. ",
       socialLinks: {
-        facebook: "https://www.facebook.com/kane.leyva",
-        instagram: "https://www.instagram.com/kaneleyva/",
-        website: "https://www.caneckleyva.com/",
+        facebook: "https://www.instagram.com/brandonecheverrys/",
+        instagram: "https://www.facebook.com/brandonecheverrys/",
+        website: "/",
       },
     },
   ];
 
   return (
     <section
+      id="fundadores"
       ref={cardRef}
-      className="relative w-full max-w-[1380px] mt-16  py-16  overflow-hidden bg-gradient-to-b from-[#1c1c1c] to-[#000000] mx-auto"
+      className="relative w-full max-w-[1380px] mt-16  py-16  overflow-hidden bg-blackBackgroundNew mx-auto"
     >
       <div className="container mx-auto px-4 md:px-8 z-30  md:pb-32">
         <h1 className="font-bebas text-4xl font-bold text-center mb-12 uppercase text-white">

@@ -14,6 +14,7 @@ import { Invitacion2 } from "./_components/invitacion2";
 
 import { Planes } from "./_components/precios";
 import { Fechas } from "./_components/fechas";
+import { Galeria } from "./_components/galeria-new";
 
 const LandingPage = () => {
   return (
@@ -26,7 +27,8 @@ const LandingPage = () => {
       <Invitacion />
       <Fechas />
       <Planes />
-      {/* <Fundadores /> */}
+      <Galeria />
+      <Fundadores />
       {/* <Invitacion2 /> */}
 
       {/* <PreguntasFrecuentes /> */}
