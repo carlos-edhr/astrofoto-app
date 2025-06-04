@@ -136,7 +136,7 @@ export const Galeria: React.FC = () => {
               p-4
             "
             >
-              <span className="text-white font-light text-sm">{item.alt}</span>
+              {/* <span className="text-white font-light text-sm">{item.alt}</span> */}
             </div>
           </div>
         ))}

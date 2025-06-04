@@ -88,7 +88,7 @@ const ImagenDeGaleria = ({ images, imgIndex }: ImagenDeGaleriaProps) => {
           </div>
 
           {/* Thumbnails below main image */}
-          <div className="flex mt-6 space-x-4 overflow-x-auto">
+          {/* <div className="flex mt-6 space-x-4 overflow-x-auto">
             {images.map((image, index) => (
               <img
                 key={index}
@@ -100,7 +100,7 @@ const ImagenDeGaleria = ({ images, imgIndex }: ImagenDeGaleriaProps) => {
                 onClick={() => selectImage(index)}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       )}
     </div>
