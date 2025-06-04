@@ -46,7 +46,7 @@ export function Fundadores() {
       name: "Caneck Leyva",
       imageUrl: "/retratos/Caneck Bubble1.png",
       description:
-        "La pasión por la astrofotografía y la divulgación científica llevó a Caneck a crear este Congreso de Astrofotografía, un espacio donde entusiastas y profesionales pueden compartir su amor por la exploración del cielo. ",
+        "Fotógrafo mexicano de segunda generación, Ingeniero en Mecatrónica y Maestro en Gestión de la Fotografía. Fundador del Instituto de Fotografía del Noroeste en 2015; su pasión por la astronomía y la fotografía lo llevó a fusionar ambas ramas y emprender el programa de Astrofotografía en el Instituto de Fotografía del Noroeste en 2018 junto con Brandon Echeverrys. Es inspirador de la marca Canon y ha impartido conferencias en plataformas como TEDx y la Academia de San Carlos. Su trabajo ha sido publicado en la revista de National Geographic en Español y diversos libros. ",
       socialLinks: {
         facebook: "https://www.facebook.com/kane.leyva",
         instagram: "https://www.instagram.com/kaneleyva/",
