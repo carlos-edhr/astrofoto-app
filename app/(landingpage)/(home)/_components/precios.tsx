@@ -51,7 +51,7 @@ export const Planes: React.FC = () => {
       features: [
         "Acceso completo a conferencias",
         "Constancia de asistencia",
-        "Kit de bienvenida con playera oficial CMF VIII",
+        "Kit de bienvenida con playera oficial CIAF VIII",
       ],
 
       buttonText: "$1,200.00 MXN",
@@ -69,7 +69,7 @@ export const Planes: React.FC = () => {
         "Acceso al rancho",
         "Charla especial de Astrofotografía",
         "Constancia de asistencia",
-        "Kit de bienvenida con playera oficial CMF VIII",
+        "Kit de bienvenida con playera oficial CIAF VIII",
       ],
 
       buttonText: "$6,000.00 MXN",
@@ -80,13 +80,13 @@ export const Planes: React.FC = () => {
       title: "FULL-ACCESS ",
 
       subtitle:
-        "La experiencia completa del Congreso. Accede a dos días de conferencias y dos noches de campamento astrofotográfico en un bortle 2.",
+        "La experiencia completa del Congreso. Accede a dos días de conferencias y dos noches de campamento astrofotográfico en un Bortle 2.",
       features: [
         "Acceso a todas las conferencias",
         "Campamento con transporte y comida",
         "Charla de Astrofotografía",
         "Constancia de asistencia",
-        "Kit de bienvenida con playera oficial CMF VIII",
+        "Kit de bienvenida con playera oficial CIAF VIII",
       ],
       buttonText: "$6,800.00 MXN",
       color: "yellow",
