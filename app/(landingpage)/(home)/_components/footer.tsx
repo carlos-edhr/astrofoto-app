@@ -38,7 +38,11 @@ const Footer = () => {
 
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
             <div className="font-bold text-[16px]">Acerca de nosotros</div>
-            <Link href="/sign-up">
+            <Link
+              href="http://wa.me/526647200826"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <p className="flex flex-row items-center my-[15px] cursor-pointer">
                 <span className="text-[15px] ml-[6px]">Regístrate</span>
               </p>

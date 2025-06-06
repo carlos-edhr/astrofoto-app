@@ -120,7 +120,7 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
         leading-relaxed
       "
       >
-        <p className="mb-4 text-justify font-robotoCondensed">
+        <p className="mb-4  font-robotoCondensed">
           Congreso Internacional de Astrofotografía pionero en México fundado en
           2018 con el objetivo de reunir a amateurs y profesionales de la
           Astrofotografía y Astronomía en un solo foro. Este evento anual reúne

@@ -39,15 +39,15 @@ export const Galeria: React.FC = () => {
   }, []);
 
   const galleryItems: GalleryItem[] = [
-    { id: 1, src: "/landing/galeria/1.jpeg", alt: "Imagen de galería 1" },
-    { id: 2, src: "/landing/galeria/2.jpeg", alt: "Imagen de galería 2" },
-    { id: 3, src: "/landing/galeria/3.jpeg", alt: "Imagen de galería 3" },
-    { id: 4, src: "/landing/galeria/4.jpeg", alt: "Imagen de galería 4" },
-    { id: 5, src: "/landing/galeria/5.jpeg", alt: "Imagen de galería 5" },
-    { id: 6, src: "/landing/galeria/6.jpeg", alt: "Imagen de galería 6" },
-    { id: 7, src: "/landing/galeria/7.jpeg", alt: "Imagen de galería 7" },
-    { id: 8, src: "/landing/galeria/8.jpeg", alt: "Imagen de galería 8" },
-    { id: 9, src: "/landing/galeria/9.jpeg", alt: "Imagen de galería 9" },
+    { id: 1, src: "/landing/galeria/10.jpeg", alt: "Imagen de galería 1" },
+    { id: 2, src: "/landing/galeria/11.jpeg", alt: "Imagen de galería 2" },
+    { id: 3, src: "/landing/galeria/12.jpeg", alt: "Imagen de galería 3" },
+    { id: 4, src: "/landing/galeria/13.jpeg", alt: "Imagen de galería 4" },
+    { id: 5, src: "/landing/galeria/14.jpeg", alt: "Imagen de galería 5" },
+    { id: 6, src: "/landing/galeria/15.jpeg", alt: "Imagen de galería 6" },
+    { id: 7, src: "/landing/galeria/16.jpeg", alt: "Imagen de galería 7" },
+    { id: 8, src: "/landing/galeria/17.jpeg", alt: "Imagen de galería 8" },
+    { id: 9, src: "/landing/galeria/18.jpeg", alt: "Imagen de galería 9" },
   ];
 
   return (
