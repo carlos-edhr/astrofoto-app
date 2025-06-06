@@ -314,7 +314,10 @@ export const Planes: React.FC = () => {
 
               {/* Button */}
               <Link
-                href={`${process.env.NEXTAUTH_URL}/auth/register`}
+                // href={`${process.env.NEXTAUTH_URL}/auth/register`}
+                href="http://wa.me/526647200826"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-auto w-full"
               >
                 <Button
