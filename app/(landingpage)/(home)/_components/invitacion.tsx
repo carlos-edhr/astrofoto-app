@@ -151,8 +151,11 @@ export const Invitacion: React.FC<InvitacionProps> = ({}) => {
       {/* Registration Button */}
       <div className="mt-4 w-full max-w-3xl">
         <Link
-          href={`${process.env.NEXTAUTH_URL}/auth/register`}
+          // href={`${process.env.NEXTAUTH_URL}/auth/register`}
+          href="http://wa.me/526647200826"
           className="w-full"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <Button
             variant="azulAstro"
