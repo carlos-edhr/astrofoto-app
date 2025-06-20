@@ -1,10 +1,11 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 interface PlanProps {
+  id: string;
   title: string;
   subtitle: string;
   features: string[];
@@ -14,6 +15,7 @@ interface PlanProps {
 }
 
 export const Planes: React.FC = () => {
+  const [showForm, setShowForm] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -44,6 +46,7 @@ export const Planes: React.FC = () => {
 
   const plans: PlanProps[] = [
     {
+      id: "MAIN_STAGE", // Should match  DB stream IDs
       title: "MAIN STAGE ",
 
       subtitle:
@@ -59,6 +62,7 @@ export const Planes: React.FC = () => {
       number: "01",
     },
     {
+      id: "STARGAZER",
       title: "STARGAZER ",
 
       subtitle:
@@ -77,8 +81,8 @@ export const Planes: React.FC = () => {
       number: "02",
     },
     {
+      id: "FULL_ACCESS",
       title: "FULL-ACCESS ",
-
       subtitle:
         "La experiencia completa del Congreso. Accede a dos días de conferencias y dos noches de campamento astrofotográfico en un Bortle 2.",
       features: [
@@ -321,24 +325,26 @@ export const Planes: React.FC = () => {
                 className="mt-auto w-full"
               >
                 <Button
-                  variant="outline"
+                  onClick={() => setShowForm(!showForm)}
                   className={`
-                    w-full
-                    py-4
-                    text-lg
-                    font-bold
-                    uppercase
-                    tracking-wider
-                    ${colorClasses.buttonBg}
-                    ${colorClasses.buttonHover}
-                    text-white
-                    border-none
-                    rounded-lg
-                  `}
+          w-full
+          py-4
+          text-lg
+          font-bold
+          uppercase
+          tracking-wider
+          ${colorClasses.buttonBg}
+          ${colorClasses.buttonHover}
+          text-white
+          border-none
+          rounded-lg
+          mt-4
+        `}
                 >
                   {plan.buttonText}
                 </Button>
               </Link>
+              {/* {showForm && <GuestRegistrationForm plan={plan} />} */}
             </div>
           );
         })}

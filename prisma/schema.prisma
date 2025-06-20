@@ -23,6 +23,12 @@ enum UserRole {
   USER
 }
 
+enum Plans {
+  MAIN_STAGE
+  STARGAZER
+  FULL_ACCESS
+}
+
 model User {
   id String @id @default(uuid())
   //New fields for auth.js
@@ -168,6 +174,21 @@ model Purchase{
   @@unique([userId, streamId])
   @@index([streamId])
 }
+
+model GuestPurchase{
+  id String @id @default(uuid())
+  plan Plans 
+ 
+  guestEmail  String  // New field for guest email
+  guestName   String  // New field for guest name
+ phoneNumber String?  // New field for guest phone number
+ paymentTotal Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+
+}
+
 
 model StripeCustomer {
   id String @id @default(uuid())
