@@ -5,6 +5,7 @@
  */
 export const publicRoutes = [
   "/",
+  "/landing/docs/campamento-sierra-juarez.pdf",
   "/registro",
   "/success",
   "/auth/new-verification",
