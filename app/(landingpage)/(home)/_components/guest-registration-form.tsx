@@ -39,19 +39,19 @@ const PLANS = [
   {
     id: "MAIN_STAGE",
     name: "MAIN STAGE PASS",
-    price: 1200,
+    price: 5,
     description: "Acceso a conferencias en modalidad híbrida",
   },
   {
     id: "STARGAZER",
     name: "STARGAZER PASS",
-    price: 6000,
+    price: 10,
     description: "Dos noches de campamento en Sierra de Juárez",
   },
   {
     id: "FULL_ACCESS",
     name: "FULL-ACCESS PASS",
-    price: 6800,
+    price: 15,
     description: "Experiencia completa del Congreso",
   },
 ];
