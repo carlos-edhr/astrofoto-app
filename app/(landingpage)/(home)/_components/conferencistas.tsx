@@ -69,10 +69,10 @@ export const Conferencistas: React.FC = () => {
     },
     {
       id: 3,
-      name: "RAFAEL POINS",
+      name: "RAFAEL PONS",
       country: "ESPAÑA",
       image: "/landing/conferencistas/3-rafael-pons.jpg",
-      alt: "Rafael Poins",
+      alt: "Rafael Pons",
     },
     {
       id: 4,
