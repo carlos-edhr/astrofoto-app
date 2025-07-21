@@ -12,7 +12,7 @@ export const Loader = () => {
         width={50}
         height={50}
       /> */}
-      <Loader2Icon className="h-24 w-24" />
+      <Loader2Icon className="h-60 w-60 text-amber-400 animate-spin" />
     </div>
   );
 };

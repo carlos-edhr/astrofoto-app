@@ -92,6 +92,7 @@ model Stream {
   
 
   isLive Boolean @default(false)
+  //Not required, but useful for frontend
   isChatEnabled Boolean @default(true)
   isChatDelayed Boolean @default(false)
   isChatFollowersOnly Boolean @default(false)

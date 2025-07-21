@@ -17,7 +17,9 @@ export const ConfirmRegisterEmail: React.FC<
           <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg">
             {/* Header */}
             <div className="bg-blue-600 text-white text-center py-6 rounded-t-lg">
-              <h1 className="text-2xl font-bold">Welcome to Carlos-EHR!</h1>
+              <h1 className="text-2xl font-bold">
+                Welcome to Congreso Internacional de Astrofotografía!
+              </h1>
             </div>
 
             {/* Body */}
@@ -25,8 +27,9 @@ export const ConfirmRegisterEmail: React.FC<
               <p className="text-lg text-gray-700">Hello {name},</p>
               <p className="mt-4 text-gray-600 leading-relaxed">
                 We’re thrilled to have you on board! Your account has been
-                successfully created at Carlos-EHR, the platform where
-                cutting-edge software engineering projects come to life.
+                successfully created at Congreso Internacional de
+                Astrofotografía, the platform where cutting-edge software
+                engineering projects come to life.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
                 To complete your registration and start exploring the platform,
@@ -44,8 +47,8 @@ export const ConfirmRegisterEmail: React.FC<
               </div>
 
               <p className="mt-6 text-gray-600 leading-relaxed">
-                If you didn’t create an account with Carlos-EHR, you can safely
-                ignore this email.
+                If you didn’t create an account with Congreso Internacional de
+                Astrofotografía, you can safely ignore this email.
               </p>
             </div>
 
@@ -57,13 +60,13 @@ export const ConfirmRegisterEmail: React.FC<
                   // href={`mailto:${supportEmail}`}
                   className="text-blue-600 hover:underline"
                 >
-                  Carlos-EHR
+                  Congreso Internacional de Astrofotografía
                 </a>
                 .
               </p>
               <p className="text-gray-500 text-sm mt-2">
-                &copy; {new Date().getFullYear()} Carlos-EHR. All rights
-                reserved.
+                &copy; {new Date().getFullYear()} Congreso Internacional de
+                Astrofotografía. All rights reserved.
               </p>
             </div>
           </div>

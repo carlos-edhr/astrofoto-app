@@ -43,20 +43,20 @@ const Options = () => {
   };
 
   const menuItems = [
-    { name: "Home", href: "/home", icon: <HomeIcon /> },
+    // { name: "Home", href: "/home", icon: <HomeIcon /> },
     { name: "Streams", href: "/transmisiones", icon: <Video /> },
-    { name: "Conferencias", href: "/conferencias", icon: <UsersRound /> },
-    { name: "Videos", href: "/videos", icon: <MonitorPlay /> },
-    { name: "Tienda", href: "/tienda", icon: <Store /> },
-    { name: "Galería", href: "/galeria", icon: <Camera /> },
-    {
-      name: "Compras",
-      href: "/compras",
-      icon: <ListChecks />,
-      hasSubmenu: true,
-    },
-    { name: "Calendario", href: "/calendario", icon: <Calendar /> },
-    { name: "Perfil", href: "/perfil", icon: <User /> },
+    // { name: "Conferencias", href: "/conferencias", icon: <UsersRound /> },
+    // { name: "Videos", href: "/videos", icon: <MonitorPlay /> },
+    // { name: "Tienda", href: "/tienda", icon: <Store /> },
+    // { name: "Galería", href: "/galeria", icon: <Camera /> },
+    // {
+    //   name: "Compras",
+    //   href: "/compras",
+    //   icon: <ListChecks />,
+    //   hasSubmenu: true,
+    // },
+    // { name: "Calendario", href: "/calendario", icon: <Calendar /> },
+    // { name: "Perfil", href: "/perfil", icon: <User /> },
   ];
 
   if (!collapsed || !isConferenciaPage) {

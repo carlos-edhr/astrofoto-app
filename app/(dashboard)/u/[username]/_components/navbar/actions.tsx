@@ -12,7 +12,7 @@ export const Actions = () => {
         className="text-muted-foreground hover:text-primary"
         asChild
       >
-        <Link href="/transmisiones">
+        <Link href="/">
           <LogOut className="h-5 w-5 mr-2 " />
           Salir
         </Link>

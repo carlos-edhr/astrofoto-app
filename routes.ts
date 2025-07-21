@@ -40,4 +40,4 @@ export const apiAuthPrefix = "/api/auth";
  * These routes will redirect logged in users to /settings
  * @type {string}
  */
-export const DEFAULT_LOGIN_REDIRECT = "/home";
+export const DEFAULT_LOGIN_REDIRECT = "/transmisiones";

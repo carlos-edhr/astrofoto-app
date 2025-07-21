@@ -21,8 +21,8 @@ const NavBar = () => {
 
   const rightNavItems: NavItem[] = [
     { label: "INVITADOS", href: "#invitados" },
-    { label: "GALERIA", href: "#galeria" },
-    { label: "SEDE", href: "#sede" },
+    { label: "REGÍSTRATE", href: "/auth/register" },
+    { label: "LOGIN", href: "/auth/login" },
   ];
 
   return (

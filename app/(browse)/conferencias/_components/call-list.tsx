@@ -70,7 +70,7 @@ export const CallList = ({ type }: CallListProps) => {
     }
   }, [type, callRecordings, toast]);
 
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
 
   const calls = getCalls();
   const noCallsMessage = getNoCallsMessage();

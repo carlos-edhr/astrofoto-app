@@ -21,8 +21,9 @@ export const PasswordResetEmail: React.FC<
               <p className="text-gray-700 text-lg mb-4">Hello,</p>
               <p className="text-gray-600 mb-6">
                 We received a request to reset the password for your account at{" "}
-                <strong>Carlos-EHR</strong>. If you made this request, please
-                click the button below to reset your password:
+                <strong>Congreso Internacional de Astrofotografía</strong>. If
+                you made this request, please click the button below to reset
+                your password:
               </p>
               <div className="text-center">
                 <a
@@ -50,8 +51,8 @@ export const PasswordResetEmail: React.FC<
                 .
               </p>
               <p className="mt-2">
-                &copy; {new Date().getFullYear()} Carlos-EHR. All rights
-                reserved.
+                &copy; {new Date().getFullYear()} Congreso Internacional de
+                Astrofotografía. All rights reserved.
               </p>
             </div>
           </div>
