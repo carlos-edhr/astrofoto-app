@@ -60,7 +60,7 @@ export const ConfirmRegisterEmail: React.FC<
                   // href={`mailto:${supportEmail}`}
                   className="text-blue-600 hover:underline"
                 >
-                  Congreso Internacional de Astrofotografía
+                  congreso@leyvafotografia.com
                 </a>
                 .
               </p>

@@ -46,7 +46,7 @@ export const PasswordResetEmail: React.FC<
                   className="text-blue-600 hover:underline"
                 >
                   {/* {supportEmail} */}
-                  Support Email
+                  congreso@leyvafotografia.com
                 </a>
                 .
               </p>

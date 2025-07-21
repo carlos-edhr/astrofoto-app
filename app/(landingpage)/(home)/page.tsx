@@ -18,6 +18,7 @@ import { Galeria } from "./_components/galeria-new";
 import { Sede } from "./_components/sede";
 import { Conferencistas } from "./_components/conferencistas";
 import { Campamento } from "./_components/campamento";
+import LogoCarousel from "./_components/logo-carousel";
 
 const LandingPage = () => {
   return (
@@ -36,6 +37,7 @@ const LandingPage = () => {
 
       <Fundadores />
       <Sede />
+      <LogoCarousel />
       {/* <Invitacion2 /> */}
 
       {/* <PreguntasFrecuentes /> */}

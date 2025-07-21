@@ -81,10 +81,10 @@ export const PurchaseConfirmationEmailToUser: React.FC<
                     ¿Preguntas? Estamos aquí para ayudarte:
                     <br />
                     <a
-                      href="mailto:contacto@ciaf.com"
+                      href="mailto:congreso@leyvafotografia.com"
                       className="text-blue-600 hover:underline"
                     >
-                      contacto@ciaf.com
+                      congreso@leyvafotografia.com
                     </a>
                   </p>
                 </div>
