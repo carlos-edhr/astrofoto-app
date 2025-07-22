@@ -57,7 +57,7 @@ export async function POST(req: Request) {
     await sendPurchaseConfirmationEmailToAdmin(
       stream?.name ?? "Unknown Stream",
       purchase.id,
-      user?.username ?? "Username not set",
+      user?.name ?? "Username not set",
       user?.email ?? "Email not set",
       stream?.price ?? 0,
     );
@@ -65,7 +65,7 @@ export async function POST(req: Request) {
     await sendPurchaseConfirmationEmailToUser(
       stream?.name ?? "Unknown Stream",
       purchase.id,
-      user?.username ?? "Username not set",
+      user?.name ?? "",
       user?.email ?? "Email not set",
       stream?.price ?? 0,
     );
