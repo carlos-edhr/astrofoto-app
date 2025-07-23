@@ -40,7 +40,7 @@ export const Thumbnail = ({
         src={src}
         fill
         alt="Thumbnail"
-        className="object-cover transition-transform group-hover:translate-x-2 group-hover:-translate-y-2 rounded-md"
+        className="object-fit transition-transform group-hover:translate-x-2 group-hover:-translate-y-2 rounded-md"
       />
     );
   }
