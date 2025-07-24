@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Instagram, Youtube, Facebook, Heart } from "lucide-react";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="z-40 relative overflow-hidden bg-gradient-to-b from-gray-900 to-black pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <footer className="font-font-robotoCondensed z-40 relative overflow-hidden bg-gradient-to-b from-gray-900 to-black pt-16 pb-12 px-4 sm:px-6 lg:px-8">
       {/* Star-like decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
@@ -35,7 +36,7 @@ const Footer = () => {
               <div className="relative">
                 <div className="absolute -inset-1 bg-blue-500 rounded-full blur opacity-30"></div>
                 <div className="relative flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full">
-                  <svg
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -53,11 +54,21 @@ const Footer = () => {
                       strokeLinejoin="round"
                       d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z"
                     />
-                  </svg>
+                  </svg> */}
+                  <Image
+                    src="/brand/CIAF8-Estrella2.png"
+                    width={40}
+                    height={40}
+                    alt="CIAF8 Logo"
+                    className="w-8 h-8 object-contain"
+                  />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">
-                Congreso <span className="font-extrabold">Astrofotografía</span>
+              <h3 className="text-2xl font-robotoCondensed text-white bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">
+                Congreso de{" "}
+                <span className="font-font-robotoCondensed">
+                  Astrofotografía
+                </span>
               </h3>
             </div>
             <p className="text-gray-400 text-sm">
@@ -73,7 +84,9 @@ const Footer = () => {
             transition={{ delay: 0.3 }}
             className="space-y-4"
           >
-            <h4 className="text-xl font-bold text-white">Comunidad</h4>
+            <h4 className="text-xl font-font-robotoCondensed text-white">
+              Comunidad
+            </h4>
             <div className="space-y-3">
               <Link
                 href="https://www.youtube.com/@ifnastro/videos"
@@ -109,7 +122,9 @@ const Footer = () => {
             transition={{ delay: 0.4 }}
             className="space-y-4"
           >
-            <h4 className="text-xl font-bold text-white">Contacto</h4>
+            <h4 className="text-xl font-font-robotoCondensed text-white">
+              Contacto
+            </h4>
             <div className="space-y-3">
               <Link
                 href="http://wa.me/526647200826"
