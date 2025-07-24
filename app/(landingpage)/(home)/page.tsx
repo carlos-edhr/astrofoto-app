@@ -19,6 +19,7 @@ import { Sede } from "./_components/sede";
 import { Conferencistas } from "./_components/conferencistas";
 import { Campamento } from "./_components/campamento";
 import LogoCarousel from "./_components/logo-carousel";
+import CongresoHero from "./_components/congreso-hero";
 
 const LandingPage = () => {
   return (
@@ -26,8 +27,8 @@ const LandingPage = () => {
       {/* <StarsCanvas /> */}
       <Navbar />
 
-      <NewHero />
-
+      {/* <NewHero /> */}
+      <CongresoHero />
       <Invitacion />
       <Fechas />
       <Campamento />
