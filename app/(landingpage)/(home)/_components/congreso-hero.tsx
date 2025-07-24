@@ -20,38 +20,38 @@ import {
 // Gallery categories with images
 const galleryCategories = [
   {
-    id: "inaguracion",
-    title: "Inaguración",
+    id: "inauguración",
+    title: "Inauguración",
     items: [
       {
         id: "inaug-1",
         src: "/landing/2025/inaguracion-1.jpeg",
-        alt: "inaguracion 1",
+        alt: "inauguración 1",
       },
       {
         id: "inaug-2",
         src: "/landing/2025/inaguracion-2.jpeg",
-        alt: "inaguracion 2",
+        alt: "inauguración 2",
       },
       {
         id: "inaug-3",
         src: "/landing/2025/inaguracion-3.jpeg",
-        alt: "inaguracion 3",
+        alt: "inauguración 3",
       },
       {
         id: "inaug-4",
         src: "/landing/2025/inaguracion-4.jpeg",
-        alt: "inaguracion 4",
+        alt: "inauguración 4",
       },
       {
         id: "inaug-5",
         src: "/landing/2025/inaguracion-5.jpeg",
-        alt: "inaguracion 5",
+        alt: "inauguración 5",
       },
       {
         id: "inaug-6",
         src: "/landing/2025/inaguracion-6.jpeg",
-        alt: "inaguracion 6",
+        alt: "inauguración 6",
       },
     ],
   },
@@ -244,7 +244,7 @@ const NewHero: React.FC<NewHeroProps> = () => {
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isMediaFullscreen, setIsMediaFullscreen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("inaguracion");
+  const [activeCategory, setActiveCategory] = useState("inauguración");
   const containerRef = useRef<HTMLDivElement>(null);
 
   const galleryItems =
