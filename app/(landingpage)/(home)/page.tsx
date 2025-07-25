@@ -20,6 +20,7 @@ import { Conferencistas } from "./_components/conferencistas";
 import { Campamento } from "./_components/campamento";
 import LogoCarousel from "./_components/logo-carousel";
 import CongresoHero from "./_components/congreso-hero";
+import CongresoHero2 from "./_components/congreso-hero-2";
 
 const LandingPage = () => {
   return (
@@ -29,6 +30,7 @@ const LandingPage = () => {
 
       {/* <NewHero /> */}
       <CongresoHero />
+      <CongresoHero2 />
       <Invitacion />
       <Fechas />
       <Campamento />

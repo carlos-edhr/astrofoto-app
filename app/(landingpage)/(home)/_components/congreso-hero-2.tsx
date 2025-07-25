@@ -17,234 +17,189 @@ import {
   Minimize2,
 } from "lucide-react";
 
-// Gallery categories with images
+// UPDATED GALLERY CATEGORIES
 const galleryCategories = [
   {
-    id: "inauguración",
-    title: "Inauguración",
+    id: "rafael-pons",
+    title: "Conferencia de Rafael Pons",
     items: [
       {
-        id: "inaug-1",
-        src: "/landing/2025/inaguracion-1.jpeg",
-        alt: "inauguración 1",
+        id: "rafael-pons-7",
+        src: "/landing/2025/rafael-pons-7.jpeg",
+        alt: "Rafael Pons 8",
       },
       {
-        id: "inaug-2",
-        src: "/landing/2025/inaguracion-2.jpeg",
-        alt: "inauguración 2",
+        id: "rafael-pons-1",
+        src: "/landing/2025/rafael-pons-1.jpeg",
+        alt: "Rafael Pons 1",
       },
       {
-        id: "inaug-3",
-        src: "/landing/2025/inaguracion-3.jpeg",
-        alt: "inauguración 3",
+        id: "rafael-pons-2",
+        src: "/landing/2025/rafael-pons-2.jpeg",
+        alt: "Rafael Pons 2",
       },
       {
-        id: "inaug-4",
-        src: "/landing/2025/inaguracion-4.jpeg",
-        alt: "inauguración 4",
+        id: "rafael-pons-3",
+        src: "/landing/2025/rafael-pons-3.jpeg",
+        alt: "Rafael Pons 3",
       },
       {
-        id: "inaug-5",
-        src: "/landing/2025/inaguracion-5.jpeg",
-        alt: "inauguración 5",
+        id: "rafael-pons-4",
+        src: "/landing/2025/rafael-pons-4.jpeg",
+        alt: "Rafael Pons 4",
       },
       {
-        id: "inaug-6",
-        src: "/landing/2025/inaguracion-6.jpeg",
-        alt: "inauguración 6",
+        id: "rafael-pons-5",
+        src: "/landing/2025/rafael-pons-5.jpeg",
+        alt: "Rafael Pons 5",
+      },
+      {
+        id: "rafael-pons-6",
+        src: "/landing/2025/rafael-pons-6.jpeg",
+        alt: "Rafael Pons 6",
+      },
+
+      {
+        id: "rafael-pons-8",
+        src: "/landing/2025/rafael-pons-8.jpeg",
+        alt: "Rafael Pons 8",
       },
     ],
   },
   {
-    id: "alberto-levy",
-    title: "Conferencia Alberto Levy",
+    id: "toni-gutierrez",
+    title: "Conferencia de Toni Gutiérrez",
     items: [
       {
-        id: "al-1",
-        src: "/landing/2025/alberto-levy-1.jpg",
-        alt: "Alberto Levy 1",
+        id: "toni-gutierrez-1",
+        src: "/landing/2025/toni-gutierrez-1.jpeg",
+        alt: "Toni Gutiérrez 1",
       },
       {
-        id: "al-2",
-        src: "/landing/2025/alberto-levy-2.jpg",
-        alt: "Alberto Levy 2",
+        id: "toni-gutierrez-2",
+        src: "/landing/2025/toni-gutierrez-2.jpeg",
+        alt: "Toni Gutiérrez 2",
       },
       {
-        id: "al-3",
-        src: "/landing/2025/alberto-levy-3.jpg",
-        alt: "Alberto Levy 3",
+        id: "toni-gutierrez-3",
+        src: "/landing/2025/toni-gutierrez-3.jpeg",
+        alt: "Toni Gutiérrez 3",
       },
       {
-        id: "al-4",
-        src: "/landing/2025/alberto-levy-4.jpg",
-        alt: "Alberto Levy 4",
+        id: "toni-gutierrez-4",
+        src: "/landing/2025/toni-gutierrez-4.jpeg",
+        alt: "Toni Gutiérrez 4",
       },
       {
-        id: "al-5",
-        src: "/landing/2025/alberto-levy-5.jpg",
-        alt: "Alberto Levy 5",
+        id: "toni-gutierrez-5",
+        src: "/landing/2025/toni-gutierrez-5.jpeg",
+        alt: "Toni Gutiérrez 5",
       },
       {
-        id: "al-6",
-        src: "/landing/2025/alberto-levy-6.jpg",
-        alt: "Alberto Levy 6",
+        id: "toni-gutierrez-6",
+        src: "/landing/2025/toni-gutierrez-6.jpeg",
+        alt: "Toni Gutiérrez 6",
       },
     ],
   },
   {
-    id: "osvaldo-castillo",
-    title: "Conferencia Osvaldo Castillo",
+    id: "guillermo-cervantes",
+    title: "Conferencia de Guillermo Cervantes",
     items: [
       {
-        id: "oc-1",
-        src: "/landing/2025/osvaldo-castillo-1.jpeg",
-        alt: "Osvaldo Castillo 1",
+        id: "guillermo-cervantes-1",
+        src: "/landing/2025/guillermo-cervantes-1.jpeg",
+        alt: "Guillermo Cervantes 1",
       },
       {
-        id: "oc-2",
-        src: "/landing/2025/osvaldo-castillo-2.jpeg",
-        alt: "Osvaldo Castillo 2",
+        id: "guillermo-cervantes-2",
+        src: "/landing/2025/guillermo-cervantes-2.jpeg",
+        alt: "Guillermo Cervantes 2",
       },
       {
-        id: "oc-3",
-        src: "/landing/2025/osvaldo-castillo-3.jpeg",
-        alt: "Osvaldo Castillo 3",
+        id: "guillermo-cervantes-3",
+        src: "/landing/2025/guillermo-cervantes-3.jpeg",
+        alt: "Guillermo Cervantes 3",
       },
       {
-        id: "oc-4",
-        src: "/landing/2025/osvaldo-castillo-4.jpeg",
-        alt: "Osvaldo Castillo 4",
+        id: "guillermo-cervantes-4",
+        src: "/landing/2025/guillermo-cervantes-4.jpeg",
+        alt: "Guillermo Cervantes 4",
       },
       {
-        id: "oc-5",
-        src: "/landing/2025/osvaldo-castillo-5.jpeg",
-        alt: "Osvaldo Castillo 5",
+        id: "guillermo-cervantes-5",
+        src: "/landing/2025/guillermo-cervantes-5.jpeg",
+        alt: "Guillermo Cervantes 5",
       },
       {
-        id: "oc-6",
-        src: "/landing/2025/osvaldo-castillo-6.jpeg",
-        alt: "Osvaldo Castillo 6",
+        id: "guillermo-cervantes-6",
+        src: "/landing/2025/guillermo-cervantes-6.jpeg",
+        alt: "Guillermo Cervantes 6",
       },
     ],
   },
   {
-    id: "lalo-juarez",
-    title: "Conferencia Lalo Juárez",
+    id: "itzarel-hernandez",
+    title: "Conferencia de Itzarel Hernández",
     items: [
       {
-        id: "lj-1",
-        src: "/landing/2025/lalo-juarez-1.jpeg",
-        alt: "Lalo Juárez 1",
+        id: "itzarel-hernandez-1",
+        src: "/landing/2025/itzarel-hernandez-1.jpeg",
+        alt: "Itzarel Hernández 1",
       },
       {
-        id: "lj-2",
-        src: "/landing/2025/lalo-juarez-2.jpeg",
-        alt: "Lalo Juárez 2",
+        id: "itzarel-hernandez-2",
+        src: "/landing/2025/itzarel-hernandez-2.jpeg",
+        alt: "Itzarel Hernández 2",
       },
       {
-        id: "lj-3",
-        src: "/landing/2025/lalo-juarez-3.jpeg",
-        alt: "Lalo Juárez 3",
+        id: "itzarel-hernandez-3",
+        src: "/landing/2025/itzarel-hernandez-3.jpeg",
+        alt: "Itzarel Hernández 3",
       },
       {
-        id: "lj-4",
-        src: "/landing/2025/lalo-juarez-4.jpeg",
-        alt: "Lalo Juárez 4",
+        id: "itzarel-hernandez-4",
+        src: "/landing/2025/itzarel-hernandez-4.jpeg",
+        alt: "Itzarel Hernández 4",
       },
       {
-        id: "lj-5",
-        src: "/landing/2025/lalo-juarez-5.jpeg",
-        alt: "Lalo Juárez 5",
+        id: "itzarel-hernandez-5",
+        src: "/landing/2025/itzarel-hernandez-5.jpeg",
+        alt: "Itzarel Hernández 5",
       },
       {
-        id: "lj-6",
-        src: "/landing/2025/lalo-juarez-6.jpeg",
-        alt: "Lalo Juárez 6",
+        id: "itzarel-hernandez-6",
+        src: "/landing/2025/itzarel-hernandez-6.jpeg",
+        alt: "Itzarel Hernández 6",
       },
     ],
   },
   {
-    id: "andres-noriega",
-    title: "Conferencia Andrés Noriega",
+    id: "fotografia-grupal",
+    title: "Fotografía grupal",
     items: [
       {
-        id: "an-1",
-        src: "/landing/2025/andres-noriega-1.jpeg",
-        alt: "Andrés Noriega 1",
+        id: "fotografia-grupal-1",
+        src: "/landing/2025/fotografia-grupal-1.jpeg",
+        alt: "Fotografía grupal 1",
       },
       {
-        id: "an-2",
-        src: "/landing/2025/andres-noriega-2.jpeg",
-        alt: "Andrés Noriega 2",
-      },
-      {
-        id: "an-3",
-        src: "/landing/2025/andres-noriega-3.jpeg",
-        alt: "Andrés Noriega 3",
-      },
-      {
-        id: "an-4",
-        src: "/landing/2025/andres-noriega-4.jpeg",
-        alt: "Andrés Noriega 4",
-      },
-      {
-        id: "an-5",
-        src: "/landing/2025/andres-noriega-5.jpeg",
-        alt: "Andrés Noriega 5",
-      },
-      {
-        id: "an-6",
-        src: "/landing/2025/andres-noriega-6.jpeg",
-        alt: "Andrés Noriega 6",
-      },
-    ],
-  },
-  {
-    id: "rifa-andromeda",
-    title: "Rifa por Andrómeda Astroshop",
-    items: [
-      {
-        id: "ra-1",
-        src: "/landing/2025/rifa-andromeda-1.jpeg",
-        alt: "Rifa Andrómeda 1",
-      },
-      {
-        id: "ra-2",
-        src: "/landing/2025/rifa-andromeda-2.jpeg",
-        alt: "Rifa Andrómeda 2",
-      },
-      {
-        id: "ra-3",
-        src: "/landing/2025/rifa-andromeda-3.jpeg",
-        alt: "Rifa Andrómeda 3",
-      },
-      {
-        id: "ra-4",
-        src: "/landing/2025/rifa-andromeda-4.jpeg",
-        alt: "Rifa Andrómeda 4",
-      },
-      {
-        id: "ra-5",
-        src: "/landing/2025/rifa-andromeda-5.jpeg",
-        alt: "Rifa Andrómeda 5",
-      },
-      {
-        id: "ra-6",
-        src: "/landing/2025/rifa-andromeda-6.jpeg",
-        alt: "Rifa Andrómeda 6",
+        id: "fotografia-grupal-2",
+        src: "/landing/2025/fotografia-grupal-2.jpeg",
+        alt: "Fotografía grupal 2",
       },
     ],
   },
 ];
 
-interface NewHeroProps {}
+interface CongresoHero2Props {}
 
-const NewHero: React.FC<NewHeroProps> = () => {
+const CongresoHero2: React.FC<CongresoHero2Props> = () => {
   const [selectedItem, setSelectedItem] = useState<any>(null);
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isMediaFullscreen, setIsMediaFullscreen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("inauguración");
+  const [activeCategory, setActiveCategory] = useState("rafael-pons"); // Updated default category
   const containerRef = useRef<HTMLDivElement>(null);
 
   const galleryItems =
@@ -323,55 +278,24 @@ const NewHero: React.FC<NewHeroProps> = () => {
     >
       <StarsCanvas />
 
-      {/* Top Bar with Logo and Button */}
-      {/* <div className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center p-4 md:p-6">
-        <div className="relative w-16 h-16 md:w-20 md:h-20">
-          <Image
-            src="/brand/CIAF8-Logo8.png"
-            alt="Congress Logo"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-
-        <Button
-          onClick={() => scrollToSection("invitacion")}
-          variant="azulAstro"
-          size="lg"
-          className="py-4 px-6 md:py-5 md:px-8 text-sm md:text-base font-robotoCondensed font-bold uppercase"
-          asChild
-        >
-          <Link href="/auth/register" target="_blank">
-            REGÍSTRATE
-          </Link>
-        </Button>
-      </div> */}
-
       {/* Main Content - Gallery */}
-      <div className="container mx-auto pt-32 pb-8 px-4 md:pt-40 text-center">
+      <div className="container mx-auto  pb-16 px-4  text-center">
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          className="my-8 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"
+        />
         {/* Logo */}
-        <div className="relative mx-auto w-56 h-20  ">
+        {/* <div className="relative mx-auto w-56 h-20  ">
           <img
             src="/brand/CIAF8-Logo8.png"
             alt="Congress Logo"
             className="object-contain z-50"
           />
-        </div>
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-8"
-        >
-          <h1 className="font-robotoCondensed text-3xl md:text-4xl font-bebas text-white uppercase tracking-wider">
-            <span className="text-azulAstro">VIII</span> CONGRESO INTERNACIONAL
-            DE ASTROFOTOGRAFÍA
-          </h1>
-          <div className="w-32 h-1 bg-azulAstro rounded mt-4 mx-auto" />
-        </motion.div> */}
-        {/* Botón de registro - Nuevo elemento agregado */}
-        <Button
+        </div> */}
+
+        {/* Botón de registro */}
+        {/* <Button
           onClick={() => scrollToSection("invitacion")}
           variant="azulAstro"
           size="lg"
@@ -379,7 +303,6 @@ const NewHero: React.FC<NewHeroProps> = () => {
           asChild
         >
           <Link href="/auth/register" target="_blank">
-            {/* Link to registration page */}
             REGÍSTRATE AHORA
             <Image
               src="/brand/CIAF8-Estrella1.png"
@@ -388,22 +311,8 @@ const NewHero: React.FC<NewHeroProps> = () => {
               height={6}
               className="h-6 w-6 ml-3 group-hover:translate-y-1 transition-transform"
             />
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 ml-3 group-hover:translate-y-1 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 13l-5 5m0 0l-5-5m5 5V6"
-              />
-            </svg> */}
           </Link>
-        </Button>
+        </Button> */}
 
         {/* Category Tabs */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
@@ -518,19 +427,6 @@ const NewHero: React.FC<NewHeroProps> = () => {
                 >
                   <ZoomOut className="w-5 h-5 text-white" />
                 </button>
-                {/* <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMediaFullscreen();
-                  }}
-                  className="bg-black/70 p-2 rounded-full hover:bg-azulAstro transition-colors"
-                >
-                  {isMediaFullscreen ? (
-                    <Minimize2 className="w-5 h-5 text-white" />
-                  ) : (
-                    <Maximize2 className="w-5 h-5 text-white" />
-                  )}
-                </button> */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -595,4 +491,4 @@ const NewHero: React.FC<NewHeroProps> = () => {
   );
 };
 
-export default NewHero;
+export default CongresoHero2;
