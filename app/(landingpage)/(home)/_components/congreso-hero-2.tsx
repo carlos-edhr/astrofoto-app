@@ -190,6 +190,43 @@ const galleryCategories = [
       },
     ],
   },
+  {
+    id: "campamento-sierra-juarez",
+    title: "Campamento en la Sierra Juárez",
+    items: [
+      {
+        id: "campamento-sierra-juarez-1",
+        src: "/landing/2025/campamento-sierra-juarez-1.jpeg",
+        alt: "Campamento en la Sierra Juárez ",
+      },
+      {
+        id: "campamento-sierra-juarez-2",
+        src: "/landing/2025/campamento-sierra-juarez-2.jpeg",
+        alt: "Campamento en la Sierra Juárez ",
+      },
+      {
+        id: "campamento-sierra-juarez-3",
+        src: "/landing/2025/campamento-sierra-juarez-3.jpeg",
+        alt: "Campamento en la Sierra Juárez ",
+      },
+      {
+        id: "campamento-sierra-juarez-4",
+        src: "/landing/2025/campamento-sierra-juarez-4.jpeg",
+        alt: "Campamento en la Sierra Juárez ",
+      },
+
+      {
+        id: "campamento-sierra-juarez-5",
+        src: "/landing/2025/campamento-sierra-juarez-5.jpeg",
+        alt: "Campamento en la Sierra Juárez ",
+      },
+      {
+        id: "campamento-sierra-juarez-6",
+        src: "/landing/2025/campamento-sierra-juarez-6.jpeg",
+        alt: "Campamento en la Sierra Juárez ",
+      },
+    ],
+  },
 ];
 
 interface CongresoHero2Props {}
