@@ -353,7 +353,7 @@ const NewHero: React.FC<NewHeroProps> = () => {
         {/* Logo */}
         <div className="relative mx-auto w-56 h-20  ">
           <img
-            src="/brand/CIAF8-Logo8.png"
+            src="/brand/CONGRESO Astro Logos_CIAF 9 BN2.png"
             alt="Congress Logo"
             className="object-contain z-50"
           />
@@ -382,7 +382,7 @@ const NewHero: React.FC<NewHeroProps> = () => {
             {/* Link to registration page */}
             REGÍSTRATE AHORA
             <Image
-              src="/brand/CIAF8-Estrella1.png"
+              src="/brand/Logo_CIAF 9 FIRMA2.png"
               alt="Congress Logo"
               width={6}
               height={6}

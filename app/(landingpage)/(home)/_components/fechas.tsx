@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import Calendar from "./calendar";
 
 interface FechasProps {}
 
@@ -74,23 +75,29 @@ export const Fechas: React.FC<FechasProps> = ({}) => {
         font-robotoCondensed
       "
     >
-      {/* Top Image - July Dates */}
-      <div className="w-full max-w-[600px] mb-8">
-        <Image
+      <div className="w-full max-w-[600px] mb-2">
+        <img
+          src="/brand/CONGRESO Astro Logos_CIAF 9 BN2.png"
+          alt="Congress Logo"
+          className="object-contain z-50"
+        />
+
+        <Calendar />
+        {/* <Image
           src="/landing/fechas1.png" // Update with actual image path
           alt="Fechas del evento: Julio 23, 24, 25, 26"
           width={600}
           height={200}
           className="w-full h-auto"
           priority
-        />
+        /> */}
       </div>
 
       {/* Event List - Single Centered Column */}
-      <div className="w-full max-w-xl mx-auto flex flex-col gap-10">
+      {/* <div className="w-full max-w-xl mx-auto flex flex-col gap-10">
         {events.map((eventGroup, groupIndex) => (
           <div key={groupIndex} className="flex flex-col items-center">
-            {/* Location Header */}
+          
             <h3
               className="
             text-xl
@@ -105,9 +112,9 @@ export const Fechas: React.FC<FechasProps> = ({}) => {
             >
               {eventGroup.location}
             </h3>
-            {/* horizontal line */}
+         
             <div className="w-60 h-1 bg-azulAstro rounded mb-4" />
-            {/* Event Days */}
+           
             <div className="w-full space-y-6">
               {eventGroup.days.map((day, dayIndex) => (
                 <div key={dayIndex} className="flex flex-col items-center">
@@ -133,23 +140,13 @@ export const Fechas: React.FC<FechasProps> = ({}) => {
                     {day.title}
                   </span>
 
-                  {/* Divider except last item */}
-                  {/* {dayIndex < eventGroup.days.length - 1 && (
-                    <div
-                      className="
-                mt-4
-                w-full
-                h-px
-                bg-gray-800
-                "
-                    />
-                  )} */}
+                 
                 </div>
               ))}
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Bottom Image - Camping Illustration */}
       {/* <div className="w-full max-w-[400px] mt-10">

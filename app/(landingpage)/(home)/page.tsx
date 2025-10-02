@@ -29,15 +29,14 @@ const LandingPage = () => {
     <main className="bg-blackBackgroundNew z-10 relative min-h-screen w-screen  ">
       {/* <StarsCanvas /> */}
       <Navbar />
-
       {/* <NewHero /> */}
       <CongresoHero />
       <CongresoHero2 />
       <Invitacion />
-      {/* <Fechas />
-      <Campamento />
+      <Fechas />
+      {/*<Campamento />*/}
       <Planes />
-      <Conferencistas /> */}
+      {/*<Conferencistas /> */}
       <Proximamente />
       <Mercancia />
       <Galeria />
